@@ -8,7 +8,6 @@ Shader "Toon/Lit" {
 	SubShader {
 		Tags { "RenderType"="Opaque" }
 		LOD 200
-
 		
 CGPROGRAM
 #pragma surface surf ToonRamp

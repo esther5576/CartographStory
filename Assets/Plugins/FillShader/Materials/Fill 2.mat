@@ -39,8 +39,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 727babd9f1ef0be468453f0751e57c13, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: d35d40c32aec51d4fb0bdc269d24b06d, type: 3}
+        m_Scale: {x: 4, y: 4}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -51,7 +51,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
-        m_Texture: {fileID: 2800000, guid: 727babd9f1ef0be468453f0751e57c13, type: 3}
+        m_Texture: {fileID: 2800000, guid: e5579ca518f171d40aa741f32e4dadf5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -69,7 +69,7 @@ Material:
     - _Degrees: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FillAmount: 0.27
+    - _FillAmount: 0.1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -81,9 +81,9 @@ Material:
     - _Offset3: 0
     - _Parallax: 0.02
     - _Phase: 0
-    - _Rim: 0.0846
+    - _Rim: 0.1
     - _Rim2: 0.39
-    - _RimPower: 1.59
+    - _RimPower: 0.83
     - _Slosh: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -92,8 +92,8 @@ Material:
     - _WobbleX: 0
     - _WobbleZ: 0
     - _ZWrite: 1
-    - _noiseScale: 0.15
-    - _texScale: 0.97
+    - _noiseScale: -3.1
+    - _texScale: 0.2
     m_Colors:
     - _Angle: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 0.8088235, b: 0.98681545, a: 1}

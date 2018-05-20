@@ -7,12 +7,12 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Mask
-  m_Shader: {fileID: 4800000, guid: 65989b99e6a86c146bc8ccfd6d95c5ce, type: 3}
+  m_Shader: {fileID: 4800000, guid: 46206cc1462ba7b4fa4552fad0352270, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2998
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:

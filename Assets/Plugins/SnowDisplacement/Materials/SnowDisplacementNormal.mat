@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: SnowDisplacementNormal
-  m_Shader: {fileID: 4800000, guid: 28570e1e95973d14dbd811df1c352d27, type: 3}
+  m_Shader: {fileID: 4800000, guid: eb4f62df73441534686b6710d721a862, type: 3}
   m_ShaderKeywords: BRUSHMAIN TINTO
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -50,6 +50,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 7ca2f04160d33eb41a5622a8e086d595, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 2800000, guid: 8d7b21eb17ea77343874ab765d2bbda3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -63,7 +67,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ramp:
-        m_Texture: {fileID: 2800000, guid: 62046044576cd904b9519d2a995c7f72, type: 3}
+        m_Texture: {fileID: 2800000, guid: b1c5e193c67c3344280de4708e0c1f58, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SnowRamp:
+        m_Texture: {fileID: 2800000, guid: b1c5e193c67c3344280de4708e0c1f58, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -75,20 +83,29 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Height: 0.002
     - _Metallic: 0
     - _Mode: 0
     - _NoiseScale: 0.9
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _RimPower: 1.48
+    - _SUV: 0
     - _Slice: 0.07
     - _Slice2: 0.217
     - _SmoothnessTextureChannel: 0
+    - _SnowOffset: 0.1
+    - _SnowSize: 0.39
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _TINTO: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.654902, g: 0.78039217, b: 0.7647059, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Tint: {r: 1, g: 0, b: 0.8896551, a: 0.5}
+    - _RimColor: {r: 0.88235295, g: 0.9723274, b: 1, a: 1}
+    - _SnowAngle: {r: 0, g: 1, b: 0, a: 1}
+    - _SnowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 0.654902, g: 0.78039217, b: 0.7647059, a: 0.5}
