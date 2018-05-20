@@ -182,3 +182,23 @@ MonoBehaviour:
     IsRecursive: 0
     SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
     LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/LayeredRocks
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/AlienPlants
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/PineTree
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/FishGenerator
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
