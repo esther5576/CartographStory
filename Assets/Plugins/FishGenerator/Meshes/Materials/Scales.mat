@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Scales
-  m_Shader: {fileID: 4800000, guid: 7d9b76f4fb2911847b85077989b49f29, type: 3}
+  m_Shader: {fileID: 4800000, guid: c96926c27d5a8364a95d3a754308453b, type: 3}
   m_ShaderKeywords: LM
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
@@ -51,11 +51,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 5e319c8250e830949b38a421d3e99473, type: 3}
+        m_Texture: {fileID: 2800000, guid: 53cb59f74cb9f7c4980cde25b5dedc22, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mask:
-        m_Texture: {fileID: 2800000, guid: 479985fb56f0ec747a45cff6c776d836, type: 3}
+        m_Texture: {fileID: 2800000, guid: 19555d7d9d114c7f1100f5ab44295342, type: 3}
         m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -79,11 +79,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ramp:
-        m_Texture: {fileID: 2800000, guid: 62046044576cd904b9519d2a995c7f72, type: 3}
+        m_Texture: {fileID: 2800000, guid: ac51b7406182bbb4988943bbb81e1629, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Brightness: 1
+    - _Brightness: 0.792
     - _BumpAmt: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -97,30 +97,29 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Offset: 0.812
+    - _Offset: 1
     - _Offset2: 0.786
     - _Outline: 0.1
     - _Outline2: 0.0076
     - _Parallax: 0.02
-    - _Rigidness: 3
+    - _Rigidness: 25
     - _RimStrength: 4
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 4.8
+    - _Speed: 25
     - _SrcBlend: 1
     - _SwayAmount: 0.03
-    - _SwayMax: 0.0576
     - _UVSec: 0
-    - _WorldScale: 3.33
-    - _YOffset: -1.65
+    - _WorldScale: 4.62
+    - _YOffset: -0.04
     - _ZWrite: 1
     - _xScale: 0.03
     - _zScale: 0.03
     m_Colors:
-    - _Color: {r: 0.8455882, g: 0.8455882, b: 0.8455882, a: 1}
+    - _Color: {r: 0.6397059, g: 0.6632245, b: 0.6632245, a: 1}
     - _EmisTint: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _IrColor: {r: 1, g: 0.6691177, b: 0.9634888, a: 1}
+    - _IrColor: {r: 0.8945233, g: 0.85294116, b: 1, a: 1}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _SnowDirection: {r: 0, g: 1, b: 0, a: 1}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}

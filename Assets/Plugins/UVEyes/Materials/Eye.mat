@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Eye
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: bd2f63d441178be4e82906300959d62b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Ramp:
+        m_Texture: {fileID: 2800000, guid: 62046044576cd904b9519d2a995c7f72, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShoreTex:
+        m_Texture: {fileID: 2800000, guid: a1053b4f6a9ab3348908e7685a5eb1a8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ToonShade:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Angle: 7
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _Delta: 20
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _Emboss: 0.3
+    - _Frequency: 4
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _HeightScale: 0.001
+    - _Intence: 264
+    - _Intensity: 3
+    - _Metallic: 0
+    - _MinY: 0
+    - _MinZ: 0
+    - _Mode: 0
+    - _NoiseScale: 0.02
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _Scale: 1
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _Speed: 0.71
+    - _SpeedX: 0.82
+    - _SpeedY: 0.3
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _WaveSpeed: 1.1
+    - _WorldScale: 1
+    - _ZWrite: 1
+    - _xScale: 0.5
+    - _yScale: 0.5
+    m_Colors:
+    - _BumpDirection: {r: -1.1, g: 1, b: -1, a: 1}
+    - _BumpTiling: {r: -11.77, g: -11.7, b: -4.53, a: 3}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DepthColor: {r: 0.5230861, g: 0.9485294, b: 0.9485294, a: 1}
+    - _DepthFadeParemeter: {r: 22.94, g: 5.88, b: 1.11, a: 9.46}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Foam: {r: 1.78, g: 0.43, b: -1.22, a: 0}
+    - _InvFadeParemeter: {r: 2.43, g: 10.03, b: 23.6, a: -8.77}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}

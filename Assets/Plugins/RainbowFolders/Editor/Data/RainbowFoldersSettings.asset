@@ -202,3 +202,83 @@ MonoBehaviour:
     IsRecursive: 0
     SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
     LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/SpookyProps
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/AuraOutline
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/BigTree
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/FillShader
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/Rocks
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/Skulls
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/TinyEnvironment
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/Waterfall
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/Clouds
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/DirectionalOutline
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/FireShader
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/Iridescence
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/SnowDisplacement
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/TriPlanar
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/UvDistort
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
+  - Type: 1
+    Key: Assets/Plugins/UVEyes
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
