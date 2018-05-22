@@ -83,19 +83,19 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Height: 0.002
+    - _Height: 0.054
     - _Metallic: 0
     - _Mode: 0
     - _NoiseScale: 0.9
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimPower: 1.48
+    - _RimPower: 2.16
     - _SUV: 0
     - _Slice: 0.07
     - _Slice2: 0.217
     - _SmoothnessTextureChannel: 0
-    - _SnowOffset: 0.1
-    - _SnowSize: 0.39
+    - _SnowOffset: 0.025
+    - _SnowSize: 0.35
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _TINTO: 1

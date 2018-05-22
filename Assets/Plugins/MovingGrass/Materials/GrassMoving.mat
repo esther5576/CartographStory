@@ -77,12 +77,12 @@ Material:
     - _RimBrightness: 3.2
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 27.4
+    - _Speed: 20
     - _SrcBlend: 1
     - _SwayAmount: 0.0415
-    - _SwayMax: 0.0534
+    - _SwayMax: 0.0387
     - _UVSec: 0
-    - _YOffset: 0.22
+    - _YOffset: 0
     - _ZWrite: 0
     - _xScale: 0.03
     - _zScale: 0.03
