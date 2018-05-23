@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class AutoIntensity : MonoBehaviour {
-
+    [Header("Sun and sky settings --------------------")]
 	public Gradient nightDayColor;
 
 	public float maxIntensity = 3f;
@@ -31,7 +31,12 @@ public class AutoIntensity : MonoBehaviour {
 	Skybox sky;
 	Material skyMat;
 
+    [Space(20)]
+
+    [Header("Boat Lights -----------------------------")]
     public Light BoatLight;
+    public float BoatSpeed = 1;
+    public float BoatLightIntensity = 5;
 
 	void Start () 
 	{
@@ -67,19 +72,17 @@ public class AutoIntensity : MonoBehaviour {
         if (dot > 0)
         {
             transform.Rotate(dayRotateSpeed * Time.deltaTime * skySpeed);
-            Debug.Log("DAAAAAAAAAAAAY");
             if (BoatLight.intensity > 0f)
             {
-                BoatLight.intensity -= 1 * Time.deltaTime;
+                BoatLight.intensity -= BoatSpeed * Time.deltaTime;
             }
         }
         else
         {
             transform.Rotate(nightRotateSpeed * Time.deltaTime * skySpeed);
-            Debug.Log("NIIIIHGT");
-            if (BoatLight.intensity < 1f)
+            if (BoatLight.intensity < BoatLightIntensity)
             {
-                BoatLight.intensity += 1 * Time.deltaTime;
+                BoatLight.intensity += BoatSpeed * Time.deltaTime;
             }
         }
 	}

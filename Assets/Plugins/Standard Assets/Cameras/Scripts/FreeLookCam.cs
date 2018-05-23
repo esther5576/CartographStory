@@ -28,12 +28,14 @@ namespace UnityStandardAssets.Cameras
 		private Quaternion m_PivotTargetRot;
 		private Quaternion m_TransformTargetRot;
 
+        public Vector3 cameraPosition;
+
         protected override void Awake()
         {
             base.Awake();
             // Lock or unlock the cursor.
-            Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
-            Cursor.visible = !m_LockCursor;
+            /*Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
+            Cursor.visible = !m_LockCursor;*/
 			m_PivotEulers = m_Pivot.rotation.eulerAngles;
 
 	        m_PivotTargetRot = m_Pivot.transform.localRotation;
@@ -110,6 +112,8 @@ namespace UnityStandardAssets.Cameras
 				m_Pivot.localRotation = m_PivotTargetRot;
 				transform.localRotation = m_TransformTargetRot;
 			}
+
+            transform.localPosition = cameraPosition;
         }
     }
 }
