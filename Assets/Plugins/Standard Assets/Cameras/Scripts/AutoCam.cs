@@ -33,6 +33,7 @@ namespace UnityStandardAssets.Cameras
         public Transform pivot;
         public float damping;
         bool launchedRot = true;
+        Vector3 initialDif;
         #endregion
 
         private void Start()
@@ -141,8 +142,9 @@ namespace UnityStandardAssets.Cameras
             {
                 launchedRot = false;
                 DOTween.Kill("camRot");
-                float angle = Mathf.LerpAngle(pivot.transform.eulerAngles.y, pivot.transform.eulerAngles.y + 1 * Input.GetAxis("Mouse X") * speed, Time.time);
-                pivot.transform.eulerAngles = new Vector3(0, angle, 0);
+                float angle = Mathf.LerpAngle(pivot.transform.localEulerAngles.y, pivot.transform.localEulerAngles.y + 1 * Input.GetAxis("Mouse X") * speed, Time.time);
+                pivot.transform.localEulerAngles = new Vector3(0, angle, 0);
+                //pivot.transform.localPosition = 
             }
         }
     }

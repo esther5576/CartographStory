@@ -7,6 +7,8 @@ public class BoatNavigation: MonoBehaviour
     public float turnSpeed = 10000f;
     public float accelerationSpeed = 200000;
 
+    public float maxSpeed = 8f;
+
     private Rigidbody boatRigibody;
 
 	// Use this for initialization
@@ -23,5 +25,7 @@ public class BoatNavigation: MonoBehaviour
 
         boatRigibody.AddTorque(0f, h * turnSpeed * Time.deltaTime, 0f);
         boatRigibody.AddForce(transform.forward * v * accelerationSpeed * Time.deltaTime);
+
+        //Debug.Log(boatRigibody.velocity.magnitude);
 	}
 }
