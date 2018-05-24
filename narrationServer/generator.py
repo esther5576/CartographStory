@@ -3,6 +3,7 @@ import sys
 import threading
 import Queue
 from time import sleep
+from ml import generate
 
 class GPUTask(object):
     def __init__(self):
@@ -21,13 +22,19 @@ class GPUThread(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
         self.queue = Queue.Queue()
-        self.running = True
 
     def run(self):
-        while self.running:
+        while True:
             task = self.queue.get()
+            if (type(task) == StopGPUThreadTask):
+                break
             task.run()
             task.setDone()
+        print("GPU thread stopped", file=sys.stderr)
+
+class StopGPUThreadTask(GPUTask):
+    def __init__(self):
+        GPUTask.__init__(self)
         
 class DetectionTask(GPUTask):
     def __init__(self, words):
@@ -37,6 +44,28 @@ class DetectionTask(GPUTask):
 
     def run(self):
         self.result = generateSentence(self.words)
+
+class LoadModelTask(GPUTask):
+    def __init__(self):
+        GPUTask.__init__(self)
+        self.result = None
+        
+    def run(self):
+        self.result = generate.load_all()
+
+class GenerateStoryTask(GPUTask):
+    def __init__(self, model, image):
+        GPUTask.__init__(self)
+        self.result = ''
+        self.error = None
+        self.model = model
+        self.image = image
+
+    def run(self):
+        try:
+            self.result = generate.story(self.model, self.image)
+        except Exception:
+            self.error = 'An error happend wile processing image'
 
 def generateSentence(words):
     text = ''
