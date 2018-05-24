@@ -1,0 +1,15 @@
+
+Request : 
+-----------------------
+{
+	words: ["Mot1", "Mot2", "Mot4"]
+}
+-----------------------
+
+Response :
+-----------------------
+{
+	status : "OK"
+	generatedText : "Il y avait mot1 et mot2 sur une petite île, le mot3 était d'une beaté magnifique."
+}
+-----------------------
