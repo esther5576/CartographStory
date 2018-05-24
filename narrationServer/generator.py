@@ -1,14 +1,42 @@
+from __future__ import print_function
+import sys
+import threading
+import Queue
+from time import sleep
 
+class GPUTask(object):
+    def __init__(self):
+        self.lock = threading.Event()
 
-def generateSentence2(words):
-    text = 'You sen me this list of words : '
-    for word in words:
-        text += '"' + word + '" '
+    def waitUntilDone(self):
+        self.lock.wait()
 
-    text += 'but, for now I cannot say anything about it :/'
+    def setDone(self):
+    	self.lock.set()
 
-    return text
+    def run(self):
+        pass
 
+class GPUThread(threading.Thread):
+    def __init__(self):
+        threading.Thread.__init__(self)
+        self.queue = Queue.Queue()
+        self.running = True
+
+    def run(self):
+        while self.running:
+            task = self.queue.get()
+            task.run()
+            task.setDone()
+        
+class DetectionTask(GPUTask):
+    def __init__(self, words):
+        GPUTask.__init__(self)
+        self.result = ''
+        self.words = words
+
+    def run(self):
+        self.result = generateSentence(self.words)
 
 def generateSentence(words):
     text = ''
@@ -30,6 +58,6 @@ def generateSentence(words):
     if text:
         text = "Today, exploring the new world, I see amazing thing\'s...\n" + text
     else:
-    	text = "I didn't see anything amazing today..."
+        text = "I didn't see anything amazing today..."
 
     return text
