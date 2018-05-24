@@ -79,7 +79,7 @@ Material:
     - _Edge2: 0.26
     - _Edge3: 1.42
     - _Edge4: 2
-    - _EdgeWidth: 0.291
+    - _EdgeWidth: 0.5
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -89,16 +89,16 @@ Material:
     - _MergeY: -0.61
     - _Metallic: 0
     - _Mode: 0
-    - _NoiseScale: 0.57
+    - _NoiseScale: 1.83
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RimPower: 20
-    - _Scale: -1.73
-    - _SideScale: -0.32
+    - _Scale: 0.1
+    - _SideScale: 1.18
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TopSpread: 1.7
+    - _TopSpread: 2
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
