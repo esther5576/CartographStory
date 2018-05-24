@@ -58,7 +58,7 @@ namespace UnityStandardAssets.Water
 
         void SetStandardCameraParameter(Camera cam, LayerMask mask)
         {
-            cam.cullingMask = mask & ~(1 << LayerMask.NameToLayer("Water"));
+            cam.cullingMask = mask & ~(1 << LayerMask.NameToLayer("Water") | 1 << LayerMask.NameToLayer("UI"));
             cam.backgroundColor = Color.black;
             cam.enabled = false;
         }
@@ -146,7 +146,7 @@ namespace UnityStandardAssets.Water
                 return;
             }
 
-            reflectCamera.cullingMask = reflectionMask & ~(1 << LayerMask.NameToLayer("Water"));
+            reflectCamera.cullingMask = reflectionMask & ~(1 << LayerMask.NameToLayer("Water") | 1 << LayerMask.NameToLayer("UI"));
 
             SaneCameraSettings(reflectCamera);
 

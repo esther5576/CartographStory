@@ -99,7 +99,7 @@ Material:
     - _SpecOffset: 0.5
     - _SpecSize: 0.893
     - _SpecularHighlights: 1
-    - _Speed: 5.8
+    - _Speed: 3.7
     - _SrcBlend: 1
     - _SwayMax: 0.0576
     - _TopBottomOffset: 0.64
