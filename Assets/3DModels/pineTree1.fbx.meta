@@ -1,59 +1,14 @@
 fileFormatVersion: 2
-guid: eade9db5d509b4746bfde5190c586e60
+guid: f28c848f4e5160449b85ec99d08342ed
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: inverted
-    100002: inverted 1
-    100004: inverted 2
-    100006: inverted 3
-    100008: //RootNode
-    100010: Island_1
-    100012: pineTree1
-    100014: pineTree2
-    100016: pineTree3
-    100018: pineTree4
-    400000: inverted
-    400002: inverted 1
-    400004: inverted 2
-    400006: inverted 3
-    400008: //RootNode
-    400010: Island_1
-    400012: pineTree1
-    400014: pineTree2
-    400016: pineTree3
-    400018: pineTree4
-    2100000: lambert1
-    2100002: pineTree
-    2300000: inverted
-    2300002: inverted 1
-    2300004: inverted 2
-    2300006: inverted 3
-    2300008: Island_1
-    2300010: pineTree1
-    2300012: pineTree2
-    2300014: pineTree3
-    2300016: pineTree4
-    2300018: //RootNode
-    3300000: inverted
-    3300002: inverted 1
-    3300004: inverted 2
-    3300006: inverted 3
-    3300008: Island_1
-    3300010: pineTree1
-    3300012: pineTree2
-    3300014: pineTree3
-    3300016: pineTree4
-    3300018: //RootNode
-    4300000: Island_1
-    4300002: pineTree1
-    4300004: inverted
-    4300006: pineTree2
-    4300008: inverted
-    4300010: pineTree3
-    4300012: inverted
-    4300014: pineTree4
-    4300016: inverted
+    100000: //RootNode
+    400000: //RootNode
+    2100000: pineTree
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pineTree1
   externalObjects: {}
   materials:
     importMaterials: 1
