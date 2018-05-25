@@ -29,6 +29,11 @@
 					sentences[i] = sentences[i].trim();
 				}
 				
+				for (var i=sentences.length-1; i>=0; i--) {
+					if (sentences[i] == "")
+						sentences.splice(i, 1);
+				}
+
 				sendRequest(
 					"storyFromSentences",
 					{"sentences": sentences},
