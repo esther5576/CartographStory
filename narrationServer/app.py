@@ -21,7 +21,7 @@ def receiveWords():
         else:
             return jsonify(status="KO", error="Invalid request.")
     except Exception as e:
-        return jsonify(status='KO', error="test : " + str(e))
+        return jsonify(status='KO', error=str(e))
         
     return jsonify(status='KO', error="Unexpected error.")
 
@@ -30,7 +30,7 @@ def receiveSentences():
     try:
         if request.is_json:
             print("\treceived : " + request.get_data(), file=sys.stderr)
-            task = StoryFromSentencesTask(z, request.json['sentences'])
+            task = StoryFromSentencesTask(model, request.json['sentences'])
             gpuThread.queue.put(task)
             task.waitUntilDone()
             if task.error is not None:
@@ -39,7 +39,7 @@ def receiveSentences():
         else:
             return jsonify(status="KO", error="Invalid request.")
     except Exception as e:
-        return jsonify(status='KO', error="test : " + str(e))
+        return jsonify(status='KO', error=str(e))
         
     return jsonify(status='KO', error="Unexpected error.")
 
@@ -82,10 +82,10 @@ if __name__ == '__main__':
     signal.signal(signal.SIGINT, stopServer)
     signal.signal(signal.SIGTERM, stopServer)
 
-    #loadTask = LoadModelTask()
-    #gpuThread.queue.put(loadTask)
-    #loadTask.waitUntilDone()
-    #model = loadTask.result
+    loadTask = LoadModelTask()
+    gpuThread.queue.put(loadTask)
+    loadTask.waitUntilDone()
+    model = loadTask.result
     print('Models loded !', file=sys.stderr)
 
     app.run(host="0.0.0.0", port=8080, debug=False)

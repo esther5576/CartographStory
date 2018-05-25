@@ -17,7 +17,8 @@
 					asynchRequest.addEventListener("error", onError, false);
 				}
 				asynchRequest.open("POST", url, true);
-				asynchRequest.send(body);
+				asynchRequest.setRequestHeader("Content-Type", "application/json");
+				asynchRequest.send(JSON.stringify(body));
 			}
 
 			function sendAsJson(form) {

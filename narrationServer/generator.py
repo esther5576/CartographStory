@@ -78,8 +78,8 @@ class StoryFromSentencesTask(GPUTask):
     def run(self):
         try:
             self.result = generate.storyFromSentence(self.model, self.sentences)
-        except Exception:
-            self.error = 'An error happend wile processing image'
+        except Exception e:
+            self.error = 'An error happend wile processing sentences : ' + str(e)
 
 def generateSentence(words):
     text = ''
