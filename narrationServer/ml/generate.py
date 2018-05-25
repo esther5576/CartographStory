@@ -75,7 +75,7 @@ def story(z, image_loc, k=100, bw=50, lyric=False):
 
     return passage
 
-def storyFromSentences(z, sentences, bw=50, lyric=False)
+def storyFromSentences(z, sentences, bw=50, lyric=False):
     # Compute skip-thought vectors for sentences
     svecs = skipthoughts.encode(z['stv'], sentences, verbose=False)
 

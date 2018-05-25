@@ -34,8 +34,8 @@ def receiveSentences():
             gpuThread.queue.put(task)
             task.waitUntilDone()
             if task.error is not None:
-                    return jsonify(status='KO', error=task.error)
-                return jsonify(status="OK", generatedText=task.result)
+                return jsonify(status='KO', error=task.error)
+            return jsonify(status="OK", generatedText=task.result)
         else:
             return jsonify(status="KO", error="Invalid request.")
     except Exception as e:
@@ -82,10 +82,10 @@ if __name__ == '__main__':
     signal.signal(signal.SIGINT, stopServer)
     signal.signal(signal.SIGTERM, stopServer)
 
-    loadTask = LoadModelTask()
-    gpuThread.queue.put(loadTask)
-    loadTask.waitUntilDone()
-    model = loadTask.result
+    #loadTask = LoadModelTask()
+    #gpuThread.queue.put(loadTask)
+    #loadTask.waitUntilDone()
+    #model = loadTask.result
     print('Models loded !', file=sys.stderr)
 
     app.run(host="0.0.0.0", port=8080, debug=False)
