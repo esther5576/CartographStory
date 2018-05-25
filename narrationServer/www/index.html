@@ -3,16 +3,70 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Narration server web client</title>
+		<script type="text/javascript" language="Javascript">
+			
+			"use strict";
+
+			var asynchRequest = new XMLHttpRequest();
+
+			function sendRequest(url, body, method, onLoad, onError) {
+				if (typeof(onLoad) != "undefined") {
+					asynchRequest.addEventListener("load", onLoad, false);
+				}
+				if (typeof(onError) != "undefined") {
+					asynchRequest.addEventListener("error", onError, false);
+				}
+				asynchRequest.open("POST", url, true);
+				asynchRequest.send(body);
+			}
+
+			function sendAsJson(form) {
+				var text = form["sentencesInput"].value;
+				var sentences.split(".");
+
+				for (var i=0; i<sentences.length; i++) {
+					sentences[i] = sentences[i].trim();
+				}
+				
+				sendRequest(
+					"storyFromSentences",
+					{"sentences": sentences},
+					"POST",
+					function() {
+						var data = JSON.parse(asynchRequest.response);
+						document.getElementById("passage").innerHTML = data.generatedText;
+					}
+				)
+			}
+
+		</script>
 	</head>
 	<body>
-		<form action="storyFromImage" method="post" enctype="multipart/form-data">
-			<div>
-				<label for="file">Select image you want a story from</label>
-				<input type="file" id="file" name="file">
-			</div>
-			<div>
-				<input type="submit" value="Send">
-			</div>
-		</form>
+		<div>
+			<form action="storyFromImage" method="post" enctype="multipart/form-data">
+				<div>
+					<label for="file">Select image you want a story from</label>
+					<input type="file" id="file" name="file">
+				</div>
+				<div>
+					<input type="submit" value="Send">
+				</div>
+			</form>
+		</div>
+		<div>
+			<form action="storyFromSentences" method="post" id="sentencesForm" onSubmit="sendAsJson(this)">
+				<div>
+					<label for="sentences">Type sentences you want to write a story from (don't forget the "." to end them)</label>
+					<textarea name="sentencesInput"></textarea>
+				</div>
+				<div>
+					<input type="submit" value="Send">
+				</div>
+			</form>
+		</div>
+		<div>
+			<label for="passage">Generated passage :</label>
+			<textarea id="passage"></textarea>
+		</div>
 	</body>
 </html>

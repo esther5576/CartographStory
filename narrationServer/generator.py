@@ -67,6 +67,20 @@ class GenerateStoryTask(GPUTask):
         except Exception:
             self.error = 'An error happend wile processing image'
 
+class StoryFromSentencesTask(GPUTask):
+    def __init__(self, model, sentences):
+        GPUTask.__init__(self)
+        self.result = ''
+        self.error = None
+        self.model = model
+        self.sentences = sentences
+
+    def run(self):
+        try:
+            self.result = generate.storyFromSentence(self.model, self.sentences)
+        except Exception:
+            self.error = 'An error happend wile processing image'
+
 def generateSentence(words):
     text = ''
     if any("snow" in word for word in words):

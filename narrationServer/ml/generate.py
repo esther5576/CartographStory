@@ -75,6 +75,27 @@ def story(z, image_loc, k=100, bw=50, lyric=False):
 
     return passage
 
+def storyFromSentences(z, sentences, bw=50, lyric=False)
+    # Compute skip-thought vectors for sentences
+    svecs = skipthoughts.encode(z['stv'], sentences, verbose=False)
+
+    # Style shifting
+    shift = svecs.mean(0) - z['bneg'] + z['bpos']
+
+    # Generate story conditioned on shift
+    passage = decoder.run_sampler(z['dec'], shift, beam_width=bw)
+    print 'OUTPUT: '
+    if lyric:
+        for line in passage.split(','):
+            if line[0] != ' ':
+                print line
+            else:
+                print line[1:]
+    else:
+        print passage
+
+    return passage
+
 
 def load_all():
     """
