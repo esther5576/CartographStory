@@ -22,7 +22,7 @@
 
 			function sendAsJson(form) {
 				var text = form["sentencesInput"].value;
-				var sentences.split(".");
+				var sentences = text.split(".");
 
 				for (var i=0; i<sentences.length; i++) {
 					sentences[i] = sentences[i].trim();
@@ -34,7 +34,11 @@
 					"POST",
 					function() {
 						var data = JSON.parse(asynchRequest.response);
+						console.log(data);
 						document.getElementById("passage").innerHTML = data.generatedText;
+					},
+					function (err) {
+						console.log("An error occured : ", err.message);
 					}
 				);
 				return false;
@@ -55,7 +59,7 @@
 			</form>
 		</div>
 		<div>
-			<form action="storyFromSentences" method="post" id="sentencesForm" onSubmit="sendAsJson(this)">
+			<form action="storyFromSentences" method="post" id="sentencesForm" onSubmit="return sendAsJson(this)">
 				<div>
 					<label for="sentences">Type sentences you want to write a story from (don't forget the "." to end them)</label>
 					<textarea name="sentencesInput"></textarea>
