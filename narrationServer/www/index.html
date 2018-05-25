@@ -7,18 +7,16 @@
 			
 			"use strict";
 
-			var asynchRequest = new XMLHttpRequest();
-
-			function sendRequest(url, body, method, onLoad, onError) {
+			function sendRequest(request, url, body, method, onLoad, onError) {
 				if (typeof(onLoad) != "undefined") {
-					asynchRequest.addEventListener("load", onLoad, false);
+					request.addEventListener("load", onLoad, false);
 				}
 				if (typeof(onError) != "undefined") {
-					asynchRequest.addEventListener("error", onError, false);
+					request.addEventListener("error", onError, false);
 				}
-				asynchRequest.open("POST", url, true);
-				asynchRequest.setRequestHeader("Content-Type", "application/json");
-				asynchRequest.send(JSON.stringify(body));
+				request.open("POST", url, true);
+				request.setRequestHeader("Content-Type", "application/json");
+				request.send(JSON.stringify(body));
 			}
 
 			function sendAsJson(form) {
@@ -33,6 +31,8 @@
 					if (sentences[i] == "")
 						sentences.splice(i, 1);
 				}
+
+				var asynchRequest = new XMLHttpRequest();
 
 				sendRequest(
 					"storyFromSentences",
