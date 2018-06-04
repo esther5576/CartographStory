@@ -116,19 +116,19 @@ Material:
     - _InvFade: 0.628783
     - _InvFadeDepthFade: 0.07197756
     - _InvFadeFoam: 0.1217
-    - _MaxTreshold: 0.5
+    - _MaxTreshold: 1
     - _MaxTreshould: 0.5
     - _NormalsDisplacement: 0
     - _ReflDistort: 0.9267696
     - _RefrDistort: 1.4393286
-    - _Shininess: 382
+    - _Shininess: 500
     - _ShoreTiling: 56.862743
     - _Speed: 0.4137931
     - _TargetValue: 0
     - _TimeScale1: 30
     - _TimeScale2: 5
-    - _TresholdDensity: 20
-    - _TresholdFalloff: 1.2
+    - _TresholdDensity: 2
+    - _TresholdFalloff: 1
     - _TreshouldDensity: 15
     - _TreshouldFalloff: 1.57
     - _WaterDepth: 40.98077
@@ -140,7 +140,11 @@ Material:
     - WaveSpeed: {r: 1.086165, g: 4.440575, b: 12.105146, a: -3.0206447}
     - _AnimationDirection: {r: 2, g: 4, b: 2, a: -1}
     - _AnimationTiling: {r: 0.04582553, g: 0.0182, b: 0.045714468, a: 0.027129691}
+<<<<<<< HEAD
     - _BaseColor: {r: 0.24532712, g: 0.46407616, b: 0.52205884, a: 0.353}
+=======
+    - _BaseColor: {r: 0.24522153, g: 0.46407616, b: 0.52205884, a: 0.353}
+>>>>>>> ab5559f931ea6ee7b7adaa16f9036bee35186d76
     - _BumpDirection: {r: 2, g: 1, b: -1, a: 1.5}
     - _BumpMap_ST: {r: 1, g: 1, b: 0, a: 0}
     - _BumpTiling: {r: 0.05, g: 0.05, b: 0.05, a: 0.05}
@@ -179,7 +183,7 @@ Material:
     - _WaveOffset: {r: 1, g: 1, b: -0.01, a: -0.01}
     - _WaveScale4: {r: 0.1, g: 0.1, b: 0.01, a: 0.01}
     - _WavesColor: {r: 0.6691177, g: 0.71247464, b: 1, a: 0.347}
-    - _WorldLightDir: {r: 0, g: 0, b: 1, a: 0}
+    - _WorldLightDir: {r: 0.21116886, g: -0.97539705, b: 0.06331149, a: 0}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6

@@ -35,7 +35,7 @@ public class AutoIntensity : MonoBehaviour {
 
     [Header("Boat Lights -----------------------------")]
     public Light BoatLight;
-    public float BoatSpeed = 1;
+    public float BoatLightSpeed = 1;
     public float BoatLightIntensity = 5;
 
 	void Start () 
@@ -74,7 +74,7 @@ public class AutoIntensity : MonoBehaviour {
             transform.Rotate(dayRotateSpeed * Time.deltaTime * skySpeed);
             if (BoatLight.intensity > 0f)
             {
-                BoatLight.intensity -= BoatSpeed * Time.deltaTime;
+                BoatLight.intensity -= BoatLightSpeed * Time.deltaTime;
             }
         }
         else
@@ -82,7 +82,7 @@ public class AutoIntensity : MonoBehaviour {
             transform.Rotate(nightRotateSpeed * Time.deltaTime * skySpeed);
             if (BoatLight.intensity < BoatLightIntensity)
             {
-                BoatLight.intensity += BoatSpeed * Time.deltaTime;
+                BoatLight.intensity += BoatLightSpeed * Time.deltaTime;
             }
         }
 	}

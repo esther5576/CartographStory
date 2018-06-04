@@ -1,14 +1,85 @@
+from __future__ import print_function
+import sys
+import threading
+import Queue
+from time import sleep
+from ml import generate
 
+class GPUTask(object):
+    def __init__(self):
+        self.lock = threading.Event()
 
-def generateSentence2(words):
-    text = 'You sen me this list of words : '
-    for word in words:
-        text += '"' + word + '" '
+    def waitUntilDone(self):
+        self.lock.wait()
 
-    text += 'but, for now I cannot say anything about it :/'
+    def setDone(self):
+    	self.lock.set()
 
-    return text
+    def run(self):
+        pass
 
+class GPUThread(threading.Thread):
+    def __init__(self):
+        threading.Thread.__init__(self)
+        self.queue = Queue.Queue()
+
+    def run(self):
+        while True:
+            task = self.queue.get()
+            if (type(task) == StopGPUThreadTask):
+                break
+            task.run()
+            task.setDone()
+        print("GPU thread stopped", file=sys.stderr)
+
+class StopGPUThreadTask(GPUTask):
+    def __init__(self):
+        GPUTask.__init__(self)
+        
+class DetectionTask(GPUTask):
+    def __init__(self, words):
+        GPUTask.__init__(self)
+        self.result = ''
+        self.words = words
+
+    def run(self):
+        self.result = generateSentence(self.words)
+
+class LoadModelTask(GPUTask):
+    def __init__(self):
+        GPUTask.__init__(self)
+        self.result = None
+        
+    def run(self):
+        self.result = generate.load_all()
+
+class GenerateStoryTask(GPUTask):
+    def __init__(self, model, image):
+        GPUTask.__init__(self)
+        self.result = ''
+        self.error = None
+        self.model = model
+        self.image = image
+
+    def run(self):
+        try:
+            self.result = generate.story(self.model, self.image)
+        except Exception:
+            self.error = 'An error happend wile processing image'
+
+class StoryFromSentencesTask(GPUTask):
+    def __init__(self, model, sentences):
+        GPUTask.__init__(self)
+        self.result = ''
+        self.error = None
+        self.model = model
+        self.sentences = sentences
+
+    def run(self):
+        try:
+            self.result = generate.storyFromSentence(self.model, self.sentences)
+        except Exception e:
+            self.error = 'An error happend wile processing sentences : ' + str(e)
 
 def generateSentence(words):
     text = ''
@@ -30,6 +101,6 @@ def generateSentence(words):
     if text:
         text = "Today, exploring the new world, I see amazing thing\'s...\n" + text
     else:
-    	text = "I didn't see anything amazing today..."
+        text = "I didn't see anything amazing today..."
 
     return text
