@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ground1
-  m_Shader: {fileID: 4800000, guid: e88347c58329a6f40af1c6f1209376e8, type: 3}
-  m_ShaderKeywords: 
+  m_Name: pineTreeAlt
+  m_Shader: {fileID: 4800000, guid: c3b151c163bef40e1baa60d6d8326cc2, type: 3}
+  m_ShaderKeywords: _ALPHATEST_ON
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -34,28 +34,32 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _EmisMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _IrTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f341b111230dc5b4bba6c01875ac1ab4, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTexBottom:
-        m_Texture: {fileID: 2800000, guid: 4f03895cd8a1c904caf98fcbe88cbe12, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTexSide:
-        m_Texture: {fileID: 2800000, guid: 7b29d9942cf0831419fb0a0fcebdd434, type: 3}
+        m_Texture: {fileID: 2800000, guid: 441c6f8cee9ac15409769ce8a2b04b8c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Normal:
-        m_Texture: {fileID: 2800000, guid: 7c05e966fef446a48ba5758ef13f0c97, type: 3}
+    - _Noise:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -66,45 +70,72 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _RainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Ramp:
-        m_Texture: {fileID: 2800000, guid: 7164ef8dffe0d48478896bfed874c377, type: 3}
+        m_Texture: {fileID: 2800000, guid: d440902fad11e807d00044888d76c639, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RampS:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ToonShade:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _ALPHA: 0
+    - _Amount: 0.5
+    - _Brightness: 1
+    - _BumpAmt: 10
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DisAmount: 0
+    - _DisLineWidth: 0
     - _DstBlend: 0
-    - _Edge: -0.02
-    - _Edge2: 0.26
-    - _Edge3: 1.42
-    - _Edge4: 2
-    - _EdgeWidth: 0
+    - _FADE: 0
+    - _Foam: 0.5
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.107
     - _GlossyReflections: 1
-    - _Merge: 0
-    - _MergeW: 0.34
-    - _MergeWidth: 0.21
-    - _MergeY: -0.61
+    - _Height: 0.5
+    - _LM: 0
     - _Metallic: 0
-    - _Mode: 0
-    - _NoiseScale: 0.13
+    - _Mode: 1
     - _OcclusionStrength: 1
+    - _Offset: 3.2
+    - _Outline: 0.005
+    - _OutlineZ: 0.2
     - _Parallax: 0.02
-    - _RimPower: 20
-    - _Scale: -0.24
-    - _SideScale: 0.48
+    - _RIM: 0
+    - _Rigidness: 25
+    - _RimBrightness: 3.2
     - _SmoothnessTextureChannel: 0
+    - _SpecOffset: 0.5
+    - _SpecSize: 0.9
     - _SpecularHighlights: 1
+    - _Speed: 25
     - _SrcBlend: 1
-    - _TopSpread: 2
+    - _SwayMax: 0.005
+    - _TextureDistort: 0.2
+    - _TopBottomOffset: 3.2
     - _UVSec: 0
+    - _WorldScale: 1
+    - _YOffset: 0.5
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color2: {r: 0.73671407, g: 1, b: 0.13235295, a: 1}
+    - _BottomColor: {r: 0.22999996, g: 0, b: 0.95, a: 1}
+    - _Color: {r: 0.9433962, g: 0.80544674, b: 0.8745465, a: 1}
+    - _DisLineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DisLineColorEx: {r: 1, g: 1, b: 1, a: 1}
+    - _EmisTint: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.31732193, g: 0.38235295, b: 0.019679926, a: 1}
-    - _RimColor2: {r: 0.1709559, g: 0.21457915, b: 0.375, a: 1}
-    - _TopColor: {r: 0.75, g: 0, b: 0, a: 1}
+    - _IrColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _RimColor: {r: 0.49, g: 0.94, b: 0.6399999, a: 1}
+    - _SColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 1, g: 1, b: 1, a: 0.5}

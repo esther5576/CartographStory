@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ground1
-  m_Shader: {fileID: 4800000, guid: e88347c58329a6f40af1c6f1209376e8, type: 3}
-  m_ShaderKeywords: 
+  m_Name: SnowDisplacement 1
+  m_Shader: {fileID: 4800000, guid: 5e2bf6e130dec69449c8b003a838e436, type: 3}
+  m_ShaderKeywords: BRUSHMAIN TINTO
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -18,6 +18,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Bump:
+        m_Texture: {fileID: 2800000, guid: 7ced0e4349c1c89459553e88630c86b0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -39,26 +43,30 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f341b111230dc5b4bba6c01875ac1ab4, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTexBottom:
-        m_Texture: {fileID: 2800000, guid: 4f03895cd8a1c904caf98fcbe88cbe12, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTexSide:
-        m_Texture: {fileID: 2800000, guid: 7b29d9942cf0831419fb0a0fcebdd434, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1ad58231631156140be55ed021b1242a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MossRamp:
+        m_Texture: {fileID: 2800000, guid: 1d3e84f63909f9a48bf83463f0e3c604, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 7a632f967e8ad42f5bd275898151ab6a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: 7c05e966fef446a48ba5758ef13f0c97, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8d7b21eb17ea77343874ab765d2bbda3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PaintMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -67,44 +75,54 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ramp:
-        m_Texture: {fileID: 2800000, guid: 7164ef8dffe0d48478896bfed874c377, type: 3}
+        m_Texture: {fileID: 2800000, guid: 62046044576cd904b9519d2a995c7f72, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SnowRamp:
+        m_Texture: {fileID: 2800000, guid: 62046044576cd904b9519d2a995c7f72, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _BRUSHMAIN: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Edge: -0.02
-    - _Edge2: 0.26
-    - _Edge3: 1.42
-    - _Edge4: 2
-    - _EdgeWidth: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Merge: 0
-    - _MergeW: 0.34
-    - _MergeWidth: 0.21
-    - _MergeY: -0.61
+    - _Height: 0.158
     - _Metallic: 0
     - _Mode: 0
-    - _NoiseScale: 0.13
+    - _MossSize: 0.14
+    - _NoiseScale: 0.9
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimPower: 20
-    - _Scale: -0.24
-    - _SideScale: 0.48
+    - _RimPower: 0.47
+    - _SUV: 0
+    - _Sharpness: 0
+    - _Slice: 0.07
+    - _Slice1: 4
+    - _Slice2: 0.235
     - _SmoothnessTextureChannel: 0
+    - _Snow: 0.51
+    - _SnowDepth: 0
+    - _SnowOffset: 0.158
+    - _SnowSize: 1.23
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TopSpread: 2
+    - _TINTO: 1
+    - _Tess: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color2: {r: 0.73671407, g: 1, b: 0.13235295, a: 1}
+    - _Color: {r: 0.8980393, g: 0.9294118, b: 0.9490197, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.31732193, g: 0.38235295, b: 0.019679926, a: 1}
-    - _RimColor2: {r: 0.1709559, g: 0.21457915, b: 0.375, a: 1}
-    - _TopColor: {r: 0.75, g: 0, b: 0, a: 1}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MossColor: {r: 0.38213664, g: 0.78027076, b: 0.9117647, a: 1}
+    - _RimColor: {r: 0, g: 0.7931032, b: 1, a: 1}
+    - _SnowAngle: {r: 0.23, g: 1, b: 0, a: 1}
+    - _SnowColor: {r: 0.9044118, g: 0.94858015, b: 1, a: 1}
+    - _SnowDirection: {r: 0.63, g: 1, b: 0, a: 1}
+    - _TColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 1, g: 0, b: 0.8896551, a: 0.5}
