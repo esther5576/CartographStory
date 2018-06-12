@@ -27,20 +27,20 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BrightNess: 1.2
-    - _EdgeWidth: 0.17
-    - _Foam: 3.31
+    - _BrightNess: 0.84
+    - _EdgeWidth: 0.2
+    - _Foam: 2
     - _HorSpeed: 0.14
-    - _NoiseScale: 0.025
+    - _NoiseScale: 0.2
     - _RIM: 0
-    - _RimPower: 2.3
-    - _Softness: 0.032
-    - _TopScale: 0.122
-    - _TopSpread: 0.14
+    - _RimPower: 3
+    - _Softness: 0.1
+    - _TopScale: 0.05
+    - _TopSpread: 0.2
     - _VERTEX: 1
     - _VertSpeed: 8.33
     m_Colors:
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.1273585, g: 0.9044377, b: 1, a: 1}
-    - _TColor: {r: 0.18356179, g: 0.7075472, b: 0.6926149, a: 0.56078434}
-    - _WaterColor: {r: 0, g: 0.4060037, b: 1, a: 0.65882355}
+    - _TColor: {r: 0.68235296, g: 0.81598926, b: 0.972549, a: 0.56078434}
+    - _WaterColor: {r: 0, g: 0.25009248, b: 0.6132076, a: 0.65882355}

@@ -176,7 +176,7 @@ public class TPCameraV2 : MonoBehaviour {
         Vector3 vDummyPos = m_pDummy.transform.position;
         Vector3 vLookAtDesiredPos = new Vector3(m_pMyCharacter.transform.position.x, (m_pMyCharacter.transform.position.y + m_fDesiredYOffsetFromAvatar), m_pMyCharacter.transform.position.z);
 
-        float fSpeedRatio = (m_pMyCharacter.GetComponent<Rigidbody>().velocity.magnitude / m_pMoveClass.maxSpeed) + 1;
+        float fSpeedRatio = (m_pMyCharacter.GetComponent<Rigidbody>().velocity.magnitude / 1 /*m_pMoveClass.maxSpeed*/) + 1;
 
         float fXpos = Mathf.Lerp(transform.position.x, vDummyPos.x, Time.deltaTime * m_fActualDistanceDamping);
         float fZpos = Mathf.Lerp(transform.position.z, vDummyPos.z, Time.deltaTime * m_fActualDistanceDamping * fSpeedRatio);
