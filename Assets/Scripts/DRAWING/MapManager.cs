@@ -25,6 +25,7 @@ public class MapManager : MonoBehaviour
 	public GameObject BigMapParent;
 	public GameObject MapPrefab;
 
+    public int LastPage;
 
 	// Use this for initialization
 	void Awake ()
@@ -47,7 +48,7 @@ public class MapManager : MonoBehaviour
 
 	public void CreateNewDraw ()
 	{
-		if (MapsUsed < AllMapTextures.Count - 1)
+		/*if (MapsUsed < AllMapTextures.Count - 1)
 		{
 			StartDraw(MapsUsed);
 			GameObject NewMap = Instantiate(MapPrefab, MapContainer);
@@ -61,12 +62,12 @@ public class MapManager : MonoBehaviour
 		else
 		{
 			Debug.Log("No more map avaible");
-		}
+		}*/
 	}
 
 	public void StartDraw (int ID)
 	{
-		DrawManager.InitDrawer(AllMapTextures[ID]);
+		//DrawManager.InitDrawer(AllMapTextures[ID].);
 		DrawManager.CanDraw = true;
         OpenJournal();
 		CloseMap();
@@ -76,7 +77,7 @@ public class MapManager : MonoBehaviour
 	{
         CloseJournalButton.interactable = true;
 		DrawManager.CanDraw = false;
-        DataManager.AllIslands[MapsUsed]
+        DataManager.AllIslands[MapsUsed].Drawing = DrawManager.SpriteShowed.sprite;
 		OpenMap();
         CloseJournal();
 	}
@@ -107,7 +108,7 @@ public class MapManager : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.R))
 		{
-			CreateNewDraw();
+            OpenJournal();
 		}
 
 		if (Input.GetKeyDown(KeyCode.M))
