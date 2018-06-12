@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class MapManager : MonoBehaviour
 {
-	public List<Sprite> AllMapTextures;
 	public List<MapInfoHandler> AllMapScripts;
 
 	public int MapsUsed;
@@ -17,7 +16,7 @@ public class MapManager : MonoBehaviour
 	[Header("Buttons")]
 	public Button ResetButton;
 	public Button CloseBigMapButton;
-	public Button CloseDrawButton;
+	public Button CloseJournalButton;
 	public Button MapValidationButton;
 
 
@@ -30,9 +29,11 @@ public class MapManager : MonoBehaviour
 	// Use this for initialization
 	void Awake ()
 	{
-		ResetButton.onClick.AddListener(ResetDraw);
+        DataManager.AllIslands.Add(new Island());
+        DataManager.AllIslands.Add(new Island());
+        ResetButton.onClick.AddListener(ResetDraw);
 		CloseBigMapButton.onClick.AddListener(CloseMap);
-		CloseDrawButton.onClick.AddListener(CloseDraw);
+        CloseJournalButton.onClick.AddListener(CloseJournal);
 		MapValidationButton.onClick.AddListener(ValidateDraw);
 		DrawManager.Reset_Canvas_On_Play = false;
 		DrawManager.CanDraw = false;
@@ -56,7 +57,6 @@ public class MapManager : MonoBehaviour
 			AllMapScripts[MapsUsed].MapSprite.sprite = AllMapTextures[MapsUsed];
 			MapsUsed++;
 			DrawManager.ResetCanvas();
-			CloseDrawButton.interactable = false;
 		}
 		else
 		{
@@ -68,24 +68,26 @@ public class MapManager : MonoBehaviour
 	{
 		DrawManager.InitDrawer(AllMapTextures[ID]);
 		DrawManager.CanDraw = true;
-		OpenDraw();
+        OpenJournal();
 		CloseMap();
 	}
 
 	public void ValidateDraw ()
 	{
-		CloseDrawButton.interactable = true;
+        CloseJournalButton.interactable = true;
 		DrawManager.CanDraw = false;
+        DataManager.AllIslands[MapsUsed]
 		OpenMap();
-		CloseDraw();
+        CloseJournal();
 	}
 
-	public void OpenDraw ()
+
+	public void OpenJournal ()
 	{
 		DrawSystemParent.SetActive(true);
 	}
 
-	public void CloseDraw ()
+	public void CloseJournal ()
 	{
 		DrawSystemParent.SetActive(false);
 	}

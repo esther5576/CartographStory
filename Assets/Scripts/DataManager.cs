@@ -9,7 +9,7 @@ public static class DataManager
 
 public class Island
 {
-    Sprite Drawing;
-    List<Sprite> Pictures = new List<Sprite>();
-    string Text = "Aucun texte chargé";
+    public Sprite Drawing;
+    public List<Sprite> Pictures = new List<Sprite>();
+    public string Text = "Aucun texte chargé";
 }
