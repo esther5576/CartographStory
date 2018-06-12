@@ -7,8 +7,12 @@ using UnityEngine.UI;
 public class PictureSystem : MonoBehaviour
 {
     public Image debugImage;
-	// Use this for initialization
-	void Start () {
+    public UnityEngine.PostProcessing.PostProcessingBehaviour postprocessing;
+    public UnityEngine.PostProcessing.PostProcessingProfile profileNoVigPic;
+    public UnityEngine.PostProcessing.PostProcessingProfile profileVigPic;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -23,12 +27,17 @@ public class PictureSystem : MonoBehaviour
 
     public void TakePic()
     {
+        postprocessing.profile = profileNoVigPic;
+        StartCoroutine(waitFrame());
+    }
+
+    IEnumerator waitFrame()
+    {
+        yield return new WaitForEndOfFrame();
         // CREATE THE TEXTURE WITH SCREENSHOT
         Texture2D screenshotTexture = ScreenCapture.CaptureScreenshotAsTexture();
-
-
         //CREATE A SPRITE
-        Sprite screenshotSprite = Sprite.Create(screenshotTexture, new Rect(0, 0, screenshotTexture.width, screenshotTexture.height), new Vector2(0f,0f));
+        Sprite screenshotSprite = Sprite.Create(screenshotTexture, new Rect(0, 0, screenshotTexture.width, screenshotTexture.height), new Vector2(0f, 0f));
 
         //SETTHE SPRITE ON THE PREVIEW SCREEN
         if (debugImage != null)
@@ -36,5 +45,7 @@ public class PictureSystem : MonoBehaviour
             debugImage.GetComponent<Image>().sprite = screenshotSprite;
             debugImage.color = new Color(1, 1, 1, 1);
         }
+        yield return new WaitForEndOfFrame();
+        postprocessing.profile = profileVigPic;
     }
 }

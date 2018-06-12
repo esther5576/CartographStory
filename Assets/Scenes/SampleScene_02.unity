@@ -6159,6 +6159,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149b0b12fdf32534bbd4096c1c70570d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &937055131 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114773510669735134, guid: 49a0e923d39ec3c4c8bb97699e2f2903,
+    type: 2}
+  m_PrefabInternal: {fileID: 937055127}
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
 --- !u!114 &937055135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6185,6 +6191,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugImage: {fileID: 1767974082}
+  postprocessing: {fileID: 937055131}
+  profileNoVigPic: {fileID: 11400000, guid: 47acee56817b4a94388c12a7dc0cc16d, type: 2}
+  profileVigPic: {fileID: 11400000, guid: e8c722a20b542c8439a55ec56132eebf, type: 2}
 --- !u!1 &970763882
 GameObject:
   m_ObjectHideFlags: 0
