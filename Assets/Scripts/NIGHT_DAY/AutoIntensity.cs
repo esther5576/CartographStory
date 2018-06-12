@@ -38,6 +38,7 @@ public class AutoIntensity : MonoBehaviour {
     public float BoatLightSpeed = 1;
     public float BoatLightIntensity = 5;
 
+    public LensFlare sunstar;
 	void Start () 
 	{
 	
@@ -75,6 +76,7 @@ public class AutoIntensity : MonoBehaviour {
             if (BoatLight.intensity > 0f)
             {
                 BoatLight.intensity -= BoatLightSpeed * Time.deltaTime;
+                sunstar.brightness  -= BoatLightSpeed * Time.deltaTime;
             }
         }
         else
@@ -83,6 +85,11 @@ public class AutoIntensity : MonoBehaviour {
             if (BoatLight.intensity < BoatLightIntensity)
             {
                 BoatLight.intensity += BoatLightSpeed * Time.deltaTime;
+            }
+
+            if(sunstar.brightness < 0.8f)
+            {
+                sunstar.brightness += BoatLightSpeed * Time.deltaTime;
             }
         }
 	}
