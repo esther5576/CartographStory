@@ -16,7 +16,8 @@ public class BoatNavigation: MonoBehaviour
     public Vector3 leftTurn = new Vector3(0, 40, 0);
     public float voileSpeedRot = 1;
 
-    
+    public List<Transform> _l_voiles;
+
 
     // Use this for initialization
     void Start ()
@@ -33,9 +34,32 @@ public class BoatNavigation: MonoBehaviour
         if(v > 0 && actualSpeed < 1)
         {
             actualSpeed += v * Time.deltaTime;
-        }else if (v < 0 && actualSpeed > 0)
+        }
+        else if (v < 0 && actualSpeed > 0)
         {
             actualSpeed += v * Time.deltaTime;
+        }
+
+        if(actualSpeed > 1)
+        {
+            actualSpeed = 1;
+        }
+
+        if (actualSpeed < 0)
+        {
+            actualSpeed = 0;
+        }
+
+        foreach (Transform t in _l_voiles)
+        {
+            if (actualSpeed < 0.1f)
+            {
+                t.localScale = new Vector3(1, 0.1f, 1);
+            }
+            else
+            {
+                t.localScale = new Vector3(1, actualSpeed, 1);
+            }
         }
 
         boatRigibody.AddTorque(0f, h * turnSpeed * Time.deltaTime, 0f);

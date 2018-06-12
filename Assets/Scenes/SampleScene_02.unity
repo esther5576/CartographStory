@@ -5568,6 +5568,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9dcb0107f320cda4cbf4d8843a0e6262, type: 2}
+    - target: {fileID: 400008, guid: 21fa80b31dda7654db1d5cf1ecc8fffa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 21fa80b31dda7654db1d5cf1ecc8fffa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21fa80b31dda7654db1d5cf1ecc8fffa, type: 3}
   m_IsPrefabParent: 0
@@ -5602,6 +5610,9 @@ MonoBehaviour:
   rightTurn: {x: 0, y: 35, z: 0}
   leftTurn: {x: 0, y: -35, z: 0}
   voileSpeedRot: 4
+  _l_voiles:
+  - {fileID: 1993334229}
+  - {fileID: 311183161}
 --- !u!114 &787296027
 MonoBehaviour:
   m_ObjectHideFlags: 0
