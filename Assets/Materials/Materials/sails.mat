@@ -120,12 +120,12 @@ Material:
     - _SpecularHighlights: 1
     - _Speed: 5
     - _SrcBlend: 1
-    - _SwayMax: 0.0417
+    - _SwayMax: 0.035
     - _TextureDistort: 0.2
-    - _TopBottomOffset: 3.2
+    - _TopBottomOffset: 2.5
     - _UVSec: 0
     - _WorldScale: 1
-    - _YOffset: 0.5
+    - _YOffset: 0.1
     - _ZWrite: 1
     m_Colors:
     - _BottomColor: {r: 0.22999996, g: 0, b: 0.95, a: 1}

@@ -7,15 +7,16 @@ public class BoatNavigation: MonoBehaviour
 {
     public float turnSpeed = 10000f;
     public float accelerationSpeed = 200000;
-
-    public float maxSpeed = 8f;
-
+    public float actualSpeed = 0;
+    
     private Rigidbody boatRigibody;
 
     public List<Transform> _l_partsToTurn;
     public Vector3 rightTurn = new Vector3(0,-40,0);
     public Vector3 leftTurn = new Vector3(0, 40, 0);
     public float voileSpeedRot = 1;
+
+    
 
     // Use this for initialization
     void Start ()
@@ -29,8 +30,16 @@ public class BoatNavigation: MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
+        if(v > 0 && actualSpeed < 1)
+        {
+            actualSpeed += v * Time.deltaTime;
+        }else if (v < 0 && actualSpeed > 0)
+        {
+            actualSpeed += v * Time.deltaTime;
+        }
+
         boatRigibody.AddTorque(0f, h * turnSpeed * Time.deltaTime, 0f);
-        boatRigibody.AddForce(transform.forward * v * accelerationSpeed * Time.deltaTime);
+        boatRigibody.AddForce(transform.forward * actualSpeed * accelerationSpeed * Time.deltaTime);
 
         //Debug.Log(boatRigibody.velocity.magnitude);
 

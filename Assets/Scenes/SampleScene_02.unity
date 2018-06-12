@@ -5240,7 +5240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc40e8b792f1164684a1baf94518ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPlayer: {fileID: 0}
+  myPlayer: {fileID: 787296025}
 --- !u!1 &642341650
 GameObject:
   m_ObjectHideFlags: 0
@@ -5556,6 +5556,18 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300008, guid: 21fa80b31dda7654db1d5cf1ecc8fffa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dcb0107f320cda4cbf4d8843a0e6262, type: 2}
+    - target: {fileID: 2300012, guid: 21fa80b31dda7654db1d5cf1ecc8fffa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dcb0107f320cda4cbf4d8843a0e6262, type: 2}
+    - target: {fileID: 2300002, guid: 21fa80b31dda7654db1d5cf1ecc8fffa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dcb0107f320cda4cbf4d8843a0e6262, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21fa80b31dda7654db1d5cf1ecc8fffa, type: 3}
   m_IsPrefabParent: 0
@@ -5580,7 +5592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 30000
   accelerationSpeed: 200000
-  maxSpeed: 10
+  actualSpeed: 0
   _l_partsToTurn:
   - {fileID: 1746569452}
   - {fileID: 417311056}
