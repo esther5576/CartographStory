@@ -33,8 +33,6 @@ public class Drawable : MonoBehaviour
 	bool erase = false;
     Vector3 lastMousePos = new Vector3(0,0,0);
 
-
-
     void Awake()
     {
 		SpriteShowed = GetComponent<SpriteRenderer>();
@@ -53,9 +51,10 @@ public class Drawable : MonoBehaviour
 
 	public void InitDrawer (Sprite Target)
 	{
-		drawable_sprite = Target;
-		drawable_texture = Target.texture;
-		SpriteShowed.sprite = Target;
+        Texture2D ResetTexture = Instantiate(Target.texture);
+        drawable_sprite = Sprite.Create(ResetTexture, new Rect(0.0f, 0.0f, ResetTexture.width, ResetTexture.height), new Vector2(0.5f, 0.5f));
+        drawable_texture = ResetTexture;
+        SpriteShowed.sprite = drawable_sprite;
 	}
 
     void Update()
@@ -248,12 +247,12 @@ public class Drawable : MonoBehaviour
         drawable_texture.Apply();
     }
 
-
     // Changes every pixel to be the reset colour
     public void ResetCanvas()
     {
-        drawable_texture.SetPixels(clean_colours_array);
-        drawable_texture.Apply();
+        InitDrawer(reset_sprite);
+        //drawable_texture.SetPixels(clean_colours_array);
+        //drawable_texture.Apply();
     }
 
     public void ChangeSizeBySpeed()
