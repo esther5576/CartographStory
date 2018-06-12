@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class DataManager
 {
-    static List<Island> AllIslands = new List<Island>();
+    public static List<Island> AllIslands = new List<Island>();
 }
 
 public class Island
