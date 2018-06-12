@@ -23,32 +23,18 @@ public class PictureSystem : MonoBehaviour
 
     public void TakePic()
     {
-        string imageName = "screensotTest.png";
+        // CREATE THE TEXTURE WITH SCREENSHOT
+        Texture2D screenshotTexture = ScreenCapture.CaptureScreenshotAsTexture();
 
-        //TAKE SCREENSHOT
-        /*ScreenCapture.CaptureScreenshot(imageName);
-        print(Application.persistentDataPath);*/
-
-        Debug.Log(Application.persistentDataPath);
-        ScreenCapture.CaptureScreenshot(Application.persistentDataPath + System.DateTime.Now.Month + System.DateTime.Now.Day + System.DateTime.Now.Hour + System.DateTime.Now.Minute + System.DateTime.Now.Second + ".png");
-
-        /*//READ DATA FROM FILE
-        byte[] data = File.ReadAllBytes(Application.persistentDataPath + "/" + imageName);
-
-        // CREATE THE TEXTURE
-        Texture2D screenshotTexture = new Texture2D(Screen.width, Screen.height);
-
-        //LOAD THE IMAGE
-        screenshotTexture.LoadImage(data);
 
         //CREATE A SPRITE
-        Sprite screenshotSprite = Sprite.Create(screenshotTexture, new Rect(0, 0, Screen.width, Screen.height), new Vector2(0.5f, 0.5f));
+        Sprite screenshotSprite = Sprite.Create(screenshotTexture, new Rect(0, 0, screenshotTexture.width, screenshotTexture.height), new Vector2(0f,0f));
 
         //SETTHE SPRITE ON THE PREVIEW SCREEN
         if (debugImage != null)
         {
             debugImage.GetComponent<Image>().sprite = screenshotSprite;
             debugImage.color = new Color(1, 1, 1, 1);
-        }*/
+        }
     }
 }
