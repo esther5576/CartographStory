@@ -10,19 +10,22 @@ public class PictureSystem : MonoBehaviour
     public UnityEngine.PostProcessing.PostProcessingBehaviour postprocessing;
     public UnityEngine.PostProcessing.PostProcessingProfile profileNoVigPic;
     public UnityEngine.PostProcessing.PostProcessingProfile profileVigPic;
+    [HideInInspector]
+    public int IDOfIlsandToAdd;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
 		
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-		if(Input.GetKeyDown(KeyCode.Space))
+		/*if(Input.GetKeyDown(KeyCode.Space))
         {
             TakePic();
-        }
+        }*/
 	}
 
     public void TakePic()
@@ -34,6 +37,7 @@ public class PictureSystem : MonoBehaviour
     IEnumerator waitFrame()
     {
         yield return new WaitForEndOfFrame();
+
         // CREATE THE TEXTURE WITH SCREENSHOT
         Texture2D screenshotTexture = ScreenCapture.CaptureScreenshotAsTexture();
         //CREATE A SPRITE
@@ -45,6 +49,20 @@ public class PictureSystem : MonoBehaviour
             debugImage.GetComponent<Image>().sprite = screenshotSprite;
             debugImage.color = new Color(1, 1, 1, 1);
         }
+
+        int theID = DataManager.AllIslands.FindIndex(a => a.ID == IDOfIlsandToAdd);
+        Debug.Log(theID + " THE ISLAND " + DataManager.AllIslands[theID].ID);
+
+        if(DataManager.AllIslands[theID].Pictures.Count < 10)
+        {
+            DataManager.AllIslands[theID].Pictures.Add(screenshotSprite);
+        }else
+        {
+            Debug.LogWarning("YOU HAVE NO MORE SPACE FOR THIS ISLAND!");
+        }
+
+        //DataManager.AllIslands
+
         yield return new WaitForEndOfFrame();
         postprocessing.profile = profileVigPic;
     }
