@@ -191,7 +191,7 @@ public class MapManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetKeyDown(KeyCode.R))
+		if (Input.GetKeyDown(KeyCode.J))
 		{
             if (DrawSystemParent.activeInHierarchy)
             {
