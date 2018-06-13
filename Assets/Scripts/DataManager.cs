@@ -10,8 +10,9 @@ public static class DataManager
 public class Island
 {
     public int ID;
+    public bool Drawed = false;
     public string IslandFinalName = "Name the island";
     public Sprite Drawing;
     public List<Sprite> Pictures = new List<Sprite>();
-    public string Text = "Aucun texte chargé";
+    public string NarrativText = "Aucun texte chargé";
 }

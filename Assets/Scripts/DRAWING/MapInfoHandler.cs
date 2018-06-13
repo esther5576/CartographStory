@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class MapInfoHandler : MonoBehaviour, IPointerDownHandler
+public class MapInfoHandler : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler
 {
 	public MapManager ManagerScript;
 	public int ID;
@@ -37,9 +37,10 @@ public class MapInfoHandler : MonoBehaviour, IPointerDownHandler
 		{
 			DragOn = true;
 		}
-		else
-		{
-			ManagerScript.StartDraw(ID);
-		}
 	}
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        ManagerScript.NarrativeTextMap.text = DataManager.AllIslands[ID].NarrativText;
+    }
 }

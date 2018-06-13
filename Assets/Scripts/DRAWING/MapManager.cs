@@ -7,9 +7,11 @@ public class MapManager : MonoBehaviour
 {
 	public List<MapInfoHandler> AllMapScripts;
 
-	public int MapsUsed;
-
-	public Drawable DrawManager;
+    public List<Image> AllPicturesRenderersOrigin;
+    public List<Image> AllPicturesRenderersWithText;
+    public Text NarrativeText;
+    public Text NarrativeTextMap;
+    public Drawable DrawManager;
 
 	public Transform MapContainer;
 	
@@ -18,27 +20,34 @@ public class MapManager : MonoBehaviour
 	public Button CloseBigMapButton;
 	public Button CloseJournalButton;
 	public Button MapValidationButton;
+	public Button DrawEditButton;
 
 
-	[Header("GameObjects")]
+    [Header("GameObjects")]
 	public GameObject DrawSystemParent;
 	public GameObject BigMapParent;
 	public GameObject MapPrefab;
 
-    public int LastPage;
+    int IslandSelected;
+
+    [Header("CameraFix")]
+    public GameObject CameraToDesactivate;
+    public CameraManager ScriptToDesactivate;
 
 	// Use this for initialization
 	void Awake ()
 	{
-        DataManager.AllIslands.Add(new Island());
-        DataManager.AllIslands.Add(new Island());
         ResetButton.onClick.AddListener(ResetDraw);
-		CloseBigMapButton.onClick.AddListener(CloseMap);
+        ResetButton.interactable = false;
+        CloseBigMapButton.onClick.AddListener(CloseMap);
+        CloseBigMapButton.interactable = true;
         CloseJournalButton.onClick.AddListener(CloseJournal);
-		MapValidationButton.onClick.AddListener(ValidateDraw);
+        CloseJournalButton.interactable = true;
+        MapValidationButton.onClick.AddListener(ValidateDraw);
+        MapValidationButton.interactable = false;
+        DrawEditButton.onClick.AddListener(StartDraw);
 		DrawManager.Reset_Canvas_On_Play = false;
 		DrawManager.CanDraw = false;
-		MapsUsed = 0;
 	}
 
 	void ResetDraw ()
@@ -46,75 +55,183 @@ public class MapManager : MonoBehaviour
 		DrawManager.ResetCanvas();
 	}
 
-	public void CreateNewDraw ()
+	public void StartDraw ()
 	{
-		/*if (MapsUsed < AllMapTextures.Count - 1)
-		{
-			StartDraw(MapsUsed);
-			GameObject NewMap = Instantiate(MapPrefab, MapContainer);
-			AllMapScripts.Add(NewMap.GetComponent<MapInfoHandler>());
-			AllMapScripts[MapsUsed].ID = MapsUsed;
-			AllMapScripts[MapsUsed].ManagerScript = this;
-			AllMapScripts[MapsUsed].MapSprite.sprite = AllMapTextures[MapsUsed];
-			MapsUsed++;
-			DrawManager.ResetCanvas();
-		}
-		else
-		{
-			Debug.Log("No more map avaible");
-		}*/
-	}
-
-	public void StartDraw (int ID)
-	{
-		//DrawManager.InitDrawer(AllMapTextures[ID].);
 		DrawManager.CanDraw = true;
-        OpenJournal();
-		CloseMap();
+        ResetButton.interactable = true;
+        DrawEditButton.interactable = false;
+        MapValidationButton.interactable = true;
+        if (DataManager.AllIslands[IslandSelected].Drawed)
+        {
+            DrawManager.InitDrawer(DataManager.AllIslands[IslandSelected].Drawing);
+        }
+        else
+        {
+            DrawManager.ResetCanvas();
+        }
 	}
 
 	public void ValidateDraw ()
 	{
-        CloseJournalButton.interactable = true;
 		DrawManager.CanDraw = false;
-        DataManager.AllIslands[MapsUsed].Drawing = DrawManager.SpriteShowed.sprite;
-		OpenMap();
-        CloseJournal();
-	}
+        ResetButton.interactable = false;
+        DrawEditButton.interactable = true;
+        MapValidationButton.interactable = false;
+        if (!DataManager.AllIslands[IslandSelected].Drawed)
+        {
+            DataManager.AllIslands[IslandSelected].Drawing = DrawManager.SpriteShowed.sprite;
+            DataManager.AllIslands[IslandSelected].Drawed = true;
+            CreateDrawInstanceOnMap();
+            CloseJournal();
+            OpenMap();
+        }
+        else
+        {
+            DataManager.AllIslands[IslandSelected].Drawing = DrawManager.SpriteShowed.sprite;
+            AllMapScripts[IslandSelected].MapSprite.sprite = DataManager.AllIslands[IslandSelected].Drawing;
+        }
+    }
 
+    public void CreateDrawInstanceOnMap ()
+    {
+        GameObject NewMap = Instantiate(MapPrefab, MapContainer);
+        AllMapScripts.Add(NewMap.GetComponent<MapInfoHandler>());
+        AllMapScripts[IslandSelected].ID = IslandSelected;
+        AllMapScripts[IslandSelected].ManagerScript = this;
+        AllMapScripts[IslandSelected].MapSprite.sprite = DataManager.AllIslands[IslandSelected].Drawing;
+    }
 
 	public void OpenJournal ()
 	{
 		DrawSystemParent.SetActive(true);
-	}
+        SetJournal(IslandSelected);
+        CameraToDesactivate.SetActive(false);
+        ScriptToDesactivate.enabled = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
 
 	public void CloseJournal ()
 	{
 		DrawSystemParent.SetActive(false);
-	}
+        CameraToDesactivate.SetActive(true);
+        ScriptToDesactivate.enabled = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
 	public void OpenMap ()
 	{
 		BigMapParent.SetActive(true);
-	}
+        CameraToDesactivate.SetActive(false);
+        ScriptToDesactivate.enabled = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
 
 	public void CloseMap ()
 	{
 		BigMapParent.SetActive(false);
-	}
+        CameraToDesactivate.SetActive(true);
+        ScriptToDesactivate.enabled = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void SetJournal (int PageNumber)
+    {
+        if (DataManager.AllIslands[PageNumber].NarrativText == "Aucun texte chargé")
+        {
+            for (int i = 0; i < AllPicturesRenderersOrigin.Count; i++)
+            {
+                if (i < DataManager.AllIslands[PageNumber].Pictures.Count)
+                {
+                    AllPicturesRenderersOrigin[i].gameObject.SetActive(true);
+                    AllPicturesRenderersOrigin[i].sprite = DataManager.AllIslands[PageNumber].Pictures[i];
+                }
+                else
+                {
+                    AllPicturesRenderersOrigin[i].gameObject.SetActive(false);
+                }
+            }
+
+            for (int i = 0; i < AllPicturesRenderersWithText.Count; i++)
+                AllPicturesRenderersWithText[i].gameObject.SetActive(false);
+
+            NarrativeText.gameObject.SetActive(false);
+        }
+        else
+        {
+            for (int i = 0; i < AllPicturesRenderersOrigin.Count; i++)
+            {
+                if (i < DataManager.AllIslands[PageNumber].Pictures.Count)
+                {
+                    AllPicturesRenderersWithText[i].gameObject.SetActive(true);
+                    AllPicturesRenderersWithText[i].sprite = DataManager.AllIslands[PageNumber].Pictures[i];
+                }
+                else
+                {
+                    AllPicturesRenderersWithText[i].gameObject.SetActive(false);
+                }
+            }
+
+            for (int i = 0; i < AllPicturesRenderersWithText.Count; i++)
+                AllPicturesRenderersOrigin[i].gameObject.SetActive(false);
+
+            NarrativeText.text = DataManager.AllIslands[PageNumber].NarrativText;
+            NarrativeText.gameObject.SetActive(true);
+        }
+
+        if (DataManager.AllIslands[PageNumber].Drawing != null)
+            DrawManager.SpriteShowed.sprite = DataManager.AllIslands[PageNumber].Drawing;
+        else
+            DrawManager.InitDrawer(DrawManager.reset_sprite);
+    }
 
 	// Update is called once per frame
 	void Update ()
 	{
 		if (Input.GetKeyDown(KeyCode.R))
 		{
-            OpenJournal();
-		}
+            if (DrawSystemParent.activeInHierarchy)
+            {
+                CloseJournal();
+            }
+            else
+            {
+                OpenJournal();
+            }
+
+        }
 
 		if (Input.GetKeyDown(KeyCode.M))
 		{
-			if (BigMapParent.activeInHierarchy) CloseMap();
-			else OpenMap();
-		}
-	}
+			if (BigMapParent.activeInHierarchy)
+            {
+                CloseMap();
+            }
+            else
+            {
+                OpenMap();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1)) IslandSelected = 0;
+        if (Input.GetKeyDown(KeyCode.Alpha2)) IslandSelected = 1;
+        if (Input.GetKeyDown(KeyCode.Alpha3)) IslandSelected = 2;
+
+    }
+
+    public void RemoveIslandPicture(int ID)
+    {
+        DataManager.AllIslands[IslandSelected].Pictures.RemoveAt(ID);
+        if (DataManager.AllIslands[IslandSelected].NarrativText == "Aucun texte chargé")
+        {
+            AllPicturesRenderersOrigin[ID].gameObject.SetActive(false);
+        }
+        else
+        {
+            AllPicturesRenderersWithText[ID].gameObject.SetActive(false);
+        }
+    }
 }
