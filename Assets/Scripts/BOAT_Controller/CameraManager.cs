@@ -21,6 +21,10 @@ public class CameraManager : MonoBehaviour
     public bool activateCam = false;
     #endregion
 
+    #region Inside cam UI
+    public CanvasGroup cameraPicCanvas;
+    #endregion
+
     // Use this for initialization
     void Start ()
     {
@@ -65,12 +69,16 @@ public class CameraManager : MonoBehaviour
                 OutsideCamera.GetComponentInChildren<Camera>().enabled = false;
                 PictureCamera.SetActive(true);
                 BoatControls.enabled = false;
+
+                cameraPicCanvas.alpha = 1;
             }
             else
             {
                 OutsideCamera.GetComponentInChildren<Camera>().enabled = true;
                 PictureCamera.SetActive(false);
                 BoatControls.enabled = true;
+
+                cameraPicCanvas.alpha = 0;
             }
         }
     }
