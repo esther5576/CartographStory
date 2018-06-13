@@ -52,16 +52,16 @@ namespace UnityStandardAssets.Cameras
             HandleRotationMovement();
             if (m_LockCursor && Input.GetMouseButtonUp(0))
             {
-                Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
-                Cursor.visible = !m_LockCursor;
+                //Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
+                //Cursor.visible = !m_LockCursor;
             }
         }
 
 
         private void OnDisable()
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+           // Cursor.lockState = CursorLockMode.None;
+           // Cursor.visible = true;
         }
 
 

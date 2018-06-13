@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.UI;
 
 public class CameraManager : MonoBehaviour
 {
@@ -24,8 +25,8 @@ public class CameraManager : MonoBehaviour
     void Start ()
     {
         _myAutoCam = OutsideCamera.GetComponent<UnityStandardAssets.Cameras.AutoCam>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 	
 	// Update is called once per frame

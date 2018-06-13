@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class PictureSystem : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class PictureSystem : MonoBehaviour
     [HideInInspector]
     public int IDOfIlsandToAdd;
 
+    public CanvasGroup camerapreview;
+    public Image imagepreview;
+
+    bool inPreviewMode = false;
+
     // Use this for initialization
     void Start ()
     {
@@ -22,16 +28,17 @@ public class PictureSystem : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		/*if(Input.GetKeyDown(KeyCode.Space))
-        {
-            TakePic();
-        }*/
+		
 	}
 
     public void TakePic()
     {
-        postprocessing.profile = profileNoVigPic;
-        StartCoroutine(waitFrame());
+        if (!inPreviewMode)
+        {
+            postprocessing.profile = profileNoVigPic;
+            StartCoroutine(waitFrame());
+            inPreviewMode = true;
+        }
     }
 
     IEnumerator waitFrame()
@@ -61,9 +68,55 @@ public class PictureSystem : MonoBehaviour
             Debug.LogWarning("YOU HAVE NO MORE SPACE FOR THIS ISLAND!");
         }
 
-        //DataManager.AllIslands
+        #region Kill tweens
+        DOTween.Kill("save01");
+        DOTween.Kill("save02");
+        DOTween.Kill("save03");
+        DOTween.Kill("dontsave01");
+        DOTween.Kill("dontsave02");
+        DOTween.Kill("dontsave03");
+        #endregion
+
+        imagepreview.transform.DOLocalMoveY(38.7f, 0).SetEase(Ease.InBack).SetId("setup01");
+        imagepreview.transform.DOScale(1f, 0).SetId("setup02");
+        DOTween.To(() => camerapreview.alpha, x => camerapreview.alpha = x, 1, 0.5f).SetId("setup03");
+        imagepreview.sprite = screenshotSprite;
 
         yield return new WaitForEndOfFrame();
         postprocessing.profile = profileVigPic;
+    }
+
+    public void SaveImage()
+    {
+        #region Kill tweens
+        DOTween.Kill("setup01");
+        DOTween.Kill("setup02");
+        DOTween.Kill("setup03");
+        #endregion
+
+        DOTween.To(() => camerapreview.alpha, x => camerapreview.alpha = x, 0, 0.5f).SetDelay(1).SetId("save01").OnComplete(EnableMorePics);
+        imagepreview.transform.DOLocalMoveY(-500, 1).SetEase(Ease.InBack).SetId("save02");
+        imagepreview.transform.DOScale(0.1f, 1f).SetId("save03");
+    }
+
+    public void DontSaveImage()
+    {
+        #region Kill tweens
+        DOTween.Kill("setup01");
+        DOTween.Kill("setup02");
+        DOTween.Kill("setup03");
+        #endregion
+
+        DOTween.To(() => camerapreview.alpha, x => camerapreview.alpha = x, 0, 0.5f).SetDelay(1).SetId("dontsave01").OnComplete(EnableMorePics);
+        imagepreview.transform.DOLocalMoveY(500, 1).SetEase(Ease.InBack).SetId("dontsave02");
+        imagepreview.transform.DOScale(0.1f, 1).SetId("dontsave03");
+
+        int theID = DataManager.AllIslands.FindIndex(a => a.ID == IDOfIlsandToAdd);
+        DataManager.AllIslands[theID].Pictures.RemoveAt(DataManager.AllIslands[theID].Pictures.Count - 1);
+    }
+
+    public void EnableMorePics()
+    {
+        inPreviewMode = false;
     }
 }

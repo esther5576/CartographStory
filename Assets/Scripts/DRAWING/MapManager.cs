@@ -107,8 +107,8 @@ public class MapManager : MonoBehaviour
         SetJournal(IslandSelected);
         CameraToDesactivate.SetActive(false);
         ScriptToDesactivate.enabled = false;
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
     }
 
 	public void CloseJournal ()
@@ -116,8 +116,8 @@ public class MapManager : MonoBehaviour
 		DrawSystemParent.SetActive(false);
         CameraToDesactivate.SetActive(true);
         ScriptToDesactivate.enabled = true;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+       // Cursor.visible = false;
+       // Cursor.lockState = CursorLockMode.Locked;
     }
 
 	public void OpenMap ()
@@ -125,8 +125,8 @@ public class MapManager : MonoBehaviour
 		BigMapParent.SetActive(true);
         CameraToDesactivate.SetActive(false);
         ScriptToDesactivate.enabled = false;
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+       // Cursor.visible = true;
+       // Cursor.lockState = CursorLockMode.None;
     }
 
 	public void CloseMap ()
@@ -134,8 +134,8 @@ public class MapManager : MonoBehaviour
 		BigMapParent.SetActive(false);
         CameraToDesactivate.SetActive(true);
         ScriptToDesactivate.enabled = true;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void SetJournal (int PageNumber)
