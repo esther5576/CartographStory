@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109012}
   m_LocalRotation: {x: 0.68047196, y: 0.07281605, z: 0.07758174, w: 0.7250082}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 68.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,18 +40,18 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.90182555, b: 0.83823526, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 0.9568628, b: 0.83921576, a: 1}
+  m_Intensity: 0.4
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: 3
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.5
     m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_NormalBias: 0.93
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
@@ -62,7 +62,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 0.58
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109012}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2eff0ad400294184495224be087b3abc, type: 3}
   m_Name: 
@@ -85,8 +85,8 @@ MonoBehaviour:
     key2: {r: 0.9411765, g: 0.5019608, b: 0.19215687, a: 0}
     key3: {r: 0.98039216, g: 0.99215686, b: 0.24705882, a: 0}
     key4: {r: 0.99607843, g: 1, b: 0.7490196, a: 0}
-    key5: {r: 1, g: 1, b: 0.9647059, a: 0}
-    key6: {r: 1, g: 1, b: 1, a: 0}
+    key5: {r: 1, g: 0.9568628, b: 0.83921576, a: 0}
+    key6: {r: 1, g: 0.9568628, b: 0.83921576, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
     ctime1: 10023
@@ -107,7 +107,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 7
     m_NumAlphaKeys: 2
-  maxIntensity: 3
+  maxIntensity: 1
   minIntensity: 0
   minPoint: -0.2
   maxAmbient: 0
@@ -115,16 +115,16 @@ MonoBehaviour:
   minAmbientPoint: -0.2
   nightDayFogColor:
     serializedVersion: 2
-    key0: {r: 0, g: 0, b: 0, a: 1}
-    key1: {r: 0.54509807, g: 0.5372549, b: 0.26666668, a: 1}
-    key2: {r: 0.72156864, g: 0.7058824, b: 0.27058825, a: 0}
-    key3: {r: 0.2784314, g: 0.34901962, b: 0.5137255, a: 0}
+    key0: {r: 0.12055002, g: 0.19471373, b: 0.4056604, a: 1}
+    key1: {r: 0.49574003, g: 0.36205056, b: 0.6792453, a: 1}
+    key2: {r: 0.8490566, g: 0.43654326, b: 0.5919832, a: 0}
+    key3: {r: 0.9716981, g: 0.6737718, b: 0.77427065, a: 0}
     key4: {r: 0.46666667, g: 0.6, b: 0.8235294, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 22552
+    ctime1: 16962
     ctime2: 25829
     ctime3: 42983
     ctime4: 65535
@@ -172,8 +172,9 @@ MonoBehaviour:
   dayRotateSpeed: {x: -2, y: 0, z: 0}
   nightRotateSpeed: {x: -3, y: 0, z: 0}
   BoatLight: {fileID: 0}
-  BoatSpeed: 1
-  BoatLightIntensity: 5
+  BoatLightSpeed: 1
+  BoatLightIntensity: 4.5
+  sunstar: {fileID: 0}
 --- !u!114 &11485488
 MonoBehaviour:
   m_ObjectHideFlags: 1
