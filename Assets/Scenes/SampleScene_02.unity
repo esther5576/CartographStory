@@ -6476,6 +6476,7 @@ MonoBehaviour:
   IDOfIlsandToAdd: 0
   camerapreview: {fileID: 1889069929}
   imagepreview: {fileID: 1602253288}
+  cameraPicUI: {fileID: 110026185}
 --- !u!1 &970763882
 GameObject:
   m_ObjectHideFlags: 0

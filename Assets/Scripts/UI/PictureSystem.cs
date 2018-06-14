@@ -16,6 +16,7 @@ public class PictureSystem : MonoBehaviour
 
     public CanvasGroup camerapreview;
     public Image imagepreview;
+    public CanvasGroup cameraPicUI;
 
     bool inPreviewMode = false;
 
@@ -38,6 +39,7 @@ public class PictureSystem : MonoBehaviour
             postprocessing.profile = profileNoVigPic;
             StartCoroutine(waitFrame());
             inPreviewMode = true;
+            cameraPicUI.alpha = 0;
         }
     }
 
@@ -84,6 +86,7 @@ public class PictureSystem : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
         postprocessing.profile = profileVigPic;
+        cameraPicUI.alpha = 1;
     }
 
     public void SaveImage()
