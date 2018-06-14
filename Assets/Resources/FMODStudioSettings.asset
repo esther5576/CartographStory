@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   HasSourceProject: 0
-  HasPlatforms: 1
+  HasPlatforms: 0
   sourceProjectPath: Assets\FMOD\BanqueSonore_Cartographe\BanqueSonore_Cartographe.fspro
   SourceProjectPathUnformatted: Assets\FMOD\BanqueSonore_Cartographe\BanqueSonore_Cartographe.fspro
-  SourceBankPathUnformatted: Assets\FMOD\BanqueSonore_Cartographe
+  SourceBankPathUnformatted: Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
@@ -43,7 +43,7 @@ MonoBehaviour:
     Value: 0
   BankDirectorySettings:
   - Platform: 2
-    Value: 
+    Value: Desktop
   VirtualChannelSettings:
   - Platform: 1
     Value: 1024

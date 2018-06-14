@@ -33,6 +33,7 @@ namespace FMODUnity
         AppleTV,
         UWP,
         Switch,
+        WebGL,
         Count,
     }
 
@@ -373,6 +374,7 @@ namespace FMODUnity
             SetSetting(LoggingSettings, FMODPlatform.PlayInEditor, TriStateBool.Enabled);
             SetSetting(LiveUpdateSettings, FMODPlatform.PlayInEditor, TriStateBool.Enabled);
             SetSetting(OverlaySettings, FMODPlatform.PlayInEditor, TriStateBool.Enabled);
+            SetSetting(SampleRateSettings, FMODPlatform.PlayInEditor, 48000);
             // These are not editable, set them high
             SetSetting(RealChannelSettings, FMODPlatform.PlayInEditor, 256);
             SetSetting(VirtualChannelSettings, FMODPlatform.PlayInEditor, 1024);

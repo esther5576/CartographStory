@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{7a152340-5ff5-4125-b18b-a2510774e42a}">
+        <property name="name">
+            <value>WindForce</value>
+        </property>
+        <relationship name="folder">
+            <destination>{4246bd84-d5a0-45f6-a9cb-f61f40ce53cc}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{dfd39670-890e-4982-91ca-3d8a805db283}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{dfd39670-890e-4982-91ca-3d8a805db283}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

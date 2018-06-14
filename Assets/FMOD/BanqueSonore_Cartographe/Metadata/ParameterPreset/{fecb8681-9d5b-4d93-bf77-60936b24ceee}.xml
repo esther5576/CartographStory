@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{fecb8681-9d5b-4d93-bf77-60936b24ceee}">
+        <property name="name">
+            <value>DynamicBoatCrack</value>
+        </property>
+        <relationship name="folder">
+            <destination>{4246bd84-d5a0-45f6-a9cb-f61f40ce53cc}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{d8833e1c-c91e-4e7e-84cc-d16582839a5e}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{d8833e1c-c91e-4e7e-84cc-d16582839a5e}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>
