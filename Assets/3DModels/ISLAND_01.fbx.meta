@@ -1,29 +1,29 @@
 fileFormatVersion: 2
-guid: c23aa243b285acd4c9ffa68c96c0abaf
+guid: cffb3be82a293bc439eb37e5f80f787e
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: TREE_MAIN_LEAVES
-    100004: TREE_SMALL_LEAVES
-    100006: TREE_TINY_LEAVES
+    100002: ISLAND_01_PART_A
+    100004: ISLAND_01_PART_A1
+    100006: ISLAND_01_PART_B
     400000: //RootNode
-    400002: TREE_MAIN_LEAVES
-    400004: TREE_SMALL_LEAVES
-    400006: TREE_TINY_LEAVES
-    2100000: TREE_01
+    400002: ISLAND_01_PART_A
+    400004: ISLAND_01_PART_A1
+    400006: ISLAND_01_PART_B
+    2100000: island01
     2300000: //RootNode
-    2300002: TREE_MAIN_LEAVES
-    2300004: TREE_SMALL_LEAVES
-    2300006: TREE_TINY_LEAVES
+    2300002: ISLAND_01_PART_A
+    2300004: ISLAND_01_PART_A1
+    2300006: ISLAND_01_PART_B
     3300000: //RootNode
-    3300002: TREE_MAIN_LEAVES
-    3300004: TREE_SMALL_LEAVES
-    3300006: TREE_TINY_LEAVES
-    4300000: TREE
-    4300002: TREE_TINY_LEAVES
-    4300004: TREE_SMALL_LEAVES
-    4300006: TREE_MAIN_LEAVES
+    3300002: ISLAND_01_PART_A
+    3300004: ISLAND_01_PART_A1
+    3300006: ISLAND_01_PART_B
+    4300000: ISLAND_01_BASE
+    4300002: ISLAND_01_PART_B
+    4300004: ISLAND_01_PART_A
+    4300006: ISLAND_01_PART_A1
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -55,7 +55,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 70
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

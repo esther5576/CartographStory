@@ -1381,7 +1381,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 10.24, y: 10.24}
-    newSize: {x: 10.24, y: 8.43}
+    newSize: {x: 10.24, y: 10.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -2147,7 +2147,7 @@ MonoBehaviour:
     m_Bits: 256
   SpriteShowed: {fileID: 212257528443042298}
   Reset_Canvas_On_Play: 1
-  reset_sprite: {fileID: 21300000, guid: f1954656f674ee54084062811665740c, type: 3}
+  reset_sprite: {fileID: 21300000, guid: 3652ad45945653e4bb115eec74cfaf3e, type: 3}
 --- !u!114 &114222401998026612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4465,12 +4465,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f1954656f674ee54084062811665740c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3652ad45945653e4bb115eec74cfaf3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.24, y: 8.43}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
