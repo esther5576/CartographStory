@@ -52,10 +52,17 @@ public class Drawable : MonoBehaviour
 	public void InitDrawer (Sprite Target)
 	{
         Texture2D ResetTexture = Instantiate(Target.texture);
-        drawable_sprite = Sprite.Create(ResetTexture, new Rect(0.0f, 0.0f, ResetTexture.width, ResetTexture.height), new Vector2(0.5f, 0.5f));
-        drawable_texture = ResetTexture;
+
+        Texture2D newTexture2DInARGB32 = new Texture2D(ResetTexture.width, ResetTexture.height, TextureFormat.ARGB32, false);
+        newTexture2DInARGB32.SetPixels(ResetTexture.GetPixels());
+        newTexture2DInARGB32.Apply();
+
+        drawable_sprite = Sprite.Create(newTexture2DInARGB32, new Rect(0.0f, 0.0f, newTexture2DInARGB32.width, newTexture2DInARGB32.height), new Vector2(0.5f, 0.5f));
+        drawable_texture = newTexture2DInARGB32;
         SpriteShowed.sprite = drawable_sprite;
-	}
+
+        
+    }
 
     void Update()
     {

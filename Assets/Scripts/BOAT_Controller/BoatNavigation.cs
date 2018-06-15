@@ -7,6 +7,7 @@ public class BoatNavigation: MonoBehaviour
 {
     public float turnSpeed = 10000f;
     public float accelerationSpeed = 200000;
+    [HideInInspector]
     public float actualSpeed = 0;
     
     private Rigidbody boatRigibody;

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{fb6ecb63-e211-4657-b703-d0c9dd4f8a8c}">
+        <property name="name">
+            <value>SailDirection</value>
+        </property>
+        <relationship name="folder">
+            <destination>{4246bd84-d5a0-45f6-a9cb-f61f40ce53cc}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{74575172-7c04-494d-9fe4-cd8ae57dbe0b}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{74575172-7c04-494d-9fe4-cd8ae57dbe0b}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>
