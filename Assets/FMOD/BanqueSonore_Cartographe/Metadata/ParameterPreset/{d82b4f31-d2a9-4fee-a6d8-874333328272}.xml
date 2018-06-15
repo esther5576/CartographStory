@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{d82b4f31-d2a9-4fee-a6d8-874333328272}">
+        <property name="name">
+            <value>StopVoile</value>
+        </property>
+        <relationship name="folder">
+            <destination>{4246bd84-d5a0-45f6-a9cb-f61f40ce53cc}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{ea8ac613-13d5-4b14-b77b-c7994be5e5c7}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{ea8ac613-13d5-4b14-b77b-c7994be5e5c7}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>
