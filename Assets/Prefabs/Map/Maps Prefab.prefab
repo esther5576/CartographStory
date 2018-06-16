@@ -1738,6 +1738,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 571045d48cec88d48848f53bf379f673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDrawEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   CanDraw: 0
   Drawing_Layers:
     serializedVersion: 2
@@ -1745,6 +1750,7 @@ MonoBehaviour:
   SpriteShowed: {fileID: 212257528443042298}
   Reset_Canvas_On_Play: 1
   reset_sprite: {fileID: 21300000, guid: f1954656f674ee54084062811665740c, type: 3}
+  drawable_texture: {fileID: 0}
 --- !u!114 &114213248824428144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2018,7 +2024,6 @@ MonoBehaviour:
   CloseBigMapButton: {fileID: 114292214814583180}
   CloseJournalButton: {fileID: 114160969728595456}
   MapValidationButton: {fileID: 114425771539362680}
-  DrawEditButton: {fileID: 114560289701917602}
   DrawSystemParent: {fileID: 1449715794996048}
   BigMapParent: {fileID: 1343383061942638}
   MapPrefab: {fileID: 1294817262995730, guid: 9cf4ca36196267e4b9a90e625ecfc5f4, type: 2}
