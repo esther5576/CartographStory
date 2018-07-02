@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 
 // 1. Attach this to a read/write enabled sprite image
@@ -10,6 +11,7 @@ using UnityEngine.UI;
 // 4. Hold down left mouse to draw on this texture!
 public class Drawable : MonoBehaviour
 {
+    public UnityEvent OnDrawEvent;
 	public bool CanDraw;
     // PEN COLOUR
     public static Color Pen_Colour = Color.black;     // Change these to change the default drawing settings
@@ -23,7 +25,7 @@ public class Drawable : MonoBehaviour
     // MUST HAVE READ/WRITE enabled set in the file editor of Unity
     Sprite drawable_sprite;
 	public Sprite reset_sprite;
-    Texture2D drawable_texture;
+    public Texture2D drawable_texture;
 
     Vector2 previous_drag_position;
     Color[] clean_colours_array;
@@ -36,7 +38,6 @@ public class Drawable : MonoBehaviour
     void Awake()
     {
 		SpriteShowed = GetComponent<SpriteRenderer>();
-		InitDrawer(SpriteShowed.sprite);
 		// Initialize clean pixels to use
 		int x = Mathf.FloorToInt(reset_sprite.rect.x);
 		int y = Mathf.FloorToInt(reset_sprite.rect.y);
@@ -49,19 +50,10 @@ public class Drawable : MonoBehaviour
             ResetCanvas();
     }
 
-	public void InitDrawer (Sprite Target)
+	public void InitDrawer (Sprite TargetSprite, Texture2D TargetTexture)
 	{
-        Texture2D ResetTexture = Instantiate(Target.texture);
-
-        Texture2D newTexture2DInARGB32 = new Texture2D(ResetTexture.width, ResetTexture.height, TextureFormat.ARGB32, false);
-        newTexture2DInARGB32.SetPixels(ResetTexture.GetPixels());
-        newTexture2DInARGB32.Apply();
-
-        drawable_sprite = Sprite.Create(newTexture2DInARGB32, new Rect(0.0f, 0.0f, newTexture2DInARGB32.width, newTexture2DInARGB32.height), new Vector2(0.5f, 0.5f));
-        drawable_texture = newTexture2DInARGB32;
-        SpriteShowed.sprite = drawable_sprite;
-
-        
+        drawable_texture = TargetTexture;
+        SpriteShowed.sprite = TargetSprite;
     }
 
     void Update()
@@ -112,6 +104,7 @@ public class Drawable : MonoBehaviour
     // Changes the surrounding pixels of the world_point to the static pen_colour
     public void ChangeColourAtPoint(Vector2 world_point)
     {
+        OnDrawEvent.Invoke();
         // Change coordinates to local coordinates of this image
         Vector3 local_pos = transform.InverseTransformPoint(world_point);
 
@@ -257,9 +250,13 @@ public class Drawable : MonoBehaviour
     // Changes every pixel to be the reset colour
     public void ResetCanvas()
     {
-        InitDrawer(reset_sprite);
-        //drawable_texture.SetPixels(clean_colours_array);
-        //drawable_texture.Apply();
+        Texture2D ResetTexture = new Texture2D(reset_sprite.texture.width, reset_sprite.texture.height, TextureFormat.ARGB32, false);
+        ResetTexture.SetPixels32(reset_sprite.texture.GetPixels32());
+        ResetTexture.Apply();
+
+        drawable_sprite = Sprite.Create(ResetTexture, new Rect(0.0f, 0.0f, reset_sprite.texture.width, reset_sprite.texture.height), new Vector2(0.5f, 0.5f));
+        drawable_texture = ResetTexture;
+        SpriteShowed.sprite = drawable_sprite;
     }
 
     public void ChangeSizeBySpeed()

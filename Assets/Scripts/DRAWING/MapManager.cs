@@ -7,20 +7,18 @@ public class MapManager : MonoBehaviour
 {
 	public List<MapInfoHandler> AllMapScripts;
 
-    public List<Image> AllPicturesRenderersOrigin;
-    public List<Image> AllPicturesRenderersWithText;
+    public List<PictureManager> AllPicturesRenderersOrigin;
+    public List<PictureManager> AllPicturesRenderersWithText;
     public Text NarrativeText;
     public Text NarrativeTextMap;
     public Drawable DrawManager;
-
 	public Transform MapContainer;
-	
+
 	[Header("Buttons")]
 	public Button ResetButton;
 	public Button CloseBigMapButton;
 	public Button CloseJournalButton;
 	public Button MapValidationButton;
-	public Button DrawEditButton;
 
 
     [Header("GameObjects")]
@@ -38,52 +36,46 @@ public class MapManager : MonoBehaviour
 	void Awake ()
 	{
         ResetButton.onClick.AddListener(ResetDraw);
-        ResetButton.interactable = false;
+        ResetButton.interactable = true;
         CloseBigMapButton.onClick.AddListener(CloseMap);
         CloseBigMapButton.interactable = true;
         CloseJournalButton.onClick.AddListener(CloseJournal);
         CloseJournalButton.interactable = true;
         MapValidationButton.onClick.AddListener(ValidateDraw);
-        MapValidationButton.interactable = false;
-        DrawEditButton.onClick.AddListener(StartDraw);
+        MapValidationButton.interactable = true;
 		DrawManager.Reset_Canvas_On_Play = false;
-		DrawManager.CanDraw = false;
+		DrawManager.CanDraw = true;
 	}
 
 	void ResetDraw ()
 	{
 		DrawManager.ResetCanvas();
+        DataManager.AllIslands[IslandSelected].Drawing = DrawManager.SpriteShowed.sprite;
+        DataManager.AllIslands[IslandSelected].TextureDraw = DrawManager.drawable_texture;
+        DataManager.AllIslands[IslandSelected].DrawStarted = true;
 	}
 
 	public void StartDraw ()
 	{
-		DrawManager.CanDraw = true;
-        ResetButton.interactable = true;
-        DrawEditButton.interactable = false;
-        MapValidationButton.interactable = true;
-        if (DataManager.AllIslands[IslandSelected].Drawed)
+        if (DataManager.AllIslands[IslandSelected].DrawStarted)
         {
-            DrawManager.InitDrawer(DataManager.AllIslands[IslandSelected].Drawing);
+            DrawManager.InitDrawer(DataManager.AllIslands[IslandSelected].Drawing, DataManager.AllIslands[IslandSelected].TextureDraw);
         }
         else
         {
-            DrawManager.ResetCanvas();
+            ResetDraw();
         }
 	}
 
 	public void ValidateDraw ()
 	{
-		DrawManager.CanDraw = false;
-        ResetButton.interactable = false;
-        DrawEditButton.interactable = true;
-        MapValidationButton.interactable = false;
-        if (!DataManager.AllIslands[IslandSelected].Drawed)
+        if (!DataManager.AllIslands[IslandSelected].DrawValidated)
         {
             DataManager.AllIslands[IslandSelected].Drawing = DrawManager.SpriteShowed.sprite;
-            DataManager.AllIslands[IslandSelected].Drawed = true;
+            DataManager.AllIslands[IslandSelected].DrawValidated = true;
             CreateDrawInstanceOnMap();
-            CloseJournal();
             OpenMap();
+            // TODO : Envoyer les informations a l'analyse d'image et transferer le texte au datamanager
         }
         else
         {
@@ -103,60 +95,72 @@ public class MapManager : MonoBehaviour
 
 	public void OpenJournal ()
 	{
-		DrawSystemParent.SetActive(true);
+        CheckNavigationCameraDeActivation();
+        DrawSystemParent.SetActive(true);
         SetJournal(IslandSelected);
-        CameraToDesactivate.SetActive(false);
-        ScriptToDesactivate.enabled = false;
-        //Cursor.visible = true;
-        //Cursor.lockState = CursorLockMode.None;
+        CloseMap();
     }
 
-	public void CloseJournal ()
+    public void CloseJournal ()
 	{
-		DrawSystemParent.SetActive(false);
-        CameraToDesactivate.SetActive(true);
-        ScriptToDesactivate.enabled = true;
-       // Cursor.visible = false;
-       // Cursor.lockState = CursorLockMode.Locked;
+        DrawSystemParent.SetActive(false);
+        CheckNavigationCameraActivation();
     }
 
-	public void OpenMap ()
+    public void OpenMap ()
 	{
-		BigMapParent.SetActive(true);
-        CameraToDesactivate.SetActive(false);
-        ScriptToDesactivate.enabled = false;
-       // Cursor.visible = true;
-       // Cursor.lockState = CursorLockMode.None;
+        CheckNavigationCameraDeActivation();
+        BigMapParent.SetActive(true);
+        CloseJournal();
     }
 
 	public void CloseMap ()
 	{
 		BigMapParent.SetActive(false);
-        CameraToDesactivate.SetActive(true);
-        ScriptToDesactivate.enabled = true;
-        //Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
+        CheckNavigationCameraActivation();
+    }
+
+    public void CheckNavigationCameraDeActivation ()
+    {
+        if (!BigMapParent.activeInHierarchy && !DrawSystemParent.activeInHierarchy)
+        {
+            CameraToDesactivate.SetActive(false);
+            ScriptToDesactivate.enabled = false;
+        }
+    }
+
+    void CheckNavigationCameraActivation()
+    {
+        if (!BigMapParent.activeInHierarchy && !DrawSystemParent.activeInHierarchy)
+        {
+            CameraToDesactivate.SetActive(true);
+            ScriptToDesactivate.enabled = true;
+        }
     }
 
     public void SetJournal (int PageNumber)
     {
+        // Setter le dessin
+        StartDraw();
+
+        // Setter les photos et le texte
         if (DataManager.AllIslands[PageNumber].NarrativText == "Aucun texte chargé")
         {
             for (int i = 0; i < AllPicturesRenderersOrigin.Count; i++)
             {
                 if (i < DataManager.AllIslands[PageNumber].Pictures.Count)
                 {
-                    AllPicturesRenderersOrigin[i].gameObject.SetActive(true);
-                    AllPicturesRenderersOrigin[i].sprite = DataManager.AllIslands[PageNumber].Pictures[i];
+                    AllPicturesRenderersOrigin[i].ParentToChange.gameObject.SetActive(true);
+                    AllPicturesRenderersOrigin[i].PictureImage.sprite = DataManager.AllIslands[PageNumber].Pictures[i];
                 }
                 else
                 {
-                    AllPicturesRenderersOrigin[i].gameObject.SetActive(false);
+                    AllPicturesRenderersOrigin[i].ParentToChange.gameObject.SetActive(false);
                 }
             }
 
             for (int i = 0; i < AllPicturesRenderersWithText.Count; i++)
-                AllPicturesRenderersWithText[i].gameObject.SetActive(false);
+                AllPicturesRenderersWithText[i].ParentToChange.gameObject.SetActive(false);
 
             NarrativeText.gameObject.SetActive(false);
         }
@@ -166,26 +170,21 @@ public class MapManager : MonoBehaviour
             {
                 if (i < DataManager.AllIslands[PageNumber].Pictures.Count)
                 {
-                    AllPicturesRenderersWithText[i].gameObject.SetActive(true);
-                    AllPicturesRenderersWithText[i].sprite = DataManager.AllIslands[PageNumber].Pictures[i];
+                    AllPicturesRenderersWithText[i].ParentToChange.gameObject.SetActive(true);
+                    AllPicturesRenderersWithText[i].PictureImage.sprite = DataManager.AllIslands[PageNumber].Pictures[i];
                 }
                 else
                 {
-                    AllPicturesRenderersWithText[i].gameObject.SetActive(false);
+                    AllPicturesRenderersWithText[i].ParentToChange.gameObject.SetActive(false);
                 }
             }
 
             for (int i = 0; i < AllPicturesRenderersWithText.Count; i++)
-                AllPicturesRenderersOrigin[i].gameObject.SetActive(false);
+                AllPicturesRenderersOrigin[i].ParentToChange.gameObject.SetActive(false);
 
             NarrativeText.text = DataManager.AllIslands[PageNumber].NarrativText;
             NarrativeText.gameObject.SetActive(true);
         }
-
-        if (DataManager.AllIslands[PageNumber].Drawing != null)
-            DrawManager.SpriteShowed.sprite = DataManager.AllIslands[PageNumber].Drawing;
-        else
-            DrawManager.InitDrawer(DrawManager.reset_sprite);
     }
 
 	// Update is called once per frame
@@ -219,7 +218,8 @@ public class MapManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) IslandSelected = 0;
         if (Input.GetKeyDown(KeyCode.Alpha2)) IslandSelected = 1;
         if (Input.GetKeyDown(KeyCode.Alpha3)) IslandSelected = 2;
-
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) PreviousPage();
+        if (Input.GetKeyDown(KeyCode.RightArrow)) NextPage();
     }
 
     public void RemoveIslandPicture(int ID)
@@ -227,11 +227,27 @@ public class MapManager : MonoBehaviour
         DataManager.AllIslands[IslandSelected].Pictures.RemoveAt(ID);
         if (DataManager.AllIslands[IslandSelected].NarrativText == "Aucun texte chargé")
         {
-            AllPicturesRenderersOrigin[ID].gameObject.SetActive(false);
+            AllPicturesRenderersOrigin[ID].ParentToChange.gameObject.SetActive(false);
         }
         else
         {
-            AllPicturesRenderersWithText[ID].gameObject.SetActive(false);
+            AllPicturesRenderersWithText[ID].ParentToChange.gameObject.SetActive(false);
         }
+    }
+
+    public void NextPage ()
+    {
+        int temp = IslandSelected;
+        IslandSelected++;
+        if (IslandSelected > 2) IslandSelected = 2;
+        if (IslandSelected != temp)  SetJournal(IslandSelected);
+    }
+
+    public void PreviousPage ()
+    {
+        int temp = IslandSelected;
+        IslandSelected--;
+        if (IslandSelected < 0) IslandSelected = 0;
+        if (IslandSelected != temp) SetJournal(IslandSelected);
     }
 }
