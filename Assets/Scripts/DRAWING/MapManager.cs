@@ -133,6 +133,9 @@ public class MapManager : MonoBehaviour
 
     public void CheckNavigationCameraDeActivation ()
     {
+        if (ScriptToDesactivate.activateCam)
+            ScriptToDesactivate.SwitchCam();
+
         if (!BigMapParent.activeInHierarchy && !DrawSystemParent.activeInHierarchy)
         {
             CameraToDesactivate.SetActive(false);

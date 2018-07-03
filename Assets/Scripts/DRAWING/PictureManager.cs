@@ -62,20 +62,28 @@ public class PictureManager : MonoBehaviour, IPointerClickHandler
         Transform papa = ParentToChange.parent;
         ParentToChange.parent = null;
         ParentToChange.parent = papa;
-      /*  ParentToChange.DOAnchorPos(AnchoredPositionFullScreen, AnimationDuration).SetId("PictureFullScreen" + ID);
-        ParentToChange.DOSizeDelta(SizeDeltaFullScreen, AnimationDuration).SetId("PictureFullScreen" + ID);
-        ParentToChange.DOAnchorMax(AnchoreMaxFullScreen, AnimationDuration).SetId("PictureFullScreen" + ID);
-        ParentToChange.DOAnchorMin(AnchoreMinFullScreen, AnimationDuration).SetId("PictureFullScreen" + ID);
-        ParentToChange.DORotate(RotationFullScreen, AnimationDuration).SetId("PictureFullScreen" + ID);*/
+        DOTween.To(() => ParentToChange.anchoredPosition, x => ParentToChange.anchoredPosition = x, AnchoredPositionFullScreen, AnimationDuration).SetId("PictureFullScreen" + ID);
+        DOTween.To(() => ParentToChange.sizeDelta, x => ParentToChange.sizeDelta = x, SizeDeltaFullScreen, AnimationDuration).SetId("PictureFullScreen" + ID);
+        DOTween.To(() => ParentToChange.anchorMax, x => ParentToChange.anchorMax = x, AnchoreMaxFullScreen, AnimationDuration).SetId("PictureFullScreen" + ID);
+        DOTween.To(() => ParentToChange.anchorMin, x => ParentToChange.anchorMin = x, AnchoreMinFullScreen, AnimationDuration).SetId("PictureFullScreen" + ID);
+        //ParentToChange.DOAnchorPos(AnchoredPositionFullScreen, AnimationDuration).SetId("PictureFullScreen" + ID);
+        //ParentToChange.DOSizeDelta(SizeDeltaFullScreen, AnimationDuration).SetId("PictureFullScreen" + ID);
+        //ParentToChange.DOAnchorMax(AnchoreMaxFullScreen, AnimationDuration).SetId("PictureFullScreen" + ID);
+        //ParentToChange.DOAnchorMin(AnchoreMinFullScreen, AnimationDuration).SetId("PictureFullScreen" + ID);
+        ParentToChange.DORotate(RotationFullScreen, AnimationDuration).SetId("PictureFullScreen" + ID);
     }
 
     void GoOriginSize ()
     {
         DOTween.Kill("PictureFullScreen" + ID);
-        /*ParentToChange.DOAnchorPos(AnchoredPositionOrigin, AnimationDuration).SetId("PictureFullScreen" + ID);
-        ParentToChange.DOSizeDelta(SizeDeltaOrigin, AnimationDuration).SetId("PictureOriginSize" + ID);
-        ParentToChange.DOAnchorMax(AnchoreMaxOrigin, AnimationDuration).SetId("PictureOriginSize" + ID);
-        ParentToChange.DOAnchorMin(AnchoreMinOrigin, AnimationDuration).SetId("PictureOriginSize" + ID);*/
+        DOTween.To(() => ParentToChange.anchoredPosition, x => ParentToChange.anchoredPosition = x, AnchoredPositionOrigin, AnimationDuration).SetId("PictureFullScreen" + ID);
+        DOTween.To(() => ParentToChange.sizeDelta, x => ParentToChange.sizeDelta = x, SizeDeltaOrigin, AnimationDuration).SetId("PictureFullScreen" + ID);
+        DOTween.To(() => ParentToChange.anchorMax, x => ParentToChange.anchorMax = x, AnchoreMaxOrigin, AnimationDuration).SetId("PictureFullScreen" + ID);
+        DOTween.To(() => ParentToChange.anchorMin, x => ParentToChange.anchorMin = x, AnchoreMinOrigin, AnimationDuration).SetId("PictureFullScreen" + ID);
+        //ParentToChange.DOAnchorPos(AnchoredPositionOrigin, AnimationDuration).SetId("PictureFullScreen" + ID);
+        //ParentToChange.DOSizeDelta(SizeDeltaOrigin, AnimationDuration).SetId("PictureOriginSize" + ID);
+        //ParentToChange.DOAnchorMax(AnchoreMaxOrigin, AnimationDuration).SetId("PictureOriginSize" + ID);
+        //ParentToChange.DOAnchorMin(AnchoreMinOrigin, AnimationDuration).SetId("PictureOriginSize" + ID);
         ParentToChange.DORotate(RotationOrigin, AnimationDuration).SetId("PictureOriginSize" + ID);
     }
 }

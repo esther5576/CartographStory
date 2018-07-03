@@ -50,37 +50,40 @@ public class BoatSound : MonoBehaviour
         {
             if (boatControls.actualSpeed < 1 && boatControls.actualSpeed > 0)
             {
+                Debug.Log("STOP2");
                 ClipSail.Play();
                 SailUp.Stop();
                 SailDown.Stop();
             }
         }
 
-        if(actualSpeedPrev < boatControls.actualSpeed)
+        if(actualSpeedPrev < boatControls.actualSpeed && (Input.GetKey(KeyCode.Z)))
         {
             if(!SailUp.IsPlaying())
             {
                 SailUp.Play();
+                Debug.Log("test");
             }
 
-            Debug.Log(actualSpeedPrev + "  " + boatControls.actualSpeed);
+            //Debug.Log(actualSpeedPrev + "  " + boatControls.actualSpeed);
             actualSpeedPrev = boatControls.actualSpeed;
 
             if(actualSpeedPrev >= 1)
             {
                 SailUp.Stop();
+                Debug.Log("STOPZ");
                 ClipSail.Play();
             }
         }
 
-        if (actualSpeedPrev > boatControls.actualSpeed)
+        if (actualSpeedPrev > boatControls.actualSpeed && (Input.GetKey(KeyCode.S)))
         {
             if (!SailDown.IsPlaying())
             {
                 SailDown.Play();
             }
 
-            Debug.Log(actualSpeedPrev + "  " + boatControls.actualSpeed);
+            //Debug.Log(actualSpeedPrev + "  " + boatControls.actualSpeed);
             actualSpeedPrev = boatControls.actualSpeed;
 
             if (actualSpeedPrev <= 0)

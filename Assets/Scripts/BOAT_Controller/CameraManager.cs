@@ -62,24 +62,29 @@ public class CameraManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.C))
         {
-            activateCam = !activateCam;
+            SwitchCam();
+        }
+    }
 
-            if(activateCam)
-            {
-                OutsideCamera.GetComponentInChildren<Camera>().enabled = false;
-                PictureCamera.SetActive(true);
-                BoatControls.enabled = false;
+    public void SwitchCam ()
+    {
+        activateCam = !activateCam;
 
-                cameraPicCanvas.alpha = 1;
-            }
-            else
-            {
-                OutsideCamera.GetComponentInChildren<Camera>().enabled = true;
-                PictureCamera.SetActive(false);
-                BoatControls.enabled = true;
+        if (activateCam)
+        {
+            OutsideCamera.GetComponentInChildren<Camera>().enabled = false;
+            PictureCamera.SetActive(true);
+            BoatControls.enabled = false;
 
-                cameraPicCanvas.alpha = 0;
-            }
+            cameraPicCanvas.alpha = 1;
+        }
+        else
+        {
+            OutsideCamera.GetComponentInChildren<Camera>().enabled = true;
+            PictureCamera.SetActive(false);
+            BoatControls.enabled = true;
+
+            cameraPicCanvas.alpha = 0;
         }
     }
 }
