@@ -5,6 +5,7 @@ using DG.Tweening;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+//test
 public class PictureManager : MonoBehaviour, IPointerClickHandler
 {
     public int ID;
