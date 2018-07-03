@@ -13532,20 +13532,6 @@ Prefab:
       propertyPath: ScriptToDesactivate
       value: 
       objectReference: {fileID: 924036602}
-    - target: {fileID: 1824167959945868, guid: 166ff68b0ff4e7c4f854b2cfe65b3a97, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224053840776719770, guid: 166ff68b0ff4e7c4f854b2cfe65b3a97,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -25
-      objectReference: {fileID: 0}
-    - target: {fileID: 224749550945522738, guid: 166ff68b0ff4e7c4f854b2cfe65b3a97,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166ff68b0ff4e7c4f854b2cfe65b3a97, type: 2}
   m_IsPrefabParent: 0
