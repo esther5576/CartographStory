@@ -45,7 +45,21 @@ public class MapManager : MonoBehaviour
         MapValidationButton.interactable = true;
 		DrawManager.Reset_Canvas_On_Play = false;
 		DrawManager.CanDraw = true;
+        StartCoroutine(CreateAllMaps());
 	}
+
+    IEnumerator CreateAllMaps ()
+    {
+        yield return new WaitForEndOfFrame();
+        for (int i = 0; i < DataManager.AllIslands.Count; i++)
+        {
+            GameObject NewMap = Instantiate(MapPrefab, MapContainer);
+            AllMapScripts.Add(NewMap.GetComponent<MapInfoHandler>());
+            AllMapScripts[i].ID = i;
+            AllMapScripts[i].ManagerScript = this;
+            AllMapScripts[i].gameObject.SetActive(false);
+        }
+    }
 
 	void ResetDraw ()
 	{
@@ -86,11 +100,8 @@ public class MapManager : MonoBehaviour
 
     public void CreateDrawInstanceOnMap ()
     {
-        GameObject NewMap = Instantiate(MapPrefab, MapContainer);
-        AllMapScripts.Add(NewMap.GetComponent<MapInfoHandler>());
-        AllMapScripts[IslandSelected].ID = IslandSelected;
-        AllMapScripts[IslandSelected].ManagerScript = this;
-        AllMapScripts[IslandSelected].MapSprite.sprite = DataManager.AllIslands[IslandSelected].Drawing;
+       AllMapScripts[IslandSelected].MapSprite.sprite = DataManager.AllIslands[IslandSelected].Drawing;
+       AllMapScripts[IslandSelected].gameObject.SetActive(true);
     }
 
 	public void OpenJournal ()

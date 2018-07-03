@@ -283,7 +283,7 @@ public class Drawable : MonoBehaviour
 			else
 			{
 				Actual_Pen_Width = (int)((float)Pen_Width * (1 - (float)dist / 2f * 0.05f));
-				if (Actual_Pen_Width < Pen_Width / 10) Actual_Pen_Width = Pen_Width / 10;
+				if (Actual_Pen_Width < Pen_Width / 5) Actual_Pen_Width = Pen_Width / 5;
 			}
 		}
 
