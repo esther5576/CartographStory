@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine.UI;
 using DG.Tweening;
 
+//test
 public class PictureSystem : MonoBehaviour
 {
     public Image debugImage;
