@@ -8,11 +8,13 @@ ModelImporter:
     100004: serpent_bodyA
     100006: serpent_bodyB
     100008: serpent_head
+    100010: ISLAND_02_PART_2
     400000: //RootNode
     400002: ISLAND_02_PART_A
     400004: serpent_bodyA
     400006: serpent_bodyB
     400008: serpent_head
+    400010: ISLAND_02_PART_2
     2100000: island01
     2100002: serpent
     2300000: //RootNode
@@ -20,16 +22,20 @@ ModelImporter:
     2300004: serpent_bodyA
     2300006: serpent_bodyB
     2300008: serpent_head
+    2300010: ISLAND_02_PART_2
     3300000: //RootNode
     3300002: ISLAND_02_PART_A
     3300004: serpent_bodyA
     3300006: serpent_bodyB
     3300008: serpent_head
+    3300010: ISLAND_02_PART_2
     4300000: ISLAND_02_BASE
     4300002: ISLAND_02_PART_A
     4300004: serpent_bodyA
     4300006: serpent_head
     4300008: serpent_bodyB
+    4300010: ISLAND_02
+    4300012: ISLAND_02_PART_2
   externalObjects: {}
   materials:
     importMaterials: 1
