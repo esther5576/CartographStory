@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.UI;
 
 public class CameraManager : MonoBehaviour
 {
@@ -20,12 +21,16 @@ public class CameraManager : MonoBehaviour
     public bool activateCam = false;
     #endregion
 
+    #region Inside cam UI
+    public CanvasGroup cameraPicCanvas;
+    #endregion
+
     // Use this for initialization
     void Start ()
     {
         _myAutoCam = OutsideCamera.GetComponent<UnityStandardAssets.Cameras.AutoCam>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 	
 	// Update is called once per frame
@@ -57,20 +62,29 @@ public class CameraManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.C))
         {
-            activateCam = !activateCam;
+            SwitchCam();
+        }
+    }
 
-            if(activateCam)
-            {
-                OutsideCamera.GetComponentInChildren<Camera>().enabled = false;
-                PictureCamera.SetActive(true);
-                BoatControls.enabled = false;
-            }
-            else
-            {
-                OutsideCamera.GetComponentInChildren<Camera>().enabled = true;
-                PictureCamera.SetActive(false);
-                BoatControls.enabled = true;
-            }
+    public void SwitchCam ()
+    {
+        activateCam = !activateCam;
+
+        if (activateCam)
+        {
+            OutsideCamera.GetComponentInChildren<Camera>().enabled = false;
+            PictureCamera.SetActive(true);
+            BoatControls.enabled = false;
+
+            cameraPicCanvas.alpha = 1;
+        }
+        else
+        {
+            OutsideCamera.GetComponentInChildren<Camera>().enabled = true;
+            PictureCamera.SetActive(false);
+            BoatControls.enabled = true;
+
+            cameraPicCanvas.alpha = 0;
         }
     }
 }

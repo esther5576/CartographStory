@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{c99b346e-9087-44dc-9229-cb5069ef3633}">
+        <property name="assetPath">
+            <value>Boat_Wood.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>115.4874375</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{63dfb50e-1380-455c-8d31-75da3bbba4f4}</destination>
+        </relationship>
+    </object>
+</objects>

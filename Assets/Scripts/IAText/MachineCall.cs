@@ -35,12 +35,13 @@ public class MachineCall : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.R))
         {
             textToDisplay.text = SendRequest();
+            objectsSeen.Clear();
         }
 	}
 
     public string SendRequest()
     {
-        var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://10.66.127.223:8080");
+        var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://respekt.justdied.com:8080/storyFromWords");
         httpWebRequest.ContentType = "application/json";
         httpWebRequest.Method = "POST";
 

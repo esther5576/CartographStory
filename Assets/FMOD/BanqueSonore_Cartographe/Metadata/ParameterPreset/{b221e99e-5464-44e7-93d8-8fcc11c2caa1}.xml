@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{b221e99e-5464-44e7-93d8-8fcc11c2caa1}">
+        <property name="name">
+            <value>StopVoileUp</value>
+        </property>
+        <relationship name="folder">
+            <destination>{4246bd84-d5a0-45f6-a9cb-f61f40ce53cc}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{d474648a-5315-46e1-94c8-523578438e2a}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{d474648a-5315-46e1-94c8-523578438e2a}">
+        <property name="parameterType">
+            <value>1</value>
+        </property>
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="isExposedRecursively">
+            <value>false</value>
+        </property>
+    </object>
+</objects>

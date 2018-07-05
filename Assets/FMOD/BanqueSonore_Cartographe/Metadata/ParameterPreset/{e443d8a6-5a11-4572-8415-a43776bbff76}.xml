@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{e443d8a6-5a11-4572-8415-a43776bbff76}">
+        <property name="name">
+            <value>OuvertureVoile</value>
+        </property>
+        <relationship name="folder">
+            <destination>{4246bd84-d5a0-45f6-a9cb-f61f40ce53cc}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{98e773c3-f0bd-474a-a1ec-02bc740da4d0}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{98e773c3-f0bd-474a-a1ec-02bc740da4d0}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

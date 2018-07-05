@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="MixerGroup" id="{06810e36-3c9f-4d43-95d9-6b557c2c920e}">
+        <property name="name">
+            <value>boat_gnrl</value>
+        </property>
+        <relationship name="effectChain">
+            <destination>{89544c5c-2de6-4108-821f-6ccb8dd830a3}</destination>
+        </relationship>
+        <relationship name="panner">
+            <destination>{633eee91-7fc8-4257-9d34-d71ae815233e}</destination>
+        </relationship>
+        <relationship name="output">
+            <destination>{12f682e9-f5f4-44ea-81c8-4881387920ac}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusEffectChain" id="{89544c5c-2de6-4108-821f-6ccb8dd830a3}">
+        <relationship name="effects">
+            <destination>{de34bd63-fa7d-4bbc-99c5-efda55d43974}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusPanner" id="{633eee91-7fc8-4257-9d34-d71ae815233e}"/>
+    <object class="MixerBusFader" id="{de34bd63-fa7d-4bbc-99c5-efda55d43974}"/>
+</objects>

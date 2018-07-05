@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{19f0f51f-5787-415e-8f48-936c9140939f}">
+        <property name="assetPath">
+            <value>BirdCall_Seagull.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>22.0499992</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>5.7313832199546484</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{63dfb50e-1380-455c-8d31-75da3bbba4f4}</destination>
+        </relationship>
+    </object>
+</objects>

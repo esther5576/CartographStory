@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{6ca2a857-44a1-4d3e-aa4e-af600e68ea91}">
+        <property name="assetPath">
+            <value>Night_Bugs.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>45.052145833333334</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{63dfb50e-1380-455c-8d31-75da3bbba4f4}</destination>
+        </relationship>
+    </object>
+</objects>

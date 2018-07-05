@@ -30,6 +30,10 @@ namespace UnityStandardAssets.Cameras
 
         public Vector3 cameraPosition;
 
+        public float minFieldOfView = 15;
+        public float maxFielOfView = 60;
+        public float scrollSpeed = 1;
+
         protected override void Awake()
         {
             base.Awake();
@@ -48,16 +52,16 @@ namespace UnityStandardAssets.Cameras
             HandleRotationMovement();
             if (m_LockCursor && Input.GetMouseButtonUp(0))
             {
-                Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
-                Cursor.visible = !m_LockCursor;
+                //Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
+                //Cursor.visible = !m_LockCursor;
             }
         }
 
 
         private void OnDisable()
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+           // Cursor.lockState = CursorLockMode.None;
+           // Cursor.visible = true;
         }
 
 
@@ -71,15 +75,15 @@ namespace UnityStandardAssets.Cameras
 
         private void HandleRotationMovement()
         {
-			if(Time.timeScale < float.Epsilon)
-			return;
+            if (Time.timeScale < float.Epsilon)
+                return;
 
             // Read the user input
             var x = CrossPlatformInputManager.GetAxis("Mouse X");
             var y = CrossPlatformInputManager.GetAxis("Mouse Y");
 
             // Adjust the look angle by an amount proportional to the turn speed and horizontal input.
-            m_LookAngle += x*m_TurnSpeed;
+            m_LookAngle += x * m_TurnSpeed;
 
             // Rotate the rig (the root object) around Y axis only:
             m_TransformTargetRot = Quaternion.Euler(0f, m_LookAngle, 0f);
@@ -94,26 +98,40 @@ namespace UnityStandardAssets.Cameras
             else
             {
                 // on platforms with a mouse, we adjust the current angle based on Y mouse input and turn speed
-                m_TiltAngle -= y*m_TurnSpeed;
+                m_TiltAngle -= y * m_TurnSpeed;
                 // and make sure the new value is within the tilt range
                 m_TiltAngle = Mathf.Clamp(m_TiltAngle, -m_TiltMin, m_TiltMax);
             }
 
             // Tilt input around X is applied to the pivot (the child of this object)
-			m_PivotTargetRot = Quaternion.Euler(m_TiltAngle, m_PivotEulers.y , m_PivotEulers.z);
+            m_PivotTargetRot = Quaternion.Euler(m_TiltAngle, m_PivotEulers.y, m_PivotEulers.z);
 
-			if (m_TurnSmoothing > 0)
-			{
-				m_Pivot.localRotation = Quaternion.Slerp(m_Pivot.localRotation, m_PivotTargetRot, m_TurnSmoothing * Time.deltaTime);
-				transform.localRotation = Quaternion.Slerp(transform.localRotation, m_TransformTargetRot, m_TurnSmoothing * Time.deltaTime);
-			}
-			else
-			{
-				m_Pivot.localRotation = m_PivotTargetRot;
-				transform.localRotation = m_TransformTargetRot;
-			}
+            if (m_TurnSmoothing > 0)
+            {
+                m_Pivot.localRotation = Quaternion.Slerp(m_Pivot.localRotation, m_PivotTargetRot, m_TurnSmoothing * Time.deltaTime);
+                transform.localRotation = Quaternion.Slerp(transform.localRotation, m_TransformTargetRot, m_TurnSmoothing * Time.deltaTime);
+            }
+            else
+            {
+                m_Pivot.localRotation = m_PivotTargetRot;
+                transform.localRotation = m_TransformTargetRot;
+            }
 
             transform.localPosition = cameraPosition;
+
+            if (Input.GetAxis("Mouse ScrollWheel") > 0f && m_Cam.GetComponent<Camera>().fieldOfView > minFieldOfView) // forward
+            {
+                m_Cam.GetComponent<Camera>().fieldOfView -= scrollSpeed * Time.deltaTime;
+            }
+            else if (Input.GetAxis("Mouse ScrollWheel") < 0f && m_Cam.GetComponent<Camera>().fieldOfView < maxFielOfView)
+            {
+                m_Cam.GetComponent<Camera>().fieldOfView += scrollSpeed * Time.deltaTime;
+            }
+        }
+
+        public void OnEnable()
+        {
+            m_Cam.GetComponent<Camera>().fieldOfView = 60;
         }
     }
 }

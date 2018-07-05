@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a1ac796db490ca24fb73ae2b5cce482b, type: 3}
+        m_Texture: {fileID: 2800000, guid: e009c71a3375a3d429d534063b7dbd48, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexBottom:
@@ -47,7 +47,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexSide:
-        m_Texture: {fileID: 2800000, guid: ae8ba95093edc254dab87ba4f2cd4068, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0c120cf4573e3224eac5eba864ad4c09, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -79,7 +79,7 @@ Material:
     - _Edge2: 0.26
     - _Edge3: 1.42
     - _Edge4: 2
-    - _EdgeWidth: 0.5
+    - _EdgeWidth: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -89,12 +89,12 @@ Material:
     - _MergeY: -0.61
     - _Metallic: 0
     - _Mode: 0
-    - _NoiseScale: 1.83
+    - _NoiseScale: -0.01
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RimPower: 20
-    - _Scale: 0.1
-    - _SideScale: 1.18
+    - _Scale: -2
+    - _SideScale: -2
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
