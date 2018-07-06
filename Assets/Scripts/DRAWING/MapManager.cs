@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MapManager : MonoBehaviour
 {
 	public List<MapInfoHandler> AllMapScripts;
-
+    public MachineCall MachineCallScript;
     public List<PictureManager> AllPicturesRenderersOrigin;
     public List<PictureManager> AllPicturesRenderersWithText;
     public Text NarrativeText;
@@ -83,19 +83,18 @@ public class MapManager : MonoBehaviour
 
 	public void ValidateDraw ()
 	{
-        if (!DataManager.AllIslands[IslandSelected].DrawValidated)
-        {
-            DataManager.AllIslands[IslandSelected].Drawing = DrawManager.SpriteShowed.sprite;
-            DataManager.AllIslands[IslandSelected].DrawValidated = true;
-            CreateDrawInstanceOnMap();
-            OpenMap();
-            // TODO : Envoyer les informations a l'analyse d'image et transferer le texte au datamanager
-        }
-        else
-        {
-            DataManager.AllIslands[IslandSelected].Drawing = DrawManager.SpriteShowed.sprite;
-            AllMapScripts[IslandSelected].MapSprite.sprite = DataManager.AllIslands[IslandSelected].Drawing;
-        }
+        DataManager.AllIslands[IslandSelected].Drawing = DrawManager.SpriteShowed.sprite;
+        CreateDrawInstanceOnMap();
+        OpenMap();
+        DataManager.AllIslands[IslandSelected].NarrativText = NarrivTextRequest();
+    }
+
+    string NarrivTextRequest ()
+    {
+        MachineCallScript.objectsSeen.Clear();
+        foreach (string Description in DataManager.AllIslands[IslandSelected].PicturesDescription)
+            MachineCallScript.objectsSeen.Add(Description);
+        return MachineCallScript.SendRequest();
     }
 
     public void CreateDrawInstanceOnMap ()
@@ -207,26 +206,18 @@ public class MapManager : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.J))
 		{
             if (DrawSystemParent.activeInHierarchy)
-            {
                 CloseJournal();
-            }
             else
-            {
                 OpenJournal();
-            }
 
         }
 
 		if (Input.GetKeyDown(KeyCode.M))
 		{
 			if (BigMapParent.activeInHierarchy)
-            {
                 CloseMap();
-            }
             else
-            {
                 OpenMap();
-            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1)) IslandSelected = 0;
@@ -239,14 +230,12 @@ public class MapManager : MonoBehaviour
     public void RemoveIslandPicture(int ID)
     {
         DataManager.AllIslands[IslandSelected].Pictures.RemoveAt(ID);
+        DataManager.AllIslands[IslandSelected].PicturesDescription.RemoveAt(ID);
+
         if (DataManager.AllIslands[IslandSelected].NarrativText == "Aucun texte chargé")
-        {
             AllPicturesRenderersOrigin[ID].ParentToChange.gameObject.SetActive(false);
-        }
         else
-        {
             AllPicturesRenderersWithText[ID].ParentToChange.gameObject.SetActive(false);
-        }
     }
 
     public void NextPage ()

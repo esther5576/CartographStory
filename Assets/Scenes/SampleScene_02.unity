@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1032166309}
-  m_IndirectSpecularColor: {r: 0.17426488, g: 0.2473414, b: 0.3500563, a: 1}
+  m_IndirectSpecularColor: {r: 0.17426376, g: 0.24733981, b: 0.35005403, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -692,7 +692,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsIsland: 1
   ID: 2
-  ObjectDescription: rock
+  ObjectDescription:
+  - 
+  - 
+  - 
+  - 
 --- !u!4 &410094413 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4253868982841628, guid: c806ca586df0e624d99ee1afd8588b8e,
@@ -6654,7 +6658,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsIsland: 1
   ID: 1
-  ObjectDescription: pillar
+  ObjectDescription:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &1223927591
 GameObject:
   m_ObjectHideFlags: 0
@@ -7891,7 +7901,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsIsland: 1
   ID: 3
-  ObjectDescription: tree
+  ObjectDescription:
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &1854689993 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1685541703459444, guid: bc4f23d04e42f4b559542ad840db6530,

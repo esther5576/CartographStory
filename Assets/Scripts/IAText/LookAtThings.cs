@@ -29,16 +29,11 @@ public class LookAtThings : MonoBehaviour
             {
                 Debug.DrawLine(this.transform.position, hit.transform.position, Color.green);
                 print("I'm looking at " + hit.transform.name);
-                myPictureSystem.IDOfIlsandToAdd = hit.transform.GetComponent<ObjectsID>().ID;
+                ObjectsID ScriptOnItem = hit.transform.GetComponent<ObjectsID>();
+                myPictureSystem.IDOfIlsandToAdd = ScriptOnItem.ID;
 
-                int randomDescription = Random.Range(0, hit.transform.GetComponent<ObjectsID>().ObjectDescription.Count);
-
-                if (!myMachineCall.objectsSeen.Contains(hit.transform.GetComponent<ObjectsID>().ObjectDescription[randomDescription]))
-                {
-                    myMachineCall.objectsSeen.Add(hit.transform.GetComponent<ObjectsID>().ObjectDescription[randomDescription]);
-                }
-
-                myPictureSystem.TakePic();
+                int randomDescription = Random.Range(0, ScriptOnItem.ObjectDescription.Count);
+                myPictureSystem.TakePic(ScriptOnItem.ObjectDescription[randomDescription]);
             }
             else
             {

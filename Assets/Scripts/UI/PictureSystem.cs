@@ -33,18 +33,18 @@ public class PictureSystem : MonoBehaviour
 		
 	}
 
-    public void TakePic()
+    public void TakePic(string description)
     {
         if (!inPreviewMode)
         {
             postprocessing.profile = profileNoVigPic;
-            StartCoroutine(waitFrame());
+            StartCoroutine(waitFrame(description));
             inPreviewMode = true;
             cameraPicUI.alpha = 0;
         }
     }
 
-    IEnumerator waitFrame()
+    IEnumerator waitFrame(string description)
     {
         yield return new WaitForEndOfFrame();
 
@@ -63,10 +63,12 @@ public class PictureSystem : MonoBehaviour
         int theID = DataManager.AllIslands.FindIndex(a => a.ID == IDOfIlsandToAdd);
         Debug.Log(theID + " THE ISLAND " + DataManager.AllIslands[theID].ID);
 
-        if(DataManager.AllIslands[theID].Pictures.Count < 10)
+        if(DataManager.AllIslands[theID].Pictures.Count < DataManager.MaxPicturePerIsland)
         {
             DataManager.AllIslands[theID].Pictures.Add(screenshotSprite);
-        }else
+            DataManager.AllIslands[theID].PicturesDescription.Add(description);
+        }
+        else
         {
             Debug.LogWarning("YOU HAVE NO MORE SPACE FOR THIS ISLAND!");
         }
@@ -117,6 +119,7 @@ public class PictureSystem : MonoBehaviour
 
         int theID = DataManager.AllIslands.FindIndex(a => a.ID == IDOfIlsandToAdd);
         DataManager.AllIslands[theID].Pictures.RemoveAt(DataManager.AllIslands[theID].Pictures.Count - 1);
+        DataManager.AllIslands[theID].PicturesDescription.RemoveAt(DataManager.AllIslands[theID].Pictures.Count - 1);
     }
 
     public void EnableMorePics()
