@@ -4,6 +4,7 @@ import threading
 import Queue
 from time import sleep
 from ml import generate
+import traceback
 
 class GPUTask(object):
     def __init__(self):
@@ -64,8 +65,9 @@ class GenerateStoryTask(GPUTask):
     def run(self):
         try:
             self.result = generate.story(self.model, self.image)
-        except Exception:
+        except Exception as e:
             self.error = 'An error happend wile processing image'
+        traceback.print_exc()
 
 class StoryFromSentencesTask(GPUTask):
     def __init__(self, model, sentences):
@@ -77,8 +79,8 @@ class StoryFromSentencesTask(GPUTask):
 
     def run(self):
         try:
-            self.result = generate.storyFromSentence(self.model, self.sentences)
-        except Exception e:
+            self.result = generate.storyFromSentences(self.model, self.sentences)
+        except Exception as e:
             self.error = 'An error happend wile processing sentences : ' + str(e)
 
 def generateSentence(words):
