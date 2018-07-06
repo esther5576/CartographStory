@@ -50,6 +50,10 @@ public class BoatSound : MonoBehaviour
         {
             if (boatControls.actualSpeed < 1 && boatControls.actualSpeed > 0)
             {
+                if(ClipSail.IsPlaying())
+                {
+                    ClipSail.Stop();
+                }
                 Debug.Log("STOP2");
                 ClipSail.Play();
                 SailUp.Stop();

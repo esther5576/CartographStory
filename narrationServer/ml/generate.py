@@ -80,7 +80,7 @@ def storyFromSentences(z, sentences, bw=50, lyric=False):
     svecs = skipthoughts.encode(z['stv'], sentences, verbose=False)
 
     # Style shifting
-    shift = svecs.mean(0) - z['bneg'] + z['bpos']
+    shift = svecs.mean(0) + z['bpos'] - z['bneg']
 
     # Generate story conditioned on shift
     passage = decoder.run_sampler(z['dec'], shift, beam_width=bw)

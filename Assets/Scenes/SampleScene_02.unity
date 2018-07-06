@@ -5947,6 +5947,11 @@ Prefab:
       propertyPath: PlayEvent
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114020889228954398, guid: c806ca586df0e624d99ee1afd8588b8e,
+        type: 2}
+      propertyPath: Event
+      value: event:/Boat/Clips
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c806ca586df0e624d99ee1afd8588b8e, type: 2}
   m_IsPrefabParent: 0
