@@ -5562,7 +5562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -6840,7 +6840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -12676,6 +12676,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114884560758189466, guid: 166ff68b0ff4e7c4f854b2cfe65b3a97,
+        type: 2}
+      propertyPath: MachineCallScript
+      value: 
+      objectReference: {fileID: 924036604}
     - target: {fileID: 114884560758189466, guid: 166ff68b0ff4e7c4f854b2cfe65b3a97,
         type: 2}
       propertyPath: CameraToDesactivate

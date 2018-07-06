@@ -113,13 +113,15 @@ public class PictureSystem : MonoBehaviour
         DOTween.Kill("setup03");
         #endregion
 
+        Debug.Log("Don't save picture");
+
         DOTween.To(() => camerapreview.alpha, x => camerapreview.alpha = x, 0, 0.5f).SetDelay(1).SetId("dontsave01").OnComplete(EnableMorePics);
         imagepreview.transform.DOLocalMoveY(500, 1).SetEase(Ease.InBack).SetId("dontsave02");
         imagepreview.transform.DOScale(0.1f, 1).SetId("dontsave03");
 
         int theID = DataManager.AllIslands.FindIndex(a => a.ID == IDOfIlsandToAdd);
         DataManager.AllIslands[theID].Pictures.RemoveAt(DataManager.AllIslands[theID].Pictures.Count - 1);
-        DataManager.AllIslands[theID].PicturesDescription.RemoveAt(DataManager.AllIslands[theID].Pictures.Count - 1);
+        DataManager.AllIslands[theID].PicturesDescription.RemoveAt(DataManager.AllIslands[theID].PicturesDescription.Count - 1);
     }
 
     public void EnableMorePics()

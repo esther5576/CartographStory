@@ -63,7 +63,7 @@ public class MachineCall : MonoBehaviour {
         }
         catch
         {
-            return "Time out";
+            return "... BZZZrrrrTtttt ... Cannot analyse data ... Please try to validate data again.";
         }
 
         var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
