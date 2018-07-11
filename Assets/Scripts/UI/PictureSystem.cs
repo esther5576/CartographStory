@@ -48,48 +48,53 @@ public class PictureSystem : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        // CREATE THE TEXTURE WITH SCREENSHOT
-        Texture2D screenshotTexture = ScreenCapture.CaptureScreenshotAsTexture();
-        //CREATE A SPRITE
-        Sprite screenshotSprite = Sprite.Create(screenshotTexture, new Rect(0, 0, screenshotTexture.width, screenshotTexture.height), new Vector2(0f, 0f));
-
-        //SETTHE SPRITE ON THE PREVIEW SCREEN
-        if (debugImage != null)
-        {
-            debugImage.GetComponent<Image>().sprite = screenshotSprite;
-            debugImage.color = new Color(1, 1, 1, 1);
-        }
-
         int theID = DataManager.AllIslands.FindIndex(a => a.ID == IDOfIlsandToAdd);
         Debug.Log(theID + " THE ISLAND " + DataManager.AllIslands[theID].ID);
 
-        if(DataManager.AllIslands[theID].Pictures.Count < DataManager.MaxPicturePerIsland)
+        if (DataManager.AllIslands[theID].Pictures.Count < DataManager.MaxPicturePerIsland)
         {
+
+            // CREATE THE TEXTURE WITH SCREENSHOT
+            Texture2D screenshotTexture = ScreenCapture.CaptureScreenshotAsTexture();
+            //CREATE A SPRITE
+            Sprite screenshotSprite = Sprite.Create(screenshotTexture, new Rect(0, 0, screenshotTexture.width, screenshotTexture.height), new Vector2(0f, 0f));
+
+            //SETTHE SPRITE ON THE PREVIEW SCREEN
+            if (debugImage != null)
+            {
+                debugImage.GetComponent<Image>().sprite = screenshotSprite;
+                debugImage.color = new Color(1, 1, 1, 1);
+            }
+
+       
             DataManager.AllIslands[theID].Pictures.Add(screenshotSprite);
             DataManager.AllIslands[theID].PicturesDescription.Add(description);
+
+            #region Kill tweens
+            DOTween.Kill("save01");
+            DOTween.Kill("save02");
+            DOTween.Kill("save03");
+            DOTween.Kill("dontsave01");
+            DOTween.Kill("dontsave02");
+            DOTween.Kill("dontsave03");
+            #endregion
+
+            imagepreview.transform.DOLocalMoveY(38.7f, 0).SetEase(Ease.InBack).SetId("setup01");
+            imagepreview.transform.DOScale(1f, 0).SetId("setup02");
+            DOTween.To(() => camerapreview.alpha, x => camerapreview.alpha = x, 1, 0.5f).SetId("setup03");
+            imagepreview.sprite = screenshotSprite;
+
+            yield return new WaitForEndOfFrame();
+            postprocessing.profile = profileVigPic;
+            cameraPicUI.alpha = 1;
         }
         else
         {
             Debug.LogWarning("YOU HAVE NO MORE SPACE FOR THIS ISLAND!");
+
+            yield return new WaitForEndOfFrame();
+            postprocessing.profile = profileVigPic;
         }
-
-        #region Kill tweens
-        DOTween.Kill("save01");
-        DOTween.Kill("save02");
-        DOTween.Kill("save03");
-        DOTween.Kill("dontsave01");
-        DOTween.Kill("dontsave02");
-        DOTween.Kill("dontsave03");
-        #endregion
-
-        imagepreview.transform.DOLocalMoveY(38.7f, 0).SetEase(Ease.InBack).SetId("setup01");
-        imagepreview.transform.DOScale(1f, 0).SetId("setup02");
-        DOTween.To(() => camerapreview.alpha, x => camerapreview.alpha = x, 1, 0.5f).SetId("setup03");
-        imagepreview.sprite = screenshotSprite;
-
-        yield return new WaitForEndOfFrame();
-        postprocessing.profile = profileVigPic;
-        cameraPicUI.alpha = 1;
     }
 
     public void SaveImage()
