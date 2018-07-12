@@ -34,6 +34,11 @@ namespace UnityStandardAssets.Cameras
         public float damping;
         bool launchedRot = true;
         Vector3 initialDif;
+        public float maxY = 50;
+        public float minY = -50;
+        public float maxX = 50;
+        public float minX = -50;
+        public float Xangle = -15;
         #endregion
 
         private void Start()
@@ -129,23 +134,50 @@ namespace UnityStandardAssets.Cameras
                 if (!launchedRot)
                 {
                     launchedRot = true;
-                    pivot.transform.DOLocalRotate(Vector3.zero, damping).SetEase(Ease.OutQuart).SetId("camRot");
+                    pivot.transform.DOLocalRotate(new Vector3(Xangle,0,0), damping).SetEase(Ease.OutQuart).SetId("camRot");
                 }
 
-                if(pivot.transform.eulerAngles.y < 0.05f)
+                /*if(pivot.transform.eulerAngles.y < 0.05f)
                 {
                     DOTween.Kill("camRot");
                     pivot.transform.eulerAngles = Vector3.zero;
-                }
+                }*/
             }
             else
             {
                 launchedRot = false;
                 DOTween.Kill("camRot");
-                float angle = Mathf.LerpAngle(pivot.transform.localEulerAngles.y, pivot.transform.localEulerAngles.y + 1 * Input.GetAxis("Mouse X") * speed, Time.time);
-                pivot.transform.localEulerAngles = new Vector3(0, angle, 0);
-                //pivot.transform.localPosition = 
+
+                #region Left right control
+                float angleYcalcul = Mathf.LerpAngle(pivot.transform.localEulerAngles.y, pivot.transform.localEulerAngles.y + 1 * Input.GetAxis("Mouse X") * speed, Time.time);
+                if(angleYcalcul > maxY && angleYcalcul < (maxY + 20))
+                {
+                    angleYcalcul = maxY;
+                }
+                if(angleYcalcul < minY && angleYcalcul > (minY - 20))
+                {
+                    angleYcalcul = minY;
+                }
+                //Debug.Log(angle);
+                //pivot.transform.localEulerAngles = new Vector3(Zangle, angle, 0);
+                #endregion
+
+                #region Up and Down control
+                float angleXcalcul = Mathf.LerpAngle(pivot.transform.localEulerAngles.x, pivot.transform.localEulerAngles.x + 1 * - Input.GetAxis("Mouse Y") * speed, Time.time);
+                if (angleXcalcul > maxX && angleXcalcul < (maxX + 20))
+                {
+                    angleXcalcul = maxX;
+                }
+                if (angleXcalcul < minX && angleXcalcul > (minX - 20))
+                {
+                    angleXcalcul = minX;
+                }
+                pivot.transform.localEulerAngles = new Vector3(angleXcalcul, angleYcalcul, 0);
+                Debug.Log(angleXcalcul);
+                #endregion
             }
+
+            //pivot.transform.localEulerAngles = new Vector3(Zangle, pivot.transform.localEulerAngles.y, pivot.transform.localEulerAngles.z);
         }
     }
 }

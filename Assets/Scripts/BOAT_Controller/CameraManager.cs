@@ -39,7 +39,7 @@ public class CameraManager : MonoBehaviour
         #region outisde camera controller
         if (OutsideCamera.GetComponentInChildren<Camera>().enabled == true)
         {
-            if (CrossPlatformInputManager.GetAxis("Mouse X") == 0)
+            if (CrossPlatformInputManager.GetAxis("Mouse X") == 0 && CrossPlatformInputManager.GetAxis("Mouse Y") == 0)
             {
                 if (waitTime < maxWaitTime)
                 {
