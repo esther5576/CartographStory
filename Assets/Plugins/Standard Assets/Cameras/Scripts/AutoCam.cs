@@ -173,7 +173,7 @@ namespace UnityStandardAssets.Cameras
                     angleXcalcul = minX;
                 }
                 pivot.transform.localEulerAngles = new Vector3(angleXcalcul, angleYcalcul, 0);
-                Debug.Log(angleXcalcul);
+                //Debug.Log(angleXcalcul);
                 #endregion
             }
 

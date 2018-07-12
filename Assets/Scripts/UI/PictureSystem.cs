@@ -21,6 +21,8 @@ public class PictureSystem : MonoBehaviour
 
     bool inPreviewMode = false;
 
+    public UnityStandardAssets.Cameras.FreeLookCam _myPicCam;
+
     // Use this for initialization
     void Start ()
     {
@@ -41,6 +43,7 @@ public class PictureSystem : MonoBehaviour
             StartCoroutine(waitFrame(description));
             inPreviewMode = true;
             cameraPicUI.alpha = 0;
+            _myPicCam.enabled = false;
         }
     }
 
@@ -127,10 +130,12 @@ public class PictureSystem : MonoBehaviour
         int theID = DataManager.AllIslands.FindIndex(a => a.ID == IDOfIlsandToAdd);
         DataManager.AllIslands[theID].Pictures.RemoveAt(DataManager.AllIslands[theID].Pictures.Count - 1);
         DataManager.AllIslands[theID].PicturesDescription.RemoveAt(DataManager.AllIslands[theID].PicturesDescription.Count - 1);
+        
     }
 
     public void EnableMorePics()
     {
         inPreviewMode = false;
+        _myPicCam.enabled = true;
     }
 }
