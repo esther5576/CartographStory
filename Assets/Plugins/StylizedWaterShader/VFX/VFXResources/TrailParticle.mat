@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: TrailParticle
   m_Shader: {fileID: 4800000, guid: fd615791d5ca41247a2f355782cd4632, type: 3}
-  m_ShaderKeywords: _A_ON _OPACITYCLIP_ON
+  m_ShaderKeywords: PIXELSNAP_ON _B_ON _G_ON _OPACITYCLIP_ON _R_ON
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _ParticleTextureA:
-        m_Texture: {fileID: 2800000, guid: 24cfd93a554d9ed4a910c43829cc0af6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 66919ea2d5ec91a40b6a4a8d57467b39, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParticleTextureB:
@@ -27,12 +27,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - PixelSnap: 0
-    - _A: 1
-    - _B: 0
+    - PixelSnap: 1
+    - _A: 0
+    - _B: 1
     - _Cutoff: 0.5
-    - _G: 0
+    - _G: 1
     - _Opacity: 1
     - _OpacityClip: 1
-    - _R: 0
+    - _R: 1
     m_Colors: []

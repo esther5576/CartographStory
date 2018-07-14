@@ -131,7 +131,10 @@ namespace UnityStandardAssets.Cameras
 
         public void OnEnable()
         {
-            m_Cam.GetComponent<Camera>().fieldOfView = 60;
+            /*if (Input.GetKeyUp(KeyCode.C))
+            {
+                m_Cam.GetComponent<Camera>().fieldOfView = 60;
+            }*/
         }
     }
 }
