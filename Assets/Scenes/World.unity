@@ -537,6 +537,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &75528700 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -563,11 +568,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.64865154
       objectReference: {fileID: 0}
     - target: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
       propertyPath: m_LocalRotation.z
@@ -575,7 +580,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.76108557
       objectReference: {fileID: 0}
     - target: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
       propertyPath: m_RootOrder
@@ -589,6 +594,10 @@ Prefab:
     - target: {fileID: 1966298269466912, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
       propertyPath: m_Name
       value: FishFlowmap (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 279.12
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114028314966158552, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
@@ -853,6 +862,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &132203223 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -898,6 +912,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &154035719 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -1025,6 +1044,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &226936504 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -1048,6 +1072,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &228763227 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -1071,6 +1100,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &229598585 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -1416,6 +1450,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &327111056 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -1548,6 +1587,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &331945344 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -1732,6 +1776,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &337286667 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -1755,6 +1804,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &340537016 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -1832,6 +1886,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &451550235 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -6550,6 +6609,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &488831478 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -6577,6 +6641,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &512061166 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -6846,6 +6915,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &630040812 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -6921,6 +6995,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &653242102 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -7161,6 +7240,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &774595931 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -7445,6 +7529,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &873470528 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -7665,6 +7754,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &954777280 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -7907,6 +8001,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &1029393010 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -8024,6 +8123,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &1055339626 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -8528,6 +8632,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &1179326412 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -8551,6 +8660,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &1204189627 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -8803,6 +8917,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &1366451763 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -8826,6 +8945,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &1368722859 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -8849,6 +8973,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &1394807728 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -9312,6 +9441,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &1580005835 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -9389,6 +9523,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &1613666006 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -9412,6 +9551,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &1648641503 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -9435,6 +9579,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &1667192075 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -9458,6 +9607,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &1709089847 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -9669,6 +9823,11 @@ MonoBehaviour:
   speed: 2
   pivot: {fileID: 1318287171}
   damping: 2
+  maxY: 50
+  minY: -50
+  maxX: 50
+  minX: -50
+  Xangle: -15
 --- !u!114 &1756317534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14919,6 +15078,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &1915459733 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -14994,6 +15158,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &1969800802 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -15233,15 +15402,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
       propertyPath: m_LocalRotation.w
@@ -15259,6 +15428,14 @@ Prefab:
     - target: {fileID: 1966298269466912, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
       propertyPath: m_Name
       value: FishFlowmap (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114028314966158552, guid: d5ee5e85088836346b8bafe001fbe646, type: 2}
@@ -15282,6 +15459,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesse: 20
   tex: {fileID: 2800000, guid: d3c1b632e4ad21d4b89489be3a503f68, type: 3}
+  timeOutsidePathMax: 1
+  state: 0
+  randomnessChanceXY: 100
+  timeOutsidePathMaxZ: 1
+  randomnessChanceZ: 100
 --- !u!4 &2105879842 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
