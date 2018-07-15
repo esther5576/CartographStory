@@ -9,35 +9,35 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1526760541452192}
+  m_RootGameObject: {fileID: 1495548883787264}
   m_IsPrefabParent: 1
---- !u!1 &1526760541452192
+--- !u!1 &1495548883787264
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4586523411980738}
-  - component: {fileID: 65683374822753954}
-  - component: {fileID: 114310962118552798}
+  - component: {fileID: 4543106725496756}
+  - component: {fileID: 65722192733720536}
+  - component: {fileID: 114257990215856898}
   m_Layer: 0
-  m_Name: Base Jumping Fish Prefab
+  m_Name: lieu Undersee Fish Prefab (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1991250542992896
+--- !u!1 &1769644102596116
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4639605763001440}
-  - component: {fileID: 198209843002477016}
-  - component: {fileID: 199957935992534276}
+  - component: {fileID: 4248184380135014}
+  - component: {fileID: 198601185965707956}
+  - component: {fileID: 199426245515027244}
   m_Layer: 9
   m_Name: Particle System Fish water out
   m_TagString: Untagged
@@ -45,64 +45,64 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4586523411980738
+--- !u!4 &4248184380135014
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1526760541452192}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 441.2, y: 0, z: -332.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4639605763001440}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4639605763001440
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1991250542992896}
+  m_GameObject: {fileID: 1769644102596116}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15, y: -10, z: -25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4586523411980738}
+  m_Father: {fileID: 4543106725496756}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &65683374822753954
+--- !u!4 &4543106725496756
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1495548883787264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4248184380135014}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65722192733720536
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1526760541452192}
+  m_GameObject: {fileID: 1495548883787264}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114310962118552798
+--- !u!114 &114257990215856898
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1526760541452192}
+  m_GameObject: {fileID: 1495548883787264}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e84f560c80d9ea24f88ed08df836a690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpFishParticleSystem: {fileID: 198209843002477016}
+  JumpFishParticleSystem: {fileID: 198601185965707956}
   ChanceToTrigger: 0.75
---- !u!198 &198209843002477016
+--- !u!198 &198601185965707956
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1991250542992896}
+  m_GameObject: {fileID: 1769644102596116}
   serializedVersion: 5
   lengthInSec: 0.5
   simulationSpeed: 1
@@ -229,7 +229,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 9.5
+      scalar: 8
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -721,14 +721,14 @@ ParticleSystem:
     serializedVersion: 5
     enabled: 1
     type: 4
-    angle: 0
+    angle: 5
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: -25, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
+    m_Rotation: {x: -20, y: 0, z: 0}
+    m_Scale: {x: 3, y: 3, z: 3}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -806,8 +806,8 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 360
-      mode: 3
+      value: 180
+      mode: 0
       spread: 0
       speed:
         serializedVersion: 2
@@ -4640,13 +4640,13 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &199957935992534276
+--- !u!199 &199426245515027244
 ParticleSystemRenderer:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1991250542992896}
+  m_GameObject: {fileID: 1769644102596116}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -4691,7 +4691,7 @@ ParticleSystemRenderer:
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 4300000, guid: eb4d5730ff516794b900104fbd7e69b5, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 1d4f8b86de94c3e42842fe7864435c7c, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
