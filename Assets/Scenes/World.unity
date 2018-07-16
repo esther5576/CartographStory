@@ -1781,6 +1781,28 @@ MonoBehaviour:
   randomnessChanceXY: 100
   timeOutsidePathMaxZ: 1
   randomnessChanceZ: 100
+--- !u!205 &337286665
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 337286663}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!4 &337286667 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4236757017495186, guid: d5ee5e85088836346b8bafe001fbe646,
@@ -9416,8 +9438,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1576222791}
-  m_LocalRotation: {x: 0.03672777, y: 0.54413366, z: 0.02385883, w: -0.8378547}
-  m_LocalPosition: {x: 43.587723, y: -7.0678563, z: 35.944817}
+  m_LocalRotation: {x: 0.03657234, y: -0.17891096, z: 0.006675242, w: 0.98316264}
+  m_LocalPosition: {x: 56.08333, y: 0.9425746, z: 12.724977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 882588516}

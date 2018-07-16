@@ -21,7 +21,7 @@ public class FishFlow : MonoBehaviour
     float maxRandomDirZ = 50;
     float minRandomDirZ = 0;
     float minminRandomDirZ = -50;
-    float maxUnderPossible = -30.0f;
+    float maxUnderPossible = -20.0f;
 
     // Use this for initialization
     void Start ()
@@ -41,12 +41,12 @@ public class FishFlow : MonoBehaviour
             Vector3 posFish = new Vector3(transform.position.x * 10, transform.position.y, transform.position.z * 10);
             int coordX = (int)transform.position.x * 10;
             int coordZ = (int)transform.position.z * 10;
-            print(coordX + " " + coordZ);
+           // print(coordX + " " + coordZ);
 
             // 2) récuppérer la valeur du pixel correspondant
 
             Color c = tex.GetPixel(coordX, coordZ);
-            print(c);
+            //print(c);
             if (c.r > 0.48f && c.r < 0.52f && c.b > 0.48f && c.b < 0.52f)
             {
 
