@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114401076137433672}
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   EditorEvents:
   - {fileID: 114058676737430832}
   - {fileID: 114442088371805306}
@@ -57,9 +57,9 @@ MonoBehaviour:
   - {fileID: 114627271655871042}
   - {fileID: 114291774580993642}
   - {fileID: 114642324144568006}
-  MasterBankRef: {fileID: 114570507643494288}
+  MasterBankRef: {fileID: 114422676124005206}
   StringsBankRef: {fileID: 114401076137433672}
-  stringsBankWriteTime: 636662409594334196
+  stringsBankWriteTime: 636664716266961844
   cacheVersion: 2
 --- !u!114 &114001646725469124
 MonoBehaviour:
@@ -363,7 +363,7 @@ MonoBehaviour:
   Path: event:/OceanCreatures/orca04
   guid: 11aafa00e48f5846b4d41e8b3403a3d3
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -538,7 +538,7 @@ MonoBehaviour:
   Path: event:/OceanCreatures/orca02
   guid: 85bb306d0546cc418d39df793d967239
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -619,7 +619,7 @@ MonoBehaviour:
   Path: event:/Birds/birdForest
   guid: 00418e6d436f984590637c255f71a8e2
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -1056,7 +1056,7 @@ MonoBehaviour:
   Path: event:/Boat/Clip3
   guid: e5705a16051ce643ba5ecdf3172f4f8a
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1098,6 +1098,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: BoatGoing
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114118604102813786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: StopVoile
   Min: 0
   Max: 1
   Default: 0
@@ -1149,7 +1164,7 @@ MonoBehaviour:
   Path: event:/Birds/wingFlaps02
   guid: ea0645b76df3d544b5a5ccb22226f6a3
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1283,7 +1298,7 @@ MonoBehaviour:
   Path: event:/WindsTrees/windTreesLight
   guid: ddec674ccc8e7846a26aedba25790ea6
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -1402,7 +1417,7 @@ MonoBehaviour:
   Path: event:/Boat/BoatAndWaves
   guid: d171a674a9700742a2d36458e4c60057
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -1469,7 +1484,7 @@ MonoBehaviour:
   Path: event:/OceanCreatures/orca03
   guid: 6cd309c42265844a959e3ac2cbd54e3f
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1671,7 +1686,7 @@ MonoBehaviour:
   Path: event:/Birds/birdcallSeagulls
   guid: c73d4f9c0927954c9b4450392130ccd6
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1878,7 +1893,7 @@ MonoBehaviour:
   Path: event:/WindsTrees/windTrees02
   guid: c0ceac2d92a00747b62f3ab7bcee8b42
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -1900,7 +1915,7 @@ MonoBehaviour:
   Path: event:/OceanWater/oceanLapping
   guid: 6366fa3c4be87e4abefee007d76be16a
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -2199,7 +2214,7 @@ MonoBehaviour:
   Path: event:/vol
   guid: 4230a030d178a24581ff2a9a15bf484b
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2445,6 +2460,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114331539243865284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DynamicBoatCrack
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114336707731383796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2504,7 +2534,7 @@ MonoBehaviour:
   Path: event:/Birds/birdcallHawk
   guid: 7720b228a00bb54698e219c2e09489a8
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2605,7 +2635,7 @@ MonoBehaviour:
   Path: event:/OceanWater/oceanLow
   guid: 11447e42bbb0e54a80c6646fbf7134f6
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -2627,7 +2657,7 @@ MonoBehaviour:
   Path: event:/WindsTrees/windTreesHeavy
   guid: d6fe0ddca26c2e40b1d52bd42225d9c5
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -2828,7 +2858,7 @@ MonoBehaviour:
   Path: event:/Birds/seagulls
   guid: 0ed233281a71b443a651b04d74386273
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -2873,6 +2903,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114396953383380142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BoatGoing
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114397844274418584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2900,7 +2945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636662409594334196
+  lastModified: 636664716266961844
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -3014,7 +3059,7 @@ MonoBehaviour:
   Path: event:/Boat/Clip2
   guid: 82bfd2f638d6154ab7a330168f32afe8
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3112,6 +3157,25 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114422676124005206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\ICAN 5\DERNIER PROJET\PROTO\CartographStory\Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636664716266674721
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 27393312
+  Exists: 1
 --- !u!114 &114425957372355352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3268,7 +3332,7 @@ MonoBehaviour:
   Path: event:/WindsTrees/windTrees01
   guid: 0e3b1910d685ea48ad1da4ed082e83d9
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -3320,7 +3384,7 @@ MonoBehaviour:
   Path: event:/Birds/birdSongs02
   guid: 615e93c45021f2449ec706dc03ba36e2
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -3466,7 +3530,7 @@ MonoBehaviour:
   Path: event:/WindsOcean/windLow
   guid: 98633e97c0c7de43b95e444e5ddac779
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -3518,7 +3582,7 @@ MonoBehaviour:
   Path: event:/Birds/birdSongs01
   guid: d84c3301ef812b489a918713081b1355
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -3540,12 +3604,12 @@ MonoBehaviour:
   Path: event:/Boat/SailDown
   guid: 288f7640c39fe4489ea9bdf830f04528
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114768644301416138}
+  - {fileID: 114118604102813786}
   MinDistance: 1
   MaxDistance: 20
   Length: 7200
@@ -3663,12 +3727,12 @@ MonoBehaviour:
   Path: event:/OceanWater/oceanQuickWaves
   guid: 3d94512253a1f246bece1587ec7b8277
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114418765311178366}
+  - {fileID: 114396953383380142}
   MinDistance: 1
   MaxDistance: 20
   Length: 44377
@@ -3881,12 +3945,12 @@ MonoBehaviour:
   Path: event:/Boat/Sails
   guid: 4b8e07404b78624980c595820b02177e
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114787914038394726}
+  - {fileID: 114573924501316062}
   MinDistance: 1
   MaxDistance: 20
   Length: 16000
@@ -3949,7 +4013,7 @@ MonoBehaviour:
   Path: event:/Collisions/IceImpact
   guid: b8dc193bfdec604f982cc4636b0966a9
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3971,7 +4035,7 @@ MonoBehaviour:
   Path: event:/Boat/Bell
   guid: c560420e9284a64993f3f2ca803eccd3
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4008,7 +4072,7 @@ MonoBehaviour:
   Path: event:/OceanWater/oceanShore
   guid: 6dbc3c5f02c13e4b98b779f57e625e79
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -4090,12 +4154,12 @@ MonoBehaviour:
   Path: event:/Boat/BoatCrackAndWind
   guid: 0e25aa8cf8184942a468a962ca321b3f
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114485325951462570}
+  - {fileID: 114331539243865284}
   MinDistance: 1
   MaxDistance: 20
   Length: 135524
@@ -4163,6 +4227,21 @@ MonoBehaviour:
   - Name: 
     Value: 27393312
   Exists: 1
+--- !u!114 &114573924501316062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: OuvertureVoile
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114575532245627130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4185,6 +4264,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1294
+--- !u!114 &114577195804411322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: SailDirection
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114583451403484278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4289,7 +4383,7 @@ MonoBehaviour:
   Path: event:/WindsOcean/windBase
   guid: c2ae9ee8ac5163498c4ec60809b8efae
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -4333,7 +4427,7 @@ MonoBehaviour:
   Path: event:/Boat/Clip
   guid: 5db14bdf8158b6488ac4c74aff1ff5b0
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4625,7 +4719,7 @@ MonoBehaviour:
   Path: event:/Boat/Clips
   guid: 17f7db746939f74a93efcf828ce1f730
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4728,12 +4822,12 @@ MonoBehaviour:
   Path: event:/Boat/ChangeSailDirection
   guid: 376b1e232f0b2f409fce449e38d6594c
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114432464091432616}
+  - {fileID: 114577195804411322}
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
@@ -4766,7 +4860,7 @@ MonoBehaviour:
   Path: snapshot:/CarnetDeboard
   guid: 9a826219363e7f42bae058d96809c7f7
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -4923,7 +5017,7 @@ MonoBehaviour:
   Path: event:/OceanWater/oceanBase
   guid: 4920ebb16e039d4fb8f68c6a75bca245
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -5577,7 +5671,7 @@ MonoBehaviour:
   Path: event:/Boat/BoatWood
   guid: e519b3049769c745b0c0f8522dae7d9f
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -5817,7 +5911,7 @@ MonoBehaviour:
   Path: event:/WindsOcean/windCave
   guid: 7e2ea20c690343448b5f835081bc11ad
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6274,7 +6368,7 @@ MonoBehaviour:
   Path: event:/Birds/woodpeckerCall
   guid: c2735f0d314ea64583a0ce2f8fe6cb02
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6445,12 +6539,12 @@ MonoBehaviour:
   Path: event:/WindsOcean/windLight
   guid: fcd105ba033ce0499a434817b964329a
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114678320588717688}
+  - {fileID: 114983356131140326}
   MinDistance: 1
   MaxDistance: 20
   Length: 36037
@@ -6468,7 +6562,7 @@ MonoBehaviour:
   Path: event:/Others/NightBugs
   guid: 311c9506559da24fb15f502d56d1caf0
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -6490,7 +6584,7 @@ MonoBehaviour:
   Path: event:/Boat/SailUp
   guid: 905ff27bcb11ab45aa069429197e1f39
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -6639,7 +6733,7 @@ MonoBehaviour:
   Path: event:/Birds/wingFlaps01
   guid: 77cbcde9c782c649a195e637d29a6598
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6759,6 +6853,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114983356131140326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: WindForce
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114986587877810688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6788,7 +6897,7 @@ MonoBehaviour:
   Path: event:/OceanCreatures/orca01
   guid: 8b07e06cb88aed468da8d930db9c65dc
   Banks:
-  - {fileID: 114570507643494288}
+  - {fileID: 114422676124005206}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
