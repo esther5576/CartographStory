@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 65916772872517382}
   - component: {fileID: 114907802887091860}
   m_Layer: 0
-  m_Name: bancLeopardShark
+  m_Name: bancleopardShark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
