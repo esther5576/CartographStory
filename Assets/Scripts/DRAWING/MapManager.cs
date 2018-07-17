@@ -220,11 +220,12 @@ public class MapManager : MonoBehaviour
                 OpenMap();
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1)) IslandSelected = 0;
-        if (Input.GetKeyDown(KeyCode.Alpha2)) IslandSelected = 1;
-        if (Input.GetKeyDown(KeyCode.Alpha3)) IslandSelected = 2;
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) PreviousPage();
-        if (Input.GetKeyDown(KeyCode.RightArrow)) NextPage();
+        if (DrawSystemParent.activeInHierarchy)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftArrow)) PreviousPage();
+            if (Input.GetKeyDown(KeyCode.RightArrow)) NextPage();
+        }
+        
     }
 
     public void RemoveIslandPicture(int ID)
