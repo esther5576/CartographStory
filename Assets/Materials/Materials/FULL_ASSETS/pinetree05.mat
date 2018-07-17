@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pinetree01
-  m_Shader: {fileID: 4800000, guid: 3b6c771b73ea3514cac756099d90c51b, type: 3}
+  m_Name: pinetree05
+  m_Shader: {fileID: 4800000, guid: eb4f62df73441534686b6710d721a862, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -62,6 +62,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -79,6 +83,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RampS:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SnowRamp:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -102,7 +110,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.107
     - _GlossyReflections: 1
-    - _Height: 0.5
+    - _Height: 0.0166
     - _LM: 0
     - _Metallic: 0
     - _Mode: 1
@@ -114,7 +122,11 @@ Material:
     - _RIM: 0
     - _Rigidness: 13.9
     - _RimBrightness: 3.2
+    - _RimPower: 0.22
+    - _SUV: 0
     - _SmoothnessTextureChannel: 0
+    - _SnowOffset: 0
+    - _SnowSize: 0.34
     - _SpecOffset: 0.5
     - _SpecSize: 0.9
     - _SpecularHighlights: 1
@@ -135,7 +147,9 @@ Material:
     - _EmisTint: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _IrColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _RimColor: {r: 0.49, g: 0.94, b: 0.6399999, a: 1}
+    - _RimColor: {r: 0.9198113, g: 0.9791092, b: 1, a: 1}
     - _SColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SnowAngle: {r: 0, g: 1, b: 0, a: 1}
+    - _SnowColor: {r: 0.08018869, g: 0.93573236, b: 1, a: 1}
+    - _TColor: {r: 0.73794055, g: 0.9716981, b: 0.9716981, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 0.5}
