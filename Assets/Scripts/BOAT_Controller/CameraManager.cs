@@ -48,7 +48,6 @@ public class CameraManager : MonoBehaviour
                 else
                 {
                     _myAutoCam.followPlayer = true;
-
                 }
             }
             else
@@ -57,6 +56,13 @@ public class CameraManager : MonoBehaviour
 
                 waitTime = 0;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            _myAutoCam.followPlayer = true;
+
+            waitTime = 0;
         }
         #endregion
 
