@@ -15,7 +15,7 @@ SpriteAtlas:
       textureCompression: 0
       filterMode: 1
       generateMipMaps: 0
-      readable: 0
+      readable: 1
       crunchedCompression: 0
       sRGB: 1
     platformSettings: []
@@ -87,7 +87,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 8727cfcad4db7a14095230a93a8563c9, type: 3}
   - {fileID: 21300000, guid: 123c20d1e5c29d74e8ba4baf16f8fa1c, type: 3}
   - {fileID: 21300000, guid: c7422888b535d16499721643e9b2727f, type: 3}
-  - {fileID: 21300000, guid: bee3732e1a5038e478f0bb7776bef51b, type: 3}
   - {fileID: 21300000, guid: bbed35f8208259f439023ea85649d140, type: 3}
   - {fileID: 21300000, guid: c2315324a9ef3354dbfaf4573ddd5dd9, type: 3}
   - {fileID: 21300000, guid: 9454ddd985e15e04b99db8dafd8c8d09, type: 3}
@@ -124,7 +123,6 @@ SpriteAtlas:
   - q
   - STAN-st
   - SOL
-  - AC-a
   - LAGU-l
   - CEN-c
   - ea
