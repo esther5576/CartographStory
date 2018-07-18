@@ -112,15 +112,15 @@ Material:
     - _OutlineZ: 0.2
     - _Parallax: 0.02
     - _RIM: 0
-    - _Rigidness: 4.2
+    - _Rigidness: 10
     - _RimBrightness: 3.2
     - _SmoothnessTextureChannel: 0
     - _SpecOffset: 0.5
     - _SpecSize: 0.9
     - _SpecularHighlights: 1
-    - _Speed: 24.9
+    - _Speed: 22
     - _SrcBlend: 1
-    - _SwayMax: 0.008
+    - _SwayMax: 0.02
     - _TextureDistort: 0.2
     - _TopBottomOffset: 3.2
     - _UVSec: 0
