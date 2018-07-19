@@ -33,12 +33,12 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionResolution: 1024
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1032166309}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.17426488, g: 0.2473414, b: 0.3500563, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: d8a25fc24fe2a494885f4e6653caf43f,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -4246,6 +4247,11 @@ Prefab:
       propertyPath: ShapeModule.radiusThickness
       value: 1.0000
       objectReference: {fileID: 0}
+    - target: {fileID: 198477668043076380, guid: e8ab6ae233a44ea499c1558927bef5da,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8ab6ae233a44ea499c1558927bef5da, type: 2}
   m_IsPrefabParent: 0
@@ -7311,6 +7317,11 @@ Prefab:
     - target: {fileID: 1765580836554564, guid: e8ab6ae233a44ea499c1558927bef5da, type: 2}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198477668043076380, guid: e8ab6ae233a44ea499c1558927bef5da,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
       objectReference: {fileID: 0}
     - target: {fileID: 198477668043076380, guid: e8ab6ae233a44ea499c1558927bef5da,
         type: 2}
@@ -35934,6 +35945,11 @@ Prefab:
       propertyPath: ShapeModule.radiusThickness
       value: 1.0000
       objectReference: {fileID: 0}
+    - target: {fileID: 198477668043076380, guid: e8ab6ae233a44ea499c1558927bef5da,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8ab6ae233a44ea499c1558927bef5da, type: 2}
   m_IsPrefabParent: 0
@@ -43290,6 +43306,11 @@ Prefab:
     - target: {fileID: 1765580836554564, guid: e8ab6ae233a44ea499c1558927bef5da, type: 2}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198477668043076380, guid: e8ab6ae233a44ea499c1558927bef5da,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
       objectReference: {fileID: 0}
     - target: {fileID: 198477668043076380, guid: e8ab6ae233a44ea499c1558927bef5da,
         type: 2}
@@ -51690,6 +51711,11 @@ Prefab:
       propertyPath: ShapeModule.radiusThickness
       value: 1.0000
       objectReference: {fileID: 0}
+    - target: {fileID: 198477668043076380, guid: e8ab6ae233a44ea499c1558927bef5da,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8ab6ae233a44ea499c1558927bef5da, type: 2}
   m_IsPrefabParent: 0
@@ -53253,6 +53279,11 @@ Prefab:
     - target: {fileID: 1662787709646808, guid: e8ab6ae233a44ea499c1558927bef5da, type: 2}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198477668043076380, guid: e8ab6ae233a44ea499c1558927bef5da,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
       objectReference: {fileID: 0}
     - target: {fileID: 198477668043076380, guid: e8ab6ae233a44ea499c1558927bef5da,
         type: 2}
@@ -60250,6 +60281,11 @@ Prefab:
       propertyPath: ShapeModule.radiusThickness
       value: 1.0000
       objectReference: {fileID: 0}
+    - target: {fileID: 198477668043076380, guid: e8ab6ae233a44ea499c1558927bef5da,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8ab6ae233a44ea499c1558927bef5da, type: 2}
   m_IsPrefabParent: 0
@@ -62998,6 +63034,11 @@ Prefab:
     - target: {fileID: 1920721821607386, guid: 1dc1a57e2d7d2db428937c1b453ff57d, type: 2}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198287645989769070, guid: 1dc1a57e2d7d2db428937c1b453ff57d,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
       objectReference: {fileID: 0}
     - target: {fileID: 198287645989769070, guid: 1dc1a57e2d7d2db428937c1b453ff57d,
         type: 2}
@@ -66966,6 +67007,11 @@ Prefab:
       propertyPath: ShapeModule.radiusThickness
       value: 1.0000
       objectReference: {fileID: 0}
+    - target: {fileID: 198287645989769070, guid: 1dc1a57e2d7d2db428937c1b453ff57d,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1dc1a57e2d7d2db428937c1b453ff57d, type: 2}
   m_IsPrefabParent: 0
@@ -68030,7 +68076,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 10861178, guid: 45b02d4b5dab3cf4091552cf46762d30, type: 2}
       propertyPath: m_Intensity
-      value: 0.7
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 11458038, guid: 45b02d4b5dab3cf4091552cf46762d30, type: 2}
       propertyPath: maxIntensity
@@ -68042,11 +68088,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 10861178, guid: 45b02d4b5dab3cf4091552cf46762d30, type: 2}
       propertyPath: m_Shadows.m_Type
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 10861178, guid: 45b02d4b5dab3cf4091552cf46762d30, type: 2}
       propertyPath: m_Shadows.m_Strength
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 10861178, guid: 45b02d4b5dab3cf4091552cf46762d30, type: 2}
       propertyPath: m_Shadows.m_NormalBias
@@ -68163,6 +68209,10 @@ Prefab:
     - target: {fileID: 11458038, guid: 45b02d4b5dab3cf4091552cf46762d30, type: 2}
       propertyPath: BoatLightSpeed
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458038, guid: 45b02d4b5dab3cf4091552cf46762d30, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45b02d4b5dab3cf4091552cf46762d30, type: 2}
@@ -79291,6 +79341,11 @@ Prefab:
     - target: {fileID: 1765580836554564, guid: e8ab6ae233a44ea499c1558927bef5da, type: 2}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198477668043076380, guid: e8ab6ae233a44ea499c1558927bef5da,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
       objectReference: {fileID: 0}
     - target: {fileID: 198477668043076380, guid: e8ab6ae233a44ea499c1558927bef5da,
         type: 2}
