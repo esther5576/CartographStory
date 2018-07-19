@@ -19,12 +19,10 @@ public class EnableDisableMouse : MonoBehaviour
     {
         if (cameraUIPIC.alpha == 1 || MapPrefab.activeSelf || JournalPrefab.activeSelf)
         {
-            Debug.Log("cacaaaaaaaaaaaaa");
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         } else if (cameraUIPIC.alpha == 0 && !MapPrefab.activeSelf && !JournalPrefab.activeSelf)
         {
-            Debug.Log("pipiiiiiiiiiiii");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }

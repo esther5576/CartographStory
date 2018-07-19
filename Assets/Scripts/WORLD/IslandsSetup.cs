@@ -18,7 +18,7 @@ public class IslandsSetup : MonoBehaviour
             }
         }
 
-        Debug.Log("ALL ISLANDS : " + DataManager.AllIslands.Count);
+        Debug.LogWarning("ALL ISLANDS : " + DataManager.AllIslands.Count);
 	}
 	
 	// Update is called once per frame
