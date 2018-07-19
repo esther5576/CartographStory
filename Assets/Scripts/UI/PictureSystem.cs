@@ -97,6 +97,8 @@ public class PictureSystem : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
             postprocessing.profile = profileVigPic;
+            cameraPicUI.alpha = 1;
+            EnableMorePics();
         }
     }
 

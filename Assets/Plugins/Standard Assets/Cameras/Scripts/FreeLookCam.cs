@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using System.Collections.Generic;
 
 namespace UnityStandardAssets.Cameras
 {
@@ -34,6 +35,8 @@ namespace UnityStandardAssets.Cameras
         public float maxFielOfView = 60;
         public float scrollSpeed = 1;
 
+        public List<MeshRenderer> myboatParts = new List<MeshRenderer>();
+
         protected override void Awake()
         {
             base.Awake();
@@ -55,13 +58,6 @@ namespace UnityStandardAssets.Cameras
                 //Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
                 //Cursor.visible = !m_LockCursor;
             }
-        }
-
-
-        private void OnDisable()
-        {
-           // Cursor.lockState = CursorLockMode.None;
-           // Cursor.visible = true;
         }
 
 
@@ -135,6 +131,20 @@ namespace UnityStandardAssets.Cameras
             {
                 m_Cam.GetComponent<Camera>().fieldOfView = 60;
             }*/
+
+            foreach(MeshRenderer t in myboatParts)
+            {
+                t.enabled = false;
+            }
+        }
+
+        public void OnDisable()
+        {
+
+            foreach (MeshRenderer t in myboatParts)
+            {
+                t.enabled = true;
+            }
         }
     }
 }
