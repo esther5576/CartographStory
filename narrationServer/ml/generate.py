@@ -75,14 +75,13 @@ def story(z, image_loc, k=100, bw=50, lyric=False):
 
     return passage
 
-def storyFromSentencesAndImage(z, sentences, image_loc, makePoetic, minOccurence, maxOccurence):
+def storyFromSentencesAndImage(z, sentences, image_loc, makePoetry, minOccurence, maxOccurence):
     """
     Generate a story for an image at location image_loc
     """
 
     k = 100
     bw = 50
-    lyric = False
 
     caps = []
 
@@ -142,14 +141,13 @@ def storyFromSentencesAndImage(z, sentences, image_loc, makePoetic, minOccurence
         passage = decoder.run_sampler(z['dec'], shift, beam_width=bw)
 
     print 'OUTPUT: '
-    if lyric:
-        for line in passage.split(','):
-            if line[0] != ' ':
-                print line
-            else:
-                print line[1:]
-    else:
-        print passage
+    print passage
+
+    if (makePoetry):
+        passage = makePoetic(passage, minOccurence, maxOccurence)
+
+    print "OUTPUT POETIC :"
+    print passage
 
     return passage
 
@@ -173,6 +171,18 @@ def storyFromSentences(z, sentences, bw=50, lyric=False):
         print passage
 
     return passage
+
+def makePoetic(sentence, minOccurence = 3, maxOccurence = 100):
+    poeticSentence = ""
+    words = sentence.split()
+    for word in words:
+        if (word.lower() in occurences):
+            print word + " has an occurence of " + str(occurences[word.lower()])
+            if (occurences[word.lower()] >= minOccurence and occurences[word.lower()] <= maxOccurence):
+                poeticSentence += word + " "
+        else:
+            print word + " is not in the database."
+    return poeticSentence
 
 
 def load_all():
@@ -225,7 +235,14 @@ def load_all():
     bpos = numpy.load(config.paths['posbias'])
 
     #Words occurences
+    occurences = {}
 
+    with open(config.paths["occurences"]) as f:
+        for line in f:
+            parts = line.split(" : ")
+            if len(parts) != 2:
+                continue
+            occurences[parts[0].strip().lower()] = int(parts[1].strip())
 
     # Pack up
     z = {}
@@ -237,6 +254,7 @@ def load_all():
     z['cvec'] = cvec
     z['bneg'] = bneg
     z['bpos'] = bpos
+    z['occ'] = occurences
 
     return z
 

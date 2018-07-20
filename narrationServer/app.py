@@ -54,7 +54,7 @@ def receiveImage():
 			del sentences[i]	
 
 	if model is not None and (image is not None):
-		task = StoryFromSentencesAndImageTask(model, sentences, image);
+		task = StoryFromSentencesAndImageTask(model, sentences, image, True);
 		gpuThread.queue.put(task)
 		task.waitUntilDone()
 		if task.error is not None:
