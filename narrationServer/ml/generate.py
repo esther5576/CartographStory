@@ -75,10 +75,14 @@ def story(z, image_loc, k=100, bw=50, lyric=False):
 
     return passage
 
-def storyFromSentencesAndImage(z, sentences, image_loc, k=100, bw=50, lyric=False):
+def storyFromSentencesAndImage(z, sentences, image_loc, makePoetic, minOccurence, maxOccurence):
     """
     Generate a story for an image at location image_loc
     """
+
+    k = 100
+    bw = 50
+    lyric = False
 
     caps = []
 
@@ -219,6 +223,9 @@ def load_all():
     print 'Loading biases...'
     bneg = numpy.load(config.paths['negbias'])
     bpos = numpy.load(config.paths['posbias'])
+
+    #Words occurences
+
 
     # Pack up
     z = {}

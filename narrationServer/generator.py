@@ -84,17 +84,20 @@ class StoryFromSentencesTask(GPUTask):
             self.error = 'An error happend wile processing sentences : ' + str(e)
 
 class StoryFromSentencesAndImageTask(GPUTask):
-    def __init__(self, model, sentences, image):
+    def __init__(self, model, sentences, image, makePoetic = False, minOccurence = 3, maxOccurence = 100):
         GPUTask.__init__(self)
         self.result = ''
         self.error = None
         self.model = model
         self.sentences = sentences
         self.image = image
-
+        self.makePoetic = makePoetic
+        self.minOccurence = minOccurence
+        self.maxOccurence = maxOccurence
+    
     def run(self):
         try:
-            self.result = generate.storyFromSentencesAndImage(self.model, self.sentences, self.image)
+            self.result = generate.storyFromSentencesAndImage(self.model, self.sentences, self.image, makePoetic, minOccurence, maxOccurence)
         except Exception as e:
             self.error = 'An error happend wile processing data : ' + str(e)
 
