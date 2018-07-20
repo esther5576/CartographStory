@@ -75,6 +75,80 @@ def story(z, image_loc, k=100, bw=50, lyric=False):
 
     return passage
 
+def storyFromSentencesAndImage(z, sentences, image_loc, k=100, bw=50, lyric=False):
+    """
+    Generate a story for an image at location image_loc
+    """
+
+    caps = []
+
+    if image_loc is not None:
+        # Load the image
+        rawim, im = load_image(image_loc)
+
+        # Run image through convnet
+        feats = compute_features(z['net'], im).flatten()
+        feats /= norm(feats)
+
+        # Embed image into joint space
+        feats = embedding.encode_images(z['vse'], feats[None,:])
+
+        # Compute the nearest neighbours
+        scores = numpy.dot(feats, z['cvec'].T).flatten()
+        sorted_args = numpy.argsort(scores)[::-1]
+        caps = [z['cap'][a] for a in sorted_args[:k]]
+
+        print 'NEAREST-CAPTIONS: '
+        for c in caps[:5]:
+            print c
+        print ''
+
+    # Compute skip-thought vectors for sentences
+    svecs = skipthoughts.encode(z['stv'], caps, verbose=False)
+
+    # Style shifting
+    shift = svecs.mean(0) - z['bneg'] + z['bpos']
+
+    # Generate story conditioned on shift
+    passage = decoder.run_sampler(z['dec'], shift, beam_width=bw)
+    print 'OUTPUT: '
+    if lyric:
+        for line in passage.split(','):
+            if line[0] != ' ':
+                print line
+            else:
+                print line[1:]
+    else:
+        print passage
+
+    if sentences is not None:
+        for i in range(len(sentences)-1, -1, -1):
+            if (sentences[i] == ""):
+                del sentences[i]
+
+    if sentences:
+        print 'Mixing with given sentences :'
+        for s in sentences:
+            print s
+        print ''
+
+        sentences.append(passage)
+        svecs = skipthoughts.encode(z['stv'], sentences, verbose=False)
+        shift = svecs.mean(0) - z['bneg'] + z['bpos']
+        passage = decoder.run_sampler(z['dec'], shift, beam_width=bw)
+
+    print 'OUTPUT: '
+    if lyric:
+        for line in passage.split(','):
+            if line[0] != ' ':
+                print line
+            else:
+                print line[1:]
+    else:
+        print passage
+
+    return passage
+
 def storyFromSentences(z, sentences, bw=50, lyric=False):
     # Compute skip-thought vectors for sentences
     svecs = skipthoughts.encode(z['stv'], sentences, verbose=False)
