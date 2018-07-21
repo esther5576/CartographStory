@@ -8,6 +8,7 @@ using DG.Tweening;
 //test
 public class PictureSystem : MonoBehaviour
 {
+    public MachineCall MachineCallScript;
     public Image debugImage;
     public UnityEngine.PostProcessing.PostProcessingBehaviour postprocessing;
     public UnityEngine.PostProcessing.PostProcessingProfile profileNoVigPic;
@@ -72,7 +73,17 @@ public class PictureSystem : MonoBehaviour
        
             DataManager.AllIslands[theID].Pictures.Add(screenshotSprite);
             DataManager.AllIslands[theID].PicturesDescription.Add(description);
-
+            StartCoroutine(MachineCallScript.sendImageAnalyseRequest(
+                 receiveNarrativText,
+                screenshotSprite.texture,
+                description,
+                true,
+                10,
+                1000,
+                theID,
+                reveiveErrorNarrativText
+                )
+            );
             #region Kill tweens
             DOTween.Kill("save01");
             DOTween.Kill("save02");
@@ -100,6 +111,17 @@ public class PictureSystem : MonoBehaviour
             cameraPicUI.alpha = 1;
             EnableMorePics();
         }
+    }
+
+    public void receiveNarrativText (string narrativText, int IslandID)
+    {
+        DataManager.AllIslands[IslandID].PicturesNarratives.Add(narrativText);
+    }
+
+    public void reveiveErrorNarrativText (string errorMessage, int IslandID)
+    {
+        Debug.Log(errorMessage);
+        DataManager.AllIslands[IslandID].PicturesNarratives.Add("Bzzrt ... Error zzzt ...Brrzzt ... traduction .. rrzzt");
     }
 
     public void SaveImage()

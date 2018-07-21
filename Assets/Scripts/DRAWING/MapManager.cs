@@ -91,10 +91,10 @@ public class MapManager : MonoBehaviour
 
     string NarrivTextRequest ()
     {
-        MachineCallScript.objectsSeen.Clear();
-        foreach (string Description in DataManager.AllIslands[IslandSelected].PicturesDescription)
-            MachineCallScript.objectsSeen.Add(Description);
-        return MachineCallScript.SendRequest();
+        string AllText = "";
+        foreach (string Description in DataManager.AllIslands[IslandSelected].PicturesNarratives)
+            AllText += Description + "\n";
+        return AllText;
     }
 
     public void CreateDrawInstanceOnMap ()
@@ -243,7 +243,7 @@ public class MapManager : MonoBehaviour
     {
         int temp = IslandSelected;
         IslandSelected++;
-        if (IslandSelected > 2) IslandSelected = 2;
+        if (IslandSelected > DataManager.AllIslands.Count - 1) IslandSelected = 0;
         if (IslandSelected != temp)  SetJournal(IslandSelected);
     }
 
@@ -251,7 +251,7 @@ public class MapManager : MonoBehaviour
     {
         int temp = IslandSelected;
         IslandSelected--;
-        if (IslandSelected < 0) IslandSelected = 0;
+        if (IslandSelected < 0) IslandSelected = DataManager.AllIslands.Count - 1;
         if (IslandSelected != temp) SetJournal(IslandSelected);
     }
 }
