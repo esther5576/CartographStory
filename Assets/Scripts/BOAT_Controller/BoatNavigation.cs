@@ -95,5 +95,14 @@ public class BoatNavigation: MonoBehaviour
                 _l_partsToTurn[i].transform.DOLocalRotate(Vector3.zero, voileSpeedRot).SetEase(Ease.OutQuart).SetId("BoatRotCenter" + i);
             }
         }
-	}
+
+        if(Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            accelerationSpeed = accelerationSpeed/2;
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            accelerationSpeed = accelerationSpeed * 2;
+        }
+    }
 }

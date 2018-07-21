@@ -47,37 +47,37 @@ Material:
     - _FresnelExp: 4.4625406
     - _GradientPosition1: 3.21
     - _GradientPosition2: 5.5
-    - _LightColorIntensity: 0.537
+    - _LightColorIntensity: 0.465
     - _MainFoamIntensity: 50
     - _MainFoamOpacity: 1
     - _MainFoamScale: 50
     - _MainFoamSpeed: 0.2
-    - _Opacity: 0.248
+    - _Opacity: 0.558
     - _OpacityDepth: 70
     - _RealTimeReflection: 1
-    - _ReflectionsIntensity: 1.596
+    - _ReflectionsIntensity: 0.93
     - _RefractionIntensity: 0.15
     - _Roughness: 0.68
     - _SecondaryFoamAlwaysVisible: 0
     - _SecondaryFoamIntensity: 50
-    - _SecondaryFoamOpacity: 0.892
+    - _SecondaryFoamOpacity: 0.149
     - _SecondaryFoamScale: 7
     - _ShadowIntensity: 1
     - _Shadows: 1
     - _ShadowsIntensity: 1
     - _SpecularIntensity: 0.88
-    - _TurbulenceDistortionIntesity: 0.25
+    - _TurbulenceDistortionIntesity: 0.5
     - _TurbulenceScale: 15
     - _VertexOffset: 0
-    - _WaveDistortionIntensity: 0.5
-    - _WavesAmplitude: 10
-    - _WavesDirection: 53.4
-    - _WavesIntensity: 1
+    - _WaveDistortionIntensity: 0.7
+    - _WavesAmplitude: 13
+    - _WavesDirection: 56.1
+    - _WavesIntensity: 1.5
     - _WavesSpeed: 2
     m_Colors:
     - _DepthGradient1: {r: 0, g: 0.9895634, b: 1, a: 1}
     - _DepthGradient2: {r: 0.010012442, g: 0.66879505, b: 0.7075471, a: 1}
-    - _DepthGradient3: {r: 0.024964403, g: 0.35264844, b: 0.4811321, a: 1}
+    - _DepthGradient3: {r: 0.024964403, g: 0.35220712, b: 0.4811321, a: 1}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
-    - _FresnelColor: {r: 0.09674903, g: 0.36050165, b: 0.4811321, a: 1}
+    - _FresnelColor: {r: 0.096339054, g: 0.36006033, b: 0.4811321, a: 1}
     - _ShadowColor: {r: 0.009191178, g: 0.033871744, b: 0.125, a: 1}

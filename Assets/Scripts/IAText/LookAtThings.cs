@@ -30,10 +30,13 @@ public class LookAtThings : MonoBehaviour
                 Debug.DrawLine(this.transform.position, hit.transform.position, Color.green);
                 print("I'm looking at " + hit.transform.name);
                 ObjectsID ScriptOnItem = hit.transform.GetComponent<ObjectsID>();
-                myPictureSystem.IDOfIlsandToAdd = ScriptOnItem.ID;
+                if (ScriptOnItem != null)
+                {
+                    myPictureSystem.IDOfIlsandToAdd = ScriptOnItem.ID;
 
-                int randomDescription = Random.Range(0, ScriptOnItem.ObjectDescription.Count);
-                myPictureSystem.TakePic(ScriptOnItem.ObjectDescription[randomDescription]);
+                    int randomDescription = Random.Range(0, ScriptOnItem.ObjectDescription.Count);
+                    myPictureSystem.TakePic(ScriptOnItem.ObjectDescription[randomDescription]);
+                }
             }
             else
             {
