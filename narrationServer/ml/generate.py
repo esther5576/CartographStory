@@ -167,14 +167,14 @@ def storyFromSentences(z, sentences, bw=50, lyric=False):
 
 def makePoetic(z, sentence, minOccurence = 3, maxOccurence = 100):
     poeticSentence = ""
-    words = set(sentence.split())
+    words = sentence.split()
     for word in words:
         if (word.lower() in z["occ"]):
-            #print word + " has an occurence of " + str(z["occ"][word.lower()])
+            print word + " has an occurence of " + str(z["occ"][word.lower()])
             if (z["occ"][word.lower()] >= minOccurence and z["occ"][word.lower()] <= maxOccurence):
                 poeticSentence += word + " "
-        #else:
-            #print word + " is not in the database."
+        else:
+            print word + " is not in the database."
     return poeticSentence
 
 
