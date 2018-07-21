@@ -42,5 +42,8 @@ paths['negbias'] = 'ml/data/storyteller/caption_style.npy'
 #paths['posbias'] = 'ml/data/storyteller/vernes_style.npy'
 #paths['posbias'] = 'ml/data/storyteller/swift_style.npy'
 #paths['posbias'] = 'ml/data/storyteller/style.npy'
-paths['posbias'] = 'ml/data/storyteller/vernes_english_style.npy'
+paths['posbias'] = 'ml/data/storyteller/vernes_english_style_3.npy'
 #paths['posbias'] = 'ml/data/storyteller/romance_style.npy'
+
+#words occurences
+paths["occurences"] = "ml/data/occurences.txt"
