@@ -115,14 +115,7 @@ def storyFromSentencesAndImage(z, sentences, image_loc, makePoetry, minOccurence
     # Generate story conditioned on shift
     passage = decoder.run_sampler(z['dec'], shift, beam_width=bw)
     print 'OUTPUT: '
-    if lyric:
-        for line in passage.split(','):
-            if line[0] != ' ':
-                print line
-            else:
-                print line[1:]
-    else:
-        print passage
+    print passage
 
     if sentences is not None:
         for i in range(len(sentences)-1, -1, -1):
@@ -130,7 +123,7 @@ def storyFromSentencesAndImage(z, sentences, image_loc, makePoetry, minOccurence
                 del sentences[i]
 
     if sentences:
-        print 'Mixing with given sentences :'
+        print '\nMixing with given sentences :'
         for s in sentences:
             print s
         print ''
@@ -140,14 +133,14 @@ def storyFromSentencesAndImage(z, sentences, image_loc, makePoetry, minOccurence
         shift = svecs.mean(0) - z['bneg'] + z['bpos']
         passage = decoder.run_sampler(z['dec'], shift, beam_width=bw)
 
-    print 'OUTPUT: '
-    print passage
+        print 'OUTPUT MIXED : '
+        print passage
 
     if (makePoetry):
-        passage = makePoetic(passage, minOccurence, maxOccurence)
+        passage = makePoetic(z, passage, minOccurence, maxOccurence)
 
-    print "OUTPUT POETIC :"
-    print passage
+        print "OUTPUT POETIC :"
+        print passage
 
     return passage
 
@@ -172,13 +165,13 @@ def storyFromSentences(z, sentences, bw=50, lyric=False):
 
     return passage
 
-def makePoetic(sentence, minOccurence = 3, maxOccurence = 100):
+def makePoetic(z, sentence, minOccurence = 3, maxOccurence = 100):
     poeticSentence = ""
     words = sentence.split()
     for word in words:
-        if (word.lower() in occurences):
-            print word + " has an occurence of " + str(occurences[word.lower()])
-            if (occurences[word.lower()] >= minOccurence and occurences[word.lower()] <= maxOccurence):
+        if (word.lower() in z["occ"]):
+            print word + " has an occurence of " + str(z["occ"][word.lower()])
+            if (z["occ"][word.lower()] >= minOccurence and z["occ"][word.lower()] <= maxOccurence):
                 poeticSentence += word + " "
         else:
             print word + " is not in the database."

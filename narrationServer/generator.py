@@ -97,7 +97,7 @@ class StoryFromSentencesAndImageTask(GPUTask):
     
     def run(self):
         try:
-            self.result = generate.storyFromSentencesAndImage(self.model, self.sentences, self.image, makePoetic, minOccurence, maxOccurence)
+            self.result = generate.storyFromSentencesAndImage(self.model, self.sentences, self.image, self.makePoetic, self.minOccurence, self.maxOccurence)
         except Exception as e:
             self.error = 'An error happend wile processing data : ' + str(e)
 
