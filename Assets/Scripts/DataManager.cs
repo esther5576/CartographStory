@@ -17,6 +17,5 @@ public class Island
     public Texture2D TextureDraw;
     public List<Sprite> Pictures = new List<Sprite>();
     public List<string> PicturesDescription = new List<string>();
-    public List<string> PicturesNarratives = new List<string>();
     public string NarrativText = "Aucun texte chargé";
 }
