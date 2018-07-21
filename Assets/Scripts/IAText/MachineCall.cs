@@ -43,7 +43,11 @@ public class MachineCall : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.U)) {
             StartCoroutine(
                 sendImageAnalyseRequest(
-                    ScreenCapture.CaptureScreenshotAsTexture()
+                    ScreenCapture.CaptureScreenshotAsTexture(),
+                    "",
+                    true,
+                    100,
+                    1000
                 )
             );
         }
@@ -94,12 +98,32 @@ public class MachineCall : MonoBehaviour {
 
     const string SERVER_URL = "http://respekt.justdied.com:8080/storyFromImage";
 
-    IEnumerator sendImageAnalyseRequest(Texture2D image)
-    {
+    /**
+     * Send an image to the narration server.
+     * image : The image to be analysed.
+     * sentences : A group of sentences to influence analyse result.
+     * poeticFilter : Wether to enable the poetic filter or not (works by removing frequent or unfrequent words)
+     * minfreq : Remove less frequent words (represent an average occurency in a text corpus).
+     * maxFreq : Remove more frequent words (like minFreq).
+     */
+    IEnumerator sendImageAnalyseRequest(
+        Texture2D image,
+        string sentences = "",
+        bool poeticFilter = false,
+        int minFreq = 10,
+        int maxFreq = 1000
+    ) {
         byte[] jpgImageData = image.EncodeToJPG();
 
         WWWForm form = new WWWForm();
         form.AddBinaryData("file", jpgImageData, "file.jpg", "image/jpeg");
+        form.AddField("sentences", sentences);
+
+        if (poeticFilter) {
+            form.AddField("poeticFilter", "on");
+            form.AddField("minFreq", minFreq);
+            form.AddField("maxFreq", maxFreq);
+        }
 
         using (var request = UnityWebRequest.Post(SERVER_URL, form)) {
 
