@@ -48,14 +48,18 @@ def receiveImage():
     try:
         image = request.files.get('file')
         # see http://werkzeug.pocoo.org/docs/0.14/datastructures/#werkzeug.datastructures.FileStorage
-        if image is not None:
-            if model is not None:
-                task = GenerateStoryTask(model, image)
-                gpuThread.queue.put(task)
-                task.waitUntilDone()
-                if task.error is not None:
-                    return jsonify(status='KO', error=task.error)
-                return jsonify(status="OK", generatedText=task.result)
+	sentences = request.form['sentences'].split(".")
+	for i in range(len(sentences)-1, -1, -1):
+		if (sentences[i].strip() == ""):
+			del sentences[i]	
+
+	if model is not None and (image is not None):
+		task = StoryFromSentencesAndImageTask(model, sentences, image, True);
+		gpuThread.queue.put(task)
+		task.waitUntilDone()
+		if task.error is not None:
+		    return jsonify(status='KO', error=task.error)
+		return jsonify(status="OK", generatedText=task.result)
     except Exception as e:
         return jsonify(status='KO', error=str(e))
         

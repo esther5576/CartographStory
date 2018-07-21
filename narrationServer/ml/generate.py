@@ -75,6 +75,75 @@ def story(z, image_loc, k=100, bw=50, lyric=False):
 
     return passage
 
+def storyFromSentencesAndImage(z, sentences, image_loc, makePoetry, minOccurence, maxOccurence):
+    """
+    Generate a story for an image at location image_loc
+    """
+
+    k = 100
+    bw = 50
+
+    caps = []
+
+    if image_loc is not None:
+        # Load the image
+        rawim, im = load_image(image_loc)
+
+        # Run image through convnet
+        feats = compute_features(z['net'], im).flatten()
+        feats /= norm(feats)
+
+        # Embed image into joint space
+        feats = embedding.encode_images(z['vse'], feats[None,:])
+
+        # Compute the nearest neighbours
+        scores = numpy.dot(feats, z['cvec'].T).flatten()
+        sorted_args = numpy.argsort(scores)[::-1]
+        caps = [z['cap'][a] for a in sorted_args[:k]]
+
+        print 'NEAREST-CAPTIONS: '
+        for c in caps[:5]:
+            print c
+        print ''
+
+    # Compute skip-thought vectors for sentences
+    svecs = skipthoughts.encode(z['stv'], caps, verbose=False)
+
+    # Style shifting
+    shift = svecs.mean(0) - z['bneg'] + z['bpos']
+
+    # Generate story conditioned on shift
+    passage = decoder.run_sampler(z['dec'], shift, beam_width=bw)
+    print 'OUTPUT: '
+    print passage
+
+    if sentences is not None:
+        for i in range(len(sentences)-1, -1, -1):
+            if (sentences[i] == ""):
+                del sentences[i]
+
+    if sentences:
+        print '\nMixing with given sentences :'
+        for s in sentences:
+            print s
+        print ''
+
+        sentences.append(passage)
+        svecs = skipthoughts.encode(z['stv'], sentences, verbose=False)
+        shift = svecs.mean(0) - z['bneg'] + z['bpos']
+        passage = decoder.run_sampler(z['dec'], shift, beam_width=bw)
+
+        print 'OUTPUT MIXED : '
+        print passage
+
+    if (makePoetry):
+        passage = makePoetic(z, passage, minOccurence, maxOccurence)
+
+        print "OUTPUT POETIC :"
+        print passage
+
+    return passage
+
 def storyFromSentences(z, sentences, bw=50, lyric=False):
     # Compute skip-thought vectors for sentences
     svecs = skipthoughts.encode(z['stv'], sentences, verbose=False)
@@ -95,6 +164,18 @@ def storyFromSentences(z, sentences, bw=50, lyric=False):
         print passage
 
     return passage
+
+def makePoetic(z, sentence, minOccurence = 3, maxOccurence = 100):
+    poeticSentence = ""
+    words = sentence.split()
+    for word in words:
+        if (word.lower() in z["occ"]):
+            print word + " has an occurence of " + str(z["occ"][word.lower()])
+            if (z["occ"][word.lower()] >= minOccurence and z["occ"][word.lower()] <= maxOccurence):
+                poeticSentence += word + " "
+        else:
+            print word + " is not in the database."
+    return poeticSentence
 
 
 def load_all():
@@ -146,6 +227,16 @@ def load_all():
     bneg = numpy.load(config.paths['negbias'])
     bpos = numpy.load(config.paths['posbias'])
 
+    #Words occurences
+    occurences = {}
+
+    with open(config.paths["occurences"]) as f:
+        for line in f:
+            parts = line.split(" : ")
+            if len(parts) != 2:
+                continue
+            occurences[parts[0].strip().lower()] = int(parts[1].strip())
+
     # Pack up
     z = {}
     z['stv'] = stv
@@ -156,6 +247,7 @@ def load_all():
     z['cvec'] = cvec
     z['bneg'] = bneg
     z['bpos'] = bpos
+    z['occ'] = occurences
 
     return z
 
