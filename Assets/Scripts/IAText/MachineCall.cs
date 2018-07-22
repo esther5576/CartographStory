@@ -38,7 +38,7 @@ public class MachineCall : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if(Input.GetKeyDown(KeyCode.R))
+        /*if(Input.GetKeyDown(KeyCode.R))
         {
             textToDisplay.text = SendRequest();
             objectsSeen.Clear();
@@ -55,7 +55,7 @@ public class MachineCall : MonoBehaviour {
                     300
                 )
             );
-        }
+        }*/
 	}
 
     public string SendRequest()
@@ -103,8 +103,8 @@ public class MachineCall : MonoBehaviour {
 
     const string SERVER_URL = "http://respekt.justdied.com:8080/storyFromImage";
 
-    public delegate void OnResult(string result);
-    public delegate void OnError(string error);
+    public delegate void OnResult(string result, int IslandID);
+    public delegate void OnError(string error, int IslandID);
 
     /**
      * Send an image to the narration server.
@@ -116,13 +116,14 @@ public class MachineCall : MonoBehaviour {
      * maxFreq : Remove more frequent words (like minFreq).
      * methodToCallOnError : the method to call on error.
      */
-    IEnumerator sendImageAnalyseRequest(
+    public IEnumerator sendImageAnalyseRequest(
         OnResult methodToCallOnResult,
         Texture2D image,
         string sentences = "",
         bool poeticFilter = false,
         int minFreq = 10,
         int maxFreq = 1000,
+        int IslandID = 0,
         OnError methodToCallOnError = null
     ) {
         byte[] jpgImageData = image.EncodeToJPG();
@@ -149,14 +150,17 @@ public class MachineCall : MonoBehaviour {
                     JSONResponse data = JsonConvert.DeserializeObject<JSONResponse>(System.Text.Encoding.UTF8.GetString(request.downloadHandler.data));
 
                     if (data.status.Equals("OK")) {
-                        methodToCallOnResult(data.generatedText);
+                        methodToCallOnResult(data.generatedText, IslandID);
+                        Debug.Log(data.generatedText);
                     } else {
                         if (methodToCallOnError != null)
-                            methodToCallOnError(data.error);
+                            methodToCallOnError(data.error, IslandID);
+                        Debug.Log(data.error);
                     }
                 } catch  {
                     if (methodToCallOnError != null)
-                        methodToCallOnError("Error parsing server response.");
+                        methodToCallOnError("Error parsing server response.", IslandID);
+                        Debug.Log("Error parsing server response.");
                 }
             }
         }
