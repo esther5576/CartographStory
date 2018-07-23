@@ -91,10 +91,18 @@ public class MapManager : MonoBehaviour
 
     string NarrivTextRequest ()
     {
-        string AllText = "";
-        foreach (string Description in DataManager.AllIslands[IslandSelected].PicturesNarratives)
-            AllText += Description + "\n";
-        return AllText;
+        if (DataManager.AllIslands[IslandSelected].PicturesNarratives.Count > 0)
+        {
+            string AllText = "";
+            foreach (string Description in DataManager.AllIslands[IslandSelected].PicturesNarratives)
+                AllText += Description + "\n";
+            return AllText;
+        }
+        else
+        {
+            return "Analyzing data ... Brrzzt ...";
+        }
+        
     }
 
     public void CreateDrawInstanceOnMap ()
@@ -108,6 +116,7 @@ public class MapManager : MonoBehaviour
         CheckNavigationCameraDeActivation();
         DrawSystemParent.SetActive(true);
         SetJournal(IslandSelected);
+        NarrivTextRequest();
         CloseMap();
     }
 
@@ -232,6 +241,7 @@ public class MapManager : MonoBehaviour
     {
         DataManager.AllIslands[IslandSelected].Pictures.RemoveAt(ID);
         DataManager.AllIslands[IslandSelected].PicturesDescription.RemoveAt(ID);
+        DataManager.AllIslands[IslandSelected].PicturesNarratives.RemoveAt(ID);
 
         if (DataManager.AllIslands[IslandSelected].NarrativText == "Aucun texte chargé")
             AllPicturesRenderersOrigin[ID].ParentToChange.gameObject.SetActive(false);
