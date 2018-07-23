@@ -35,6 +35,8 @@ public class MapManager : MonoBehaviour
     public GameObject CameraToDesactivate;
     public CameraManager ScriptToDesactivate;
 
+    public GameObject player;
+
 	// Use this for initialization
 	void Awake ()
 	{
@@ -227,7 +229,10 @@ public class MapManager : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.J))
 		{
             if (DrawSystemParent.activeInHierarchy)
+            {
+                CameraToDesactivate.transform.position = player.transform.position;
                 CloseJournal();
+            }
             else
                 OpenJournal();
 
@@ -235,8 +240,11 @@ public class MapManager : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.M))
 		{
-			if (BigMapParent.activeInHierarchy)
+            if (BigMapParent.activeInHierarchy)
+            {
+                CameraToDesactivate.transform.position = player.transform.position;
                 CloseMap();
+            }
             else
                 OpenMap();
         }
