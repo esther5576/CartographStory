@@ -13,6 +13,9 @@ public class MapManager : MonoBehaviour
     public Text NarrativeTextMap;
     public Drawable DrawManager;
 	public Transform MapContainer;
+    public Sprite FondWithText;
+    public Sprite FondWithoutText;
+    public SpriteRenderer Fond;
 
 	[Header("Buttons")]
 	public Button ResetButton;
@@ -26,7 +29,7 @@ public class MapManager : MonoBehaviour
 	public GameObject BigMapParent;
 	public GameObject MapPrefab;
 
-    int IslandSelected;
+    public int IslandSelected;
 
     [Header("CameraFix")]
     public GameObject CameraToDesactivate;
@@ -185,6 +188,7 @@ public class MapManager : MonoBehaviour
                 AllPicturesRenderersWithText[i].ParentToChange.gameObject.SetActive(false);
 
             NarrativeText.gameObject.SetActive(false);
+            Fond.sprite = FondWithoutText;
         }
         else
         {
@@ -206,6 +210,7 @@ public class MapManager : MonoBehaviour
 
             NarrativeText.text = DataManager.AllIslands[PageNumber].NarrativText;
             NarrativeText.gameObject.SetActive(true);
+            Fond.sprite = FondWithText;
         }
     }
 
