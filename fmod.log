@@ -8,7 +8,7 @@
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000000055A13528 isAsync 1 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000000592C6C78 isAsync 1 updatePeriod 0.02
 [LOG] Thread::initThread                       : Init FMOD Studio update thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
@@ -24,205 +24,145 @@
 [LOG] SystemI::createSound                     : filename = Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
 [LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] SystemI::createSound                     : setdata soundi = 000000004F2DF818 : node = 000000000DCBDD80
-[LOG] SystemI::createSound                     : add node to async list : head = 000000004EE87EB8.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F2DF818
+[LOG] SystemI::createSound                     : setdata soundi = 000000005964ACA8 : node = 00000000591C39F0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000000059221818.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005964ACA8
 [LOG] SystemI::createSoundInternal             :     Create name='Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 27324352
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 68960
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000000DCBDE98
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000591C3B08
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSound                     :     filename = Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     :     setdata soundi = 000000004F2DF9C8 : node = 000000000DCBE020
-[LOG] SystemI::createSound                     :     add node to async list : head = 000000004EE87EB8.  list count = 0
+[LOG] SystemI::createSound                     :     setdata soundi = 000000005964AE58 : node = 00000000591C30C0
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000000059221818.  list count = 0
 [LOG] SystemI::createSound                     :     filename = Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     :     setdata soundi = 000000004F2DE588 : node = 000000000DCBE170
-[LOG] SystemI::createSound                     :     add node to async list : head = 000000004EE87EB8.  list count = 1
+[LOG] SystemI::createSound                     :     setdata soundi = 000000005964B008 : node = 00000000591C3C90
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000000059221818.  list count = 1
 [LOG] SystemI::createSound                     :     filename = Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     :     setdata soundi = 000000004F2DFB78 : node = 000000000DCBE2C0
-[LOG] SystemI::createSound                     :     add node to async list : head = 000000004EE87EB8.  list count = 2
+[LOG] SystemI::createSound                     :     setdata soundi = 000000005964C298 : node = 00000000591C34B0
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000000059221818.  list count = 2
 [LOG] SystemI::createSound                     :     filename = Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     :     setdata soundi = 000000004F2DE078 : node = 000000000DCBE950
-[LOG] SystemI::createSound                     :     add node to async list : head = 000000004EE87EB8.  list count = 3
+[LOG] SystemI::createSound                     :     setdata soundi = 000000005964B1B8 : node = 00000000591C41D0
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000000059221818.  list count = 3
 [LOG] SystemI::createSound                     :     filename = Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     :     setdata soundi = 00000000226B7588 : node = 000000000DCBE800
-[LOG] SystemI::createSound                     :     add node to async list : head = 000000004EE87EB8.  list count = 4
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Ocean_Low', format=2, channels=2, frequency=48000, lengthbytes=1293824, lengthpcm=5159354, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.021709.
+[LOG] SystemI::createSound                     :     setdata soundi = 000000005964B368 : node = 00000000591C3DE0
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000000059221818.  list count = 4
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Wind_Light', format=2, channels=1, frequency=48000, lengthbytes=290080, lengthpcm=1729782, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.060455.
 [LOG] Thread::initThread                       :     Init FMOD file thread. Priority: 1, Stack Size: 16384, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F2DF818
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F2DF9C8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005964ACA8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005964AE58
 [LOG] SystemI::createSoundInternal             :     Create name='Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 27324352
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 68960
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000000DCBE138
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000591C31D8
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Boat_Wood', format=2, channels=2, frequency=48000, lengthbytes=1368672, lengthpcm=5543397, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.152889.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F2DF9C8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F2DE588
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005964AE58
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005964B008
 [LOG] SystemI::createSoundInternal             :     Create name='Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 27324352
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 68960
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000000DCBE288
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000591C3DA8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Ocean_Low', format=2, channels=2, frequency=48000, lengthbytes=1293824, lengthpcm=5159354, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.021709.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005964B008
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005964C298
+[LOG] SystemI::createSoundInternal             :     Create name='Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 27324352
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 68960
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000591C35C8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Ocean_QuickerWaves', format=2, channels=2, frequency=48000, lengthbytes=609152, lengthpcm=2130119, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.630220.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005964C298
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005964B1B8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 27324352
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 68960
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000591C42E8
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Session sans titre 1_mixage final', format=2, channels=2, frequency=48000, lengthbytes=1687872, lengthpcm=6505162, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.541595.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F2DE588
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F2DFB78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005964B1B8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005964B368
 [LOG] SystemI::createSoundInternal             :     Create name='Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 27324352
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 68960
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000000DCBE3D8
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Wind_Light', format=2, channels=1, frequency=48000, lengthbytes=290080, lengthpcm=1729782, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.060455.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F2DFB78
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F2DE078
-[LOG] SystemI::createSoundInternal             :     Create name='Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 27324352
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 68960
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000000DCBEA68
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Ocean_QuickerWaves', format=2, channels=2, frequency=48000, lengthbytes=609152, lengthpcm=2130119, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.630220.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F2DE078
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000226B7588
-[LOG] SystemI::createSoundInternal             :     Create name='Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 27324352
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 68960
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000000DCBE918
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000591C3EF8
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='sails01', format=2, channels=2, frequency=48000, lengthbytes=152608, lengthpcm=768000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.300412.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000226B7588
-[LOG] SoundI::getSubSound                      : sound 000000004F2DF818.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 000000004F2DF9C8.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 000000004F2DE588.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 000000004F2DFB78.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 000000004F2DE078.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 00000000226B7588.  Subsound index 0 / 1
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005964B368
+[LOG] SoundI::getSubSound                      : sound 000000005964ACA8.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 000000005964AE58.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 000000005964B008.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 000000005964C298.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 000000005964B1B8.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 000000005964B368.  Subsound index 0 / 1
 [LOG] SystemI::createSound                     : filename = Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 00000000226B8818 : node = 000000004F88BF10
-[LOG] SystemI::createSound                     : add node to async list : head = 000000004EE87EB8.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000226B8818
+[LOG] SystemI::createSound                     : setdata soundi = 00000000565F1E88 : node = 00000000591C3210
+[LOG] SystemI::createSound                     : add node to async list : head = 0000000059221818.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000565F1E88
 [LOG] SystemI::createSoundInternal             :     Create name='Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 27324352
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 68960
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000004F88C028
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000591C3328
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='sails01', format=2, channels=2, frequency=48000, lengthbytes=152608, lengthpcm=768000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.300412.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000226B8818
-[LOG] SoundI::getSubSound                      : sound 00000000226B8818.  Subsound index 0 / 1
-[LOG] SoundI::release                          : sails01 (00000000226B7588)
-[LOG] SoundI::release                          :     sails01 (00000000227AD698)
-[LOG] SoundI::release                          :     sails01 (00000000226B84B8)
-[LOG] SystemI::createSound                     : filename = Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 00000000226B84B8 : node = 000000004F88B730
-[LOG] SystemI::createSound                     : add node to async list : head = 000000004EE87EB8.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000226B84B8
-[LOG] SystemI::createSoundInternal             :     Create name='Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 27324352
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 68960
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000004F88B848
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='sails01', format=2, channels=2, frequency=48000, lengthbytes=152608, lengthpcm=768000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.300412.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000226B84B8
-[LOG] SoundI::getSubSound                      : sound 00000000226B84B8.  Subsound index 0 / 1
-[LOG] SoundI::release                          : sails01 (00000000226B8818)
-[LOG] SoundI::release                          :     sails01 (000000004F3FB0A8)
-[LOG] SoundI::release                          :     sails01 (00000000226B8B78)
-[LOG] SystemI::createSound                     : filename = Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 00000000226B8ED8 : node = 000000004F88BF10
-[LOG] SystemI::createSound                     : add node to async list : head = 000000004EE87EB8.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000226B8ED8
-[LOG] SystemI::createSoundInternal             :     Create name='Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 27324352
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 68960
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000004F88C028
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Wind_Light', format=2, channels=1, frequency=48000, lengthbytes=290080, lengthpcm=1729782, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.060455.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000226B8ED8
-[LOG] SoundI::getSubSound                      : sound 00000000226B8ED8.  Subsound index 0 / 1
-[LOG] SoundI::release                          : Wind_Light (000000004F2DFB78)
-[LOG] SoundI::release                          :     Wind_Light (000000004823AAA8)
-[LOG] SoundI::release                          :     Wind_Light (00000000226B78E8)
-[LOG] SystemI::createSound                     : filename = Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 00000000226B78E8 : node = 000000000B28DA10
-[LOG] SystemI::createSound                     : add node to async list : head = 000000004EE87EB8.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000226B78E8
-[LOG] SystemI::createSoundInternal             :     Create name='Assets\FMOD\BanqueSonore_Cartographe\Build\Desktop/Master Bank.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 27324352
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 68960
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000000B28DB28
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Ocean_QuickerWaves', format=2, channels=2, frequency=48000, lengthbytes=609152, lengthpcm=2130119, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.630220.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000226B78E8
-[LOG] SoundI::getSubSound                      : sound 00000000226B78E8.  Subsound index 0 / 1
-[LOG] SoundI::release                          : Ocean_QuickerWaves (000000004F2DE078)
-[LOG] SoundI::release                          :     Ocean_QuickerWaves (00000000227AD1B8)
-[LOG] SoundI::release                          :     Ocean_QuickerWaves (00000000226B7DF8)
-[LOG] SoundI::release                          : Boat_Wood (000000004F2DF9C8)
-[LOG] SoundI::release                          :     Boat_Wood (000000004823BE28)
-[LOG] SoundI::release                          :     Boat_Wood (00000000226B8D28)
-[LOG] SoundI::release                          : Ocean_Low (000000004F2DF818)
-[LOG] SoundI::release                          :     Ocean_Low (000000004823B2C8)
-[LOG] SoundI::release                          :     Ocean_Low (00000000226B7A98)
-[LOG] SoundI::release                          : Ocean_QuickerWaves (00000000226B78E8)
-[LOG] SoundI::release                          :     Ocean_QuickerWaves (000000004F3FB588)
-[LOG] SoundI::release                          :     Ocean_QuickerWaves (00000000226B8818)
-[LOG] SoundI::release                          : Wind_Light (00000000226B8ED8)
-[LOG] SoundI::release                          :     Wind_Light (000000004F3FB0A8)
-[LOG] SoundI::release                          :     Wind_Light (00000000226B8B78)
-[LOG] SoundI::release                          : sails01 (00000000226B84B8)
-[LOG] SoundI::release                          :     sails01 (000000004F3FCC48)
-[LOG] SoundI::release                          :     sails01 (00000000226B7588)
-[LOG] SoundI::release                          : Session sans titre 1_mixage final (000000004F2DE588)
-[LOG] SoundI::release                          :     Session sans titre 1_mixage final (000000004823A908)
-[LOG] SoundI::release                          :     Session sans titre 1_mixage final (00000000226B8158)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000565F1E88
+[LOG] SoundI::getSubSound                      : sound 00000000565F1E88.  Subsound index 0 / 1
+[LOG] SoundI::release                          : sails01 (000000005964B368)
+[LOG] SoundI::release                          :     sails01 (000000005921E948)
+[LOG] SoundI::release                          :     sails01 (00000000565F2A58)
+[LOG] SoundI::release                          : Boat_Wood (000000005964AE58)
+[LOG] SoundI::release                          :     Boat_Wood (0000000059220D08)
+[LOG] SoundI::release                          :     Boat_Wood (000000005964B878)
+[LOG] SoundI::release                          : Ocean_Low (000000005964B008)
+[LOG] SoundI::release                          :     Ocean_Low (0000000059221868)
+[LOG] SoundI::release                          :     Ocean_Low (000000005964BBD8)
+[LOG] SoundI::release                          : Ocean_QuickerWaves (000000005964C298)
+[LOG] SoundI::release                          :     Ocean_QuickerWaves (0000000059220B68)
+[LOG] SoundI::release                          :     Ocean_QuickerWaves (000000005964BD88)
+[LOG] SoundI::release                          : Wind_Light (000000005964ACA8)
+[LOG] SoundI::release                          :     Wind_Light (0000000059222228)
+[LOG] SoundI::release                          :     Wind_Light (000000005964B6C8)
+[LOG] SoundI::release                          : sails01 (00000000565F1E88)
+[LOG] SoundI::release                          :     sails01 (00000000592209C8)
+[LOG] SoundI::release                          :     sails01 (00000000565F2548)
+[LOG] SoundI::release                          : Session sans titre 1_mixage final (000000005964B1B8)
+[LOG] SoundI::release                          :     Session sans titre 1_mixage final (000000005921F308)
+[LOG] SoundI::release                          :     Session sans titre 1_mixage final (000000005964BF38)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

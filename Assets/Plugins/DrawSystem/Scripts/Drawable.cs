@@ -112,10 +112,11 @@ public class Drawable : MonoBehaviour
         float pixelWidth = drawable_sprite.rect.width;
         float pixelHeight = drawable_sprite.rect.height;
         float unitsToPixels = pixelWidth / drawable_sprite.bounds.size.x * transform.localScale.x;
+        unitsToPixels *= 1.2f;
 
         // Need to center our coordinates
-        float centered_x = local_pos.x * unitsToPixels + pixelWidth / 2;
-        float centered_y = local_pos.y * unitsToPixels + pixelHeight / 2;
+        float centered_x = local_pos.x * unitsToPixels + pixelWidth / 2f;
+        float centered_y = local_pos.y * unitsToPixels + pixelHeight / 2f;
 
         // Round current mouse position to nearest pixel
         Vector2 pixel_pos = new Vector2(Mathf.RoundToInt(centered_x), Mathf.RoundToInt(centered_y));
