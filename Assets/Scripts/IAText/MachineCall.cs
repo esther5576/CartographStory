@@ -154,8 +154,11 @@ public class MachineCall : MonoBehaviour {
                         Debug.Log(data.generatedText);
                     } else {
                         if (methodToCallOnError != null)
+                        {
                             methodToCallOnError(data.error, IslandID);
-                        Debug.Log(data.error);
+                            Debug.Log(data.error);
+                        }
+                         
                     }
                 } catch  {
                     if (methodToCallOnError != null)

@@ -76,17 +76,8 @@ public class PictureSystem : MonoBehaviour
             myMap.IslandSelected = theID;
             DataManager.AllIslands[theID].Pictures.Add(screenshotSprite);
             DataManager.AllIslands[theID].PicturesDescription.Add(description);
-            StartCoroutine(MachineCallScript.sendImageAnalyseRequest(
-             receiveNarrativText,
-            screenshotSprite.texture,
-            description,
-            false,
-            10,
-            5000,
-            theID,
-            reveiveErrorNarrativText
-            )
-        );
+            myMap.SendAnalyseImage(screenshotSprite.texture, description, theID);
+
             #region Kill tweens
             DOTween.Kill("save01");
             DOTween.Kill("save02");
@@ -163,15 +154,6 @@ public class PictureSystem : MonoBehaviour
         _myPicCam.enabled = true;
     }
 
-    public void receiveNarrativText(string narrativText, int IslandID)
-    {
-        DataManager.AllIslands[IslandID].PicturesNarratives.Add(narrativText);
-    }
-
-    public void reveiveErrorNarrativText(string errorMessage, int IslandID)
-    {
-        Debug.Log(errorMessage);
-        DataManager.AllIslands[IslandID].PicturesNarratives.Add("Bzzrt ... Error zzzt ...Brrzzt ... traduction .. rrzzt");
-    }
+    
 
 }

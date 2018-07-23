@@ -89,23 +89,22 @@ public class MapManager : MonoBehaviour
         DataManager.AllIslands[IslandSelected].Drawing = DrawManager.SpriteShowed.sprite;
         CreateDrawInstanceOnMap();
         OpenMap();
-        DataManager.AllIslands[IslandSelected].NarrativText = NarrivTextRequest();
+        SetNarrativText();
     }
 
-    string NarrivTextRequest ()
+    public void SetNarrativText ()
     {
         if (DataManager.AllIslands[IslandSelected].PicturesNarratives.Count > 0)
         {
             string AllText = "";
             foreach (string Description in DataManager.AllIslands[IslandSelected].PicturesNarratives)
                 AllText += Description + "\n";
-            return AllText;
+            DataManager.AllIslands[IslandSelected].NarrativText = AllText;
         }
         else
         {
-            return "Analyzing data ... Brrzzt ...";
+            DataManager.AllIslands[IslandSelected].NarrativText = "Analyzing data ... Brrzzt ...";
         }
-        
     }
 
     public void CreateDrawInstanceOnMap ()
@@ -118,8 +117,8 @@ public class MapManager : MonoBehaviour
 	{
         CheckNavigationCameraDeActivation();
         DrawSystemParent.SetActive(true);
+        SetNarrativText();
         SetJournal(IslandSelected);
-        NarrivTextRequest();
         CloseMap();
     }
 
@@ -268,5 +267,31 @@ public class MapManager : MonoBehaviour
         IslandSelected--;
         if (IslandSelected < 0) IslandSelected = DataManager.AllIslands.Count - 1;
         if (IslandSelected != temp) SetJournal(IslandSelected);
+    }
+
+    public void SendAnalyseImage (Texture2D ImageTexture, string InfluenceText, int IslandID)
+    {
+        StartCoroutine(MachineCallScript.sendImageAnalyseRequest(
+          receiveNarrativText,
+          ImageTexture,
+          InfluenceText,
+          false,
+          10,
+          5000,
+          IslandID,
+          reveiveErrorNarrativText
+          ));
+    }
+
+    public void receiveNarrativText(string narrativText, int IslandID)
+    {
+        DataManager.AllIslands[IslandID].PicturesNarratives.Add(narrativText);
+        SetNarrativText();
+    }
+
+    public void reveiveErrorNarrativText(string errorMessage, int IslandID)
+    {
+        Debug.Log(errorMessage);
+        DataManager.AllIslands[IslandID].PicturesNarratives.Add("Bzzrt ... Error zzzt ...Brrzzt ... traduction .. rrzzt");
     }
 }
