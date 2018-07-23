@@ -87,6 +87,8 @@ public class MapManager : MonoBehaviour
 	public void ValidateDraw ()
 	{
         DataManager.AllIslands[IslandSelected].Drawing = DrawManager.SpriteShowed.sprite;
+        DataManager.AllIslands[IslandSelected].DrawValidated = true;
+        
         CreateDrawInstanceOnMap();
         OpenMap();
         SetNarrativText();
@@ -94,17 +96,23 @@ public class MapManager : MonoBehaviour
 
     public void SetNarrativText ()
     {
-        if (DataManager.AllIslands[IslandSelected].PicturesNarratives.Count > 0)
+        if (DataManager.AllIslands[IslandSelected].DrawValidated)
         {
-            string AllText = "";
-            foreach (string Description in DataManager.AllIslands[IslandSelected].PicturesNarratives)
-                AllText += Description + "\n";
-            DataManager.AllIslands[IslandSelected].NarrativText = AllText;
+            if (DataManager.AllIslands[IslandSelected].PicturesNarratives.Count > 0)
+            {
+                string AllText = "";
+                foreach (string Description in DataManager.AllIslands[IslandSelected].PicturesNarratives)
+                    AllText += Description + "\n";
+                DataManager.AllIslands[IslandSelected].NarrativText = AllText;
+            }
+            else
+            {
+                DataManager.AllIslands[IslandSelected].NarrativText = "Analyzing data ... Brrzzt ...";
+            }
         }
-        else
-        {
-            DataManager.AllIslands[IslandSelected].NarrativText = "Analyzing data ... Brrzzt ...";
-        }
+
+        NarrativeText.text = DataManager.AllIslands[IslandSelected].NarrativText;
+        NarrativeTextMap.text = DataManager.AllIslands[IslandSelected].NarrativText;
     }
 
     public void CreateDrawInstanceOnMap ()

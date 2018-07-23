@@ -285,6 +285,7 @@ public class Island
 {
     public int ID;
     public bool DrawStarted = false;
+    public bool DrawValidated = false;
     public string IslandFinalName = "Name the island";
     public Sprite Drawing;
     public Texture2D TextureDraw;

@@ -78,80 +78,92 @@ public class LookAtThings : MonoBehaviour
                 case SentenceType.Tree:
                     AddArrayToList(ListComposedWithIds, DataManager.TreeSentences);
                     break;
-                case SentenceType.SubmergedPillar: // TODO : complete
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                case SentenceType.SubmergedPillar:
+                    AddArrayToList(ListComposedWithIds, DataManager.SubmergedPillarSentences);
                     break;
                 case SentenceType.SciencePillar:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.SciencePillarSentences);
                     break;
                 case SentenceType.Plank:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.PlankSentences);
                     break;
                 case SentenceType.Ruin:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.RuinSentences);
                     break;
                 case SentenceType.Wall:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.WallSentences);
                     break;
                 case SentenceType.Slab:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.SlabSentences);
                     break;
                 case SentenceType.Rock:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.RockSentences);
                     break;
                 case SentenceType.Stone:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.StoneSentences);
                     break;
                 case SentenceType.Wonder:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.WonderSentences);
                     break;
                 case SentenceType.Snake:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.SnakeSentences);
                     break;
                 case SentenceType.Ring:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.RingSentences);
                     break;
                 case SentenceType.Orca:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.OrcaSentences);
                     break;
                 case SentenceType.WhiteBuilding:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.WhiteBuildingSentences);
                     break;
                 case SentenceType.MusicHole:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.MusicHoleSentences);
                     break;
                 case SentenceType.windmill:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.WindmillSentences);
                     break;
                 case SentenceType.Rune:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.RuneSentences);
                     break;
                 case SentenceType.Joy:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.JoySentences);
                     break;
                 case SentenceType.Knowledge:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.KnowledgeSentences);
                     break;
                 case SentenceType.Sun:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.SunSentences);
                     break;
                 case SentenceType.Day:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.DaySentences);
                     break;
                 case SentenceType.Beginning:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.BeginningSentences);
                     break;
                 case SentenceType.Destiny:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.DestinySentences);
                     break;
                 case SentenceType.Wealth:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.WealthSentences);
                     break;
                 case SentenceType.Eye:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.EyeSentences);
                     break;
                 case SentenceType.Journey:
-                    AddArrayToList(ListComposedWithIds, DataManager.AreasSentences);
+                    AddArrayToList(ListComposedWithIds, DataManager.JourneySentences);
+                    break;
+                case SentenceType.Bird:
+                    AddArrayToList(ListComposedWithIds, DataManager.BirdSentences);
+                    break;
+                case SentenceType.Fire:
+                    AddArrayToList(ListComposedWithIds, DataManager.FireSentences);
+                    break;
+                case SentenceType.Ash:
+                    AddArrayToList(ListComposedWithIds, DataManager.AshSentences);
+                    break;
+                case SentenceType.Ice:
+                    AddArrayToList(ListComposedWithIds, DataManager.IceSentences);
                     break;
                 default:
                     break;
