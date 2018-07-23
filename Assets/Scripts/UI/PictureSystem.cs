@@ -9,6 +9,7 @@ using DG.Tweening;
 public class PictureSystem : MonoBehaviour
 {
     public MachineCall MachineCallScript;
+    public MapManager myMap;
     public Image debugImage;
     public UnityEngine.PostProcessing.PostProcessingBehaviour postprocessing;
     public UnityEngine.PostProcessing.PostProcessingProfile profileNoVigPic;
@@ -23,6 +24,8 @@ public class PictureSystem : MonoBehaviour
     bool inPreviewMode = false;
 
     public UnityStandardAssets.Cameras.FreeLookCam _myPicCam;
+
+    public CanvasGroup UIWarning;
 
     // Use this for initialization
     void Start ()
@@ -70,14 +73,14 @@ public class PictureSystem : MonoBehaviour
                 debugImage.color = new Color(1, 1, 1, 1);
             }
 
-       
+            myMap.IslandSelected = theID;
             DataManager.AllIslands[theID].Pictures.Add(screenshotSprite);
             DataManager.AllIslands[theID].PicturesDescription.Add(description);
             StartCoroutine(MachineCallScript.sendImageAnalyseRequest(
              receiveNarrativText,
             screenshotSprite.texture,
             description,
-            true,
+            false,
             10,
             5000,
             theID,
@@ -110,7 +113,15 @@ public class PictureSystem : MonoBehaviour
             postprocessing.profile = profileVigPic;
             cameraPicUI.alpha = 1;
             EnableMorePics();
+            DOTween.To(() => UIWarning.alpha, x => UIWarning.alpha = x, 1, 0.25f);
+            UIWarning.transform.DOShakePosition(0.5f, 1, 10, 90, true).OnComplete(EndAction);
         }
+    }
+
+    public void EndAction()
+    {
+        DOTween.To(() => UIWarning.alpha, x => UIWarning.alpha = x, 0, 0.25f);
+        UIWarning.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
     }
 
     public void SaveImage()
