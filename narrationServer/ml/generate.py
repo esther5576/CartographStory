@@ -3,6 +3,7 @@ Story generation
 """
 import cPickle as pkl
 import numpy
+import random
 import copy
 import sys
 import skimage.transform
@@ -141,6 +142,10 @@ def storyFromSentencesAndImage(z, sentences, image_loc, makePoetry, minOccurence
 
         print "OUTPUT POETIC :"
         print passage
+    else:
+    	passage = removeProperNoun(z, passage)
+	print "OUTPUT WITHOUT PROPER NOUN:"
+    	print passage
 
     return passage
 
@@ -177,6 +182,20 @@ def makePoetic(z, sentence, minOccurence = 3, maxOccurence = 100):
             #print word + " is not in the database."
     return poeticSentence
 
+robotSpeak = ['*bzzzhuuuu*', '*rrzzrr*', '*iigguuiigg*', '*brrrzz*', '*trrrr*', '*disk damaged*', '*error*', '*access denied*']
+allowedWords = ["God", "Terra"]
+
+def removeProperNoun(z, passage):
+    cleaned = ""
+    words = passage.split()
+    for word in words:
+        if word[0].isupper() and word not in allowedWords and (word.lower() not in z["occ"] or (word.lower() in z["occ"] and z["occ"][word.lower()] < 100)):
+    	    cleaned += random.choice(robotSpeak)
+	else:
+	    cleaned += word
+        cleaned += " "
+
+    return cleaned
 
 def load_all():
     """

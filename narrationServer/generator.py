@@ -5,6 +5,21 @@ import Queue
 from time import sleep
 from ml import generate
 import traceback
+import os
+
+##################################################################"
+if not os.path.isdir('saved_images'):
+	os.makedir('saved_images')
+
+index = 0
+while os.path.exists('saved_images/image_' + str(index) + '.jpg'):
+	index += 1
+
+def saveImage(image):
+	global index
+	image.save('saved_images/image_' + str(index) + '.jpg')
+	index += 1
+###################################################################
 
 class GPUTask(object):
     def __init__(self):
@@ -97,6 +112,10 @@ class StoryFromSentencesAndImageTask(GPUTask):
     
     def run(self):
         try:
+            try:
+                saveImage(self.image)
+            except:
+                pass
             self.result = generate.storyFromSentencesAndImage(self.model, self.sentences, self.image, self.makePoetic, self.minOccurence, self.maxOccurence)
         except Exception as e:
             self.error = 'An error happend wile processing data : ' + str(e)

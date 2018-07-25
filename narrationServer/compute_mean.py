@@ -12,8 +12,8 @@ with open("sentences_vernes.txt") as f:
 
 s = []
 
-for i in xrange(0, len(sentences)-5, 5):
-    tmp = sentences[i] + " " + sentences[i+1] + " "  + sentences[i+2] + " " + sentences[i+3] + " " + sentences[i+4]
+for i in xrange(0, len(sentences)-2, 2):
+    tmp = sentences[i] + " " + sentences[i+1]
     s.append(tmp)
 
 model = ml.skipthoughts.load_model(ml.config.paths['skmodels'], ml.config.paths['sktables'])
@@ -25,5 +25,5 @@ vecs = ml.skipthoughts.encode(model, s)
 
 mean = vecs.mean(0)
 
-numpy.save('ml/data/storyteller/vernes_english_style_3.npy', mean)
+numpy.save('ml/data/storyteller/vernes_english_style_2.npy', mean)
 
