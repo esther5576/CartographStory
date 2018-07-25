@@ -150,11 +150,11 @@ namespace UnityStandardAssets.Cameras
 
                 #region Left right control
                 float angleYcalcul = Mathf.LerpAngle(pivot.transform.localEulerAngles.y, pivot.transform.localEulerAngles.y + 1 * Input.GetAxis("Mouse X") * speed, Time.time);
-                if(angleYcalcul > maxY && angleYcalcul < (maxY + 20))
+                if(angleYcalcul > maxY && angleYcalcul < (maxY + 40))
                 {
                     angleYcalcul = maxY;
                 }
-                if(angleYcalcul < minY && angleYcalcul > (minY - 20))
+                if(angleYcalcul < minY && angleYcalcul > (minY - 40))
                 {
                     angleYcalcul = minY;
                 }
@@ -164,11 +164,11 @@ namespace UnityStandardAssets.Cameras
 
                 #region Up and Down control
                 float angleXcalcul = Mathf.LerpAngle(pivot.transform.localEulerAngles.x, pivot.transform.localEulerAngles.x + 1 * - Input.GetAxis("Mouse Y") * speed, Time.time);
-                if (angleXcalcul > maxX && angleXcalcul < (maxX + 20))
+                if (angleXcalcul > maxX && angleXcalcul < (maxX + 40))
                 {
                     angleXcalcul = maxX;
                 }
-                if (angleXcalcul < minX && angleXcalcul > (minX - 20))
+                if (angleXcalcul < minX && angleXcalcul > (minX - 40))
                 {
                     angleXcalcul = minX;
                 }

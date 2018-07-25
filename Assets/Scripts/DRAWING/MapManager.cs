@@ -13,6 +13,9 @@ public class MapManager : MonoBehaviour
     public Text NarrativeTextMap;
     public Drawable DrawManager;
 	public Transform MapContainer;
+    public Sprite FondWithText;
+    public Sprite FondWithoutText;
+    public SpriteRenderer Fond;
 
 	[Header("Buttons")]
 	public Button ResetButton;
@@ -26,11 +29,13 @@ public class MapManager : MonoBehaviour
 	public GameObject BigMapParent;
 	public GameObject MapPrefab;
 
-    int IslandSelected;
+    public int IslandSelected;
 
     [Header("CameraFix")]
     public GameObject CameraToDesactivate;
     public CameraManager ScriptToDesactivate;
+
+    public GameObject player;
 
 	// Use this for initialization
 	void Awake ()
@@ -84,17 +89,32 @@ public class MapManager : MonoBehaviour
 	public void ValidateDraw ()
 	{
         DataManager.AllIslands[IslandSelected].Drawing = DrawManager.SpriteShowed.sprite;
+        DataManager.AllIslands[IslandSelected].DrawValidated = true;
+        
         CreateDrawInstanceOnMap();
         OpenMap();
-        DataManager.AllIslands[IslandSelected].NarrativText = NarrivTextRequest();
+        SetNarrativText();
     }
 
-    string NarrivTextRequest ()
+    public void SetNarrativText ()
     {
-        MachineCallScript.objectsSeen.Clear();
-        foreach (string Description in DataManager.AllIslands[IslandSelected].PicturesDescription)
-            MachineCallScript.objectsSeen.Add(Description);
-        return MachineCallScript.SendRequest();
+        if (DataManager.AllIslands[IslandSelected].DrawValidated)
+        {
+            if (DataManager.AllIslands[IslandSelected].PicturesNarratives.Count > 0)
+            {
+                string AllText = "";
+                foreach (string Description in DataManager.AllIslands[IslandSelected].PicturesNarratives)
+                    AllText += Description + "\n";
+                DataManager.AllIslands[IslandSelected].NarrativText = AllText;
+            }
+            else
+            {
+                DataManager.AllIslands[IslandSelected].NarrativText = "Analyzing data ... Brrzzt ...";
+            }
+        }
+
+        NarrativeText.text = DataManager.AllIslands[IslandSelected].NarrativText;
+        NarrativeTextMap.text = DataManager.AllIslands[IslandSelected].NarrativText;
     }
 
     public void CreateDrawInstanceOnMap ()
@@ -107,6 +127,7 @@ public class MapManager : MonoBehaviour
 	{
         CheckNavigationCameraDeActivation();
         DrawSystemParent.SetActive(true);
+        SetNarrativText();
         SetJournal(IslandSelected);
         CloseMap();
     }
@@ -176,6 +197,7 @@ public class MapManager : MonoBehaviour
                 AllPicturesRenderersWithText[i].ParentToChange.gameObject.SetActive(false);
 
             NarrativeText.gameObject.SetActive(false);
+            Fond.sprite = FondWithoutText;
         }
         else
         {
@@ -197,6 +219,7 @@ public class MapManager : MonoBehaviour
 
             NarrativeText.text = DataManager.AllIslands[PageNumber].NarrativText;
             NarrativeText.gameObject.SetActive(true);
+            Fond.sprite = FondWithText;
         }
     }
 
@@ -206,7 +229,10 @@ public class MapManager : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.J))
 		{
             if (DrawSystemParent.activeInHierarchy)
+            {
+                CameraToDesactivate.transform.position = player.transform.position;
                 CloseJournal();
+            }
             else
                 OpenJournal();
 
@@ -214,8 +240,11 @@ public class MapManager : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.M))
 		{
-			if (BigMapParent.activeInHierarchy)
+            if (BigMapParent.activeInHierarchy)
+            {
+                CameraToDesactivate.transform.position = player.transform.position;
                 CloseMap();
+            }
             else
                 OpenMap();
         }
@@ -232,6 +261,7 @@ public class MapManager : MonoBehaviour
     {
         DataManager.AllIslands[IslandSelected].Pictures.RemoveAt(ID);
         DataManager.AllIslands[IslandSelected].PicturesDescription.RemoveAt(ID);
+        DataManager.AllIslands[IslandSelected].PicturesNarratives.RemoveAt(ID);
 
         if (DataManager.AllIslands[IslandSelected].NarrativText == "Aucun texte chargé")
             AllPicturesRenderersOrigin[ID].ParentToChange.gameObject.SetActive(false);
@@ -243,7 +273,7 @@ public class MapManager : MonoBehaviour
     {
         int temp = IslandSelected;
         IslandSelected++;
-        if (IslandSelected > 2) IslandSelected = 2;
+        if (IslandSelected > DataManager.AllIslands.Count - 1) IslandSelected = 0;
         if (IslandSelected != temp)  SetJournal(IslandSelected);
     }
 
@@ -251,7 +281,33 @@ public class MapManager : MonoBehaviour
     {
         int temp = IslandSelected;
         IslandSelected--;
-        if (IslandSelected < 0) IslandSelected = 0;
+        if (IslandSelected < 0) IslandSelected = DataManager.AllIslands.Count - 1;
         if (IslandSelected != temp) SetJournal(IslandSelected);
+    }
+
+    public void SendAnalyseImage (Texture2D ImageTexture, string InfluenceText, int IslandID)
+    {
+        StartCoroutine(MachineCallScript.sendImageAnalyseRequest(
+          receiveNarrativText,
+          ImageTexture,
+          InfluenceText,
+          false,
+          10,
+          5000,
+          IslandID,
+          reveiveErrorNarrativText
+          ));
+    }
+
+    public void receiveNarrativText(string narrativText, int IslandID)
+    {
+        DataManager.AllIslands[IslandID].PicturesNarratives.Add(narrativText);
+        SetNarrativText();
+    }
+
+    public void reveiveErrorNarrativText(string errorMessage, int IslandID)
+    {
+        Debug.Log(errorMessage);
+        DataManager.AllIslands[IslandID].PicturesNarratives.Add("Bzzrt ... Error zzzt ...Brrzzt ... traduction .. rrzzt");
     }
 }

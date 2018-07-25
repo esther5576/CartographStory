@@ -8,6 +8,8 @@ using DG.Tweening;
 //test
 public class PictureSystem : MonoBehaviour
 {
+    public MachineCall MachineCallScript;
+    public MapManager myMap;
     public Image debugImage;
     public UnityEngine.PostProcessing.PostProcessingBehaviour postprocessing;
     public UnityEngine.PostProcessing.PostProcessingProfile profileNoVigPic;
@@ -22,6 +24,8 @@ public class PictureSystem : MonoBehaviour
     bool inPreviewMode = false;
 
     public UnityStandardAssets.Cameras.FreeLookCam _myPicCam;
+
+    public CanvasGroup UIWarning;
 
     // Use this for initialization
     void Start ()
@@ -69,9 +73,10 @@ public class PictureSystem : MonoBehaviour
                 debugImage.color = new Color(1, 1, 1, 1);
             }
 
-       
+            myMap.IslandSelected = theID;
             DataManager.AllIslands[theID].Pictures.Add(screenshotSprite);
             DataManager.AllIslands[theID].PicturesDescription.Add(description);
+            myMap.SendAnalyseImage(screenshotSprite.texture, description, theID);
 
             #region Kill tweens
             DOTween.Kill("save01");
@@ -99,7 +104,15 @@ public class PictureSystem : MonoBehaviour
             postprocessing.profile = profileVigPic;
             cameraPicUI.alpha = 1;
             EnableMorePics();
+            DOTween.To(() => UIWarning.alpha, x => UIWarning.alpha = x, 1, 0.25f);
+            UIWarning.transform.DOShakePosition(0.5f, 1, 10, 90, true).OnComplete(EndAction);
         }
+    }
+
+    public void EndAction()
+    {
+        DOTween.To(() => UIWarning.alpha, x => UIWarning.alpha = x, 0, 0.25f);
+        UIWarning.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
     }
 
     public void SaveImage()
@@ -126,8 +139,8 @@ public class PictureSystem : MonoBehaviour
         Debug.Log("Don't save picture");
 
         DOTween.To(() => camerapreview.alpha, x => camerapreview.alpha = x, 0, 0.5f).SetDelay(1).SetId("dontsave01").OnComplete(EnableMorePics);
-        imagepreview.transform.DOLocalMoveY(500, 1).SetEase(Ease.InBack).SetId("dontsave02");
-        imagepreview.transform.DOScale(0.1f, 1).SetId("dontsave03");
+        //imagepreview.transform.DOLocalMoveY(500, 1).SetEase(Ease.InBack).SetId("dontsave02");
+        imagepreview.transform.DOScale(0f, 1).SetId("dontsave03").SetEase(Ease.InQuart);
 
         int theID = DataManager.AllIslands.FindIndex(a => a.ID == IDOfIlsandToAdd);
         DataManager.AllIslands[theID].Pictures.RemoveAt(DataManager.AllIslands[theID].Pictures.Count - 1);
@@ -140,4 +153,7 @@ public class PictureSystem : MonoBehaviour
         inPreviewMode = false;
         _myPicCam.enabled = true;
     }
+
+    
+
 }

@@ -48,27 +48,13 @@ def receiveImage():
     try:
         image = request.files.get('file')
         # see http://werkzeug.pocoo.org/docs/0.14/datastructures/#werkzeug.datastructures.FileStorage
-	sentences = request.form.get('sentences', None)
-	if sentences is not None:
-		sentences = sentences.split(".")
-		for i in range(len(sentences)-1, -1, -1):
-			if (sentences[i].strip() == ""):
-				del sentences[i]
-
-	
-	poeticFilter = request.form.get('poeticFilter', False)
-	minFreq = 10
-	maxFreq = 100
-	if poeticFilter:
-		poeticFilter = True
-		try:
-			minFreq = int(request.form.get('minFreq', '10'))
-			maxFreq = int(request.form.get('maxFreq', '100'))
-		except:
-			pass
+	sentences = request.form['sentences'].split(".")
+	for i in range(len(sentences)-1, -1, -1):
+		if (sentences[i].strip() == ""):
+			del sentences[i]	
 
 	if model is not None and (image is not None):
-		task = StoryFromSentencesAndImageTask(model, sentences, image, poeticFilter, minFreq, maxFreq);
+		task = StoryFromSentencesAndImageTask(model, sentences, image, True);
 		gpuThread.queue.put(task)
 		task.waitUntilDone()
 		if task.error is not None:

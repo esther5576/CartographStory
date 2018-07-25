@@ -6,5 +6,5 @@ public class ObjectsID : MonoBehaviour
 {
     public bool IsIsland;
     public int ID;
-    public List<string> ObjectDescription = new List<string>();
+    public List<SentenceType> ObjectDescription = new List<SentenceType>();
 }
